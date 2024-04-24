@@ -9,4 +9,6 @@ mongoose.connect(url)
     console.log(err);
 });
 
-console.log('last line of the connection');
+// console.log('last line of the connection');
+
+module.exports = mongoose;
