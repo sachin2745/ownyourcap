@@ -21,10 +21,6 @@ const mySchema = new Schema({
         type: String,
         required: true
     },
-    confirmPassword: {
-        type: String,
-        required: true
-    },
     createdAt: {
         type: Date,
         default: Date.now
@@ -36,4 +32,4 @@ const mySchema = new Schema({
 
 });
 
-model.exports = model('signup', mySchema);
+module.exports = model('signup', mySchema);

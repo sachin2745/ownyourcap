@@ -1,11 +1,13 @@
 'use client'
 import { useFormik } from 'formik'
+import { useRouter } from 'next/navigation';
 import React from 'react'
 import toast from 'react-hot-toast';
 import * as Yup from 'yup';
 
 const Signup = () => {
 
+  const router = useRouter();
   const signupvalidationSchema = Yup.object().shape({
     firstName: Yup.string().required('First name is required'),
       lastName: Yup.string().required('Last name is required'),
@@ -27,7 +29,7 @@ const Signup = () => {
 
   onSubmit: (values) => {
     console.log(values);
-    fetch('http://localhost:5000/signup/add', {
+    fetch('http://localhost:5000/signup/sign', {
       method: 'POST',
       body: JSON.stringify(values),
       headers: {
@@ -39,7 +41,7 @@ const Signup = () => {
         if (response.status === 200) {
           toast.success('User Registered successfully');
           formik.resetForm();
-          useRouter().push('/login');
+          router.push("/login")
         } else {
           toast.error('Some Error Occured');
         }

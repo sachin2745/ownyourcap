@@ -2,7 +2,7 @@ const express = require('express');
 const cors = require('cors');
 const app = express();
 
-const signupRouter = require('./routers/signupRouter');
+const signupRouter = require('./router/signupRouter');
 
 app.use(express.json());
 app.use(cors({origin: '*'}));
