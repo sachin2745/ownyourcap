@@ -6,6 +6,15 @@ import * as Yup from 'yup';
 
 const Signup = () => {
 
+  const signupvalidationSchema = Yup.object().shape({
+    firstName: Yup.string().required('First name is required'),
+      lastName: Yup.string().required('Last name is required'),
+      phoneNumber: Yup.string().required('Phone number is required'),
+      email: Yup.string().email('Invalid email address').required('Email is required'),
+      password: Yup.string().required('Password is required'),
+      cpassword: Yup.string().oneOf([Yup.ref('password'), null], 'Passwords must match').required('Confirm password is required')
+  });
+
   const formik = useFormik({
     initialValues: {
       firstName: '',
@@ -15,21 +24,9 @@ const Signup = () => {
       password: '',
       cpassword: ''
     },
-    validationSchema: Yup.object({
-      firstName: Yup.string().required('First name is required'),
-      lastName: Yup.string().required('Last name is required'),
-      phoneNumber: Yup.number().required('Phone number is required'),
-      email: Yup.string().email('Invalid email address').required('Email is required'),
-      password: Yup.string().required('Password is required'),
-      cpassword: Yup.string().oneOf([Yup.ref('password'), null], 'Passwords must match').required('Confirm password is required')
-    }),
-    
-  })
 
-  formik = (values) => {
-    values.password = value;
+  onSubmit: (values) => {
     console.log(values);
-
     fetch('http://localhost:5000/signup/add', {
       method: 'POST',
       body: JSON.stringify(values),
@@ -41,9 +38,8 @@ const Signup = () => {
         console.log(response.status);
         if (response.status === 200) {
           toast.success('User Registered successfully');
-          setValue('');
-          form.reset();
-          router.push('/login')
+          formik.resetForm();
+          useRouter().push('/login');
         } else {
           toast.error('Some Error Occured');
         }
@@ -51,9 +47,13 @@ const Signup = () => {
       }).catch((err) => {
         console.log(err);
         toast.error('Some Error Occured');
-      });
+      })
 
-    }
+    },
+
+    validationSchema: signupvalidationSchema,
+      
+    });
 
   return (
     <div className="flex min-h-full flex-1 flex-col justify-center px-6 py-12 lg:px-8">
