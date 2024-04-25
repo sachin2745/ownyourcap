@@ -13,8 +13,8 @@ module.exports = {
   theme: {
     extend: {
       colors: {
-        primary: "#66ff00",
-        secondary: "#f9fcff",
+        primary: "#f9ae33",
+        secondary: "black",
       },
       container: {
         center: true,

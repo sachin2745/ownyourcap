@@ -10,7 +10,7 @@ const Menu = [
     name: "Home",
     link: "/",
   },
- 
+
   {
     id: 2,
     name: "About Us",
@@ -68,7 +68,7 @@ const Navbar = ({ handleOrderPopup }) => {
   return (
     <div className="shadow-md bg-white dark:bg-gray-900 dark:text-white duration-200 relative z-40">
       {/* upper Navbar */}
-      <div className="bg-primary/40 py-2">
+      <div className="bg-primary py-2">
         <div className="container flex justify-between items-center">
           <div>
             <a href="#" className="font-bold text-2xl sm:text-3xl flex gap-2">
@@ -106,6 +106,7 @@ const Navbar = ({ handleOrderPopup }) => {
           </div>
         </div>
       </div>
+      
       {/* lower Navbar */}
       <div data-aos="zoom-in" className="flex justify-center">
         <ul className="sm:flex hidden items-center gap-4">
@@ -119,7 +120,7 @@ const Navbar = ({ handleOrderPopup }) => {
               </a>
             </li>
           ))}
-           <li className="group relative cursor-pointer">
+          <li className="group relative cursor-pointer">
             <a href="#" className="flex items-center gap-[2px] py-2">
               Categories
               <span>
