@@ -9,8 +9,21 @@ module.exports = {
     "./src/**/*.{html,js,ts,jsx,tsx,mdx}",
     
   ],
+  darkMode: "class",
   theme: {
-    extend: {},
+    extend: {
+      colors: {
+        primary: "#66ff00",
+        secondary: "#f9fcff",
+      },
+      container: {
+        center: true,
+        padding: {
+          DEFAULT: "1rem",
+          sm: "3rem",
+        },
+      },
+    },
   },
   plugins: [require("daisyui"),
  

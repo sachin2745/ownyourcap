@@ -13,11 +13,18 @@ const navigation = [
 
 export default function Home() {
 
+  const [orderPopup, setOrderPopup] = React.useState(false);
+
+  const handleOrderPopup = () => {
+    setOrderPopup(!orderPopup);
+  };
+
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
   return (
     <>
-      <Navbar />
+  <Navbar handleOrderPopup={handleOrderPopup} />
 
+  
       <div className="bg-white">
       <header className="absolute inset-x-0 top-0 z-50">       
         <Dialog as="div" className="lg:hidden" open={mobileMenuOpen} onClose={setMobileMenuOpen}>
