@@ -7,12 +7,12 @@ module.exports = {
 
     // Or if using `src` directory:
     "./src/**/*.{html,js,ts,jsx,tsx,mdx}",
-    'node_modules/preline/dist/*.js',
+    
   ],
   theme: {
     extend: {},
   },
   plugins: [require("daisyui"),
-  require('preline/plugin'),
+ 
   ],
 }
