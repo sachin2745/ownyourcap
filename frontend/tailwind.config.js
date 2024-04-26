@@ -1,3 +1,6 @@
+const { Allura } = require('next/font/google');
+
+
 /** @type {import('tailwindcss').Config} */
 module.exports = {
   content: [
@@ -7,12 +10,29 @@ module.exports = {
 
     // Or if using `src` directory:
     "./src/**/*.{html,js,ts,jsx,tsx,mdx}",
-    'node_modules/preline/dist/*.js',
+    
   ],
+  darkMode: "class",
   theme: {
-    extend: {},
+    extend: {
+      colors: {
+        primary: "#F27546",
+        secondary: "#e7eff9",
+      },
+      container: {
+        center: true,
+        padding: {
+          DEFAULT: "1rem",
+          sm: "3rem",
+        },
+      },
+    },
+    fontFamily: {
+      Quicksand: ["Quicksand","sans-serif"],
+      
+    },
   },
   plugins: [require("daisyui"),
-  require('preline/plugin'),
+ 
   ],
 }
