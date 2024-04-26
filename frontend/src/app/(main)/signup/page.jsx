@@ -50,7 +50,6 @@ const Signup = () => {
         console.log(err);
         toast.error('Some Error Occured');
       })
-
     },
 
     validationSchema: signupvalidationSchema,

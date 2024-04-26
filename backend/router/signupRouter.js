@@ -17,7 +17,6 @@ router.post('/sign', (req , res ) => {
 });
 
 
-
 router.post('/authenticate', (req, res) => {
     console.log(req.body);
     Model.findOne(req.body)

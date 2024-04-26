@@ -3,11 +3,13 @@ const cors = require('cors');
 const app = express();
 
 const signupRouter = require('./router/signupRouter');
+const contactFormRouter = require('./router/contactFormRouter');
 
 app.use(express.json());
 app.use(cors({origin: '*'}));
 
 app.use('/signup', signupRouter);
+app.use('/contact', contactFormRouter);
 
 const port = 5000;
 

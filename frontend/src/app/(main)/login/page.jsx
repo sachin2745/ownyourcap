@@ -10,11 +10,8 @@ const Login = () => {
 
   const formik = useFormik({
     initialValues: {
-
-      
       email: '',
       password: ''
-
     },
 
     onSubmit: (values) => {
