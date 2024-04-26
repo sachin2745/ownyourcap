@@ -9,7 +9,7 @@ app.use(express.json());
 app.use(cors({origin: '*'}));
 
 app.use('/signup', signupRouter);
-app.use('/contact', contactFormRouter);
+app.use('/contactForm', contactFormRouter);
 
 const port = 5000;
 

@@ -14,7 +14,7 @@ const contactFormSchema = new Schema({
         required: true
     },
     phoneNumber: {
-        type: number,
+        type: Number,
         required: true
     },
     message: {

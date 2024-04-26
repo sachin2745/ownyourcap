@@ -1,3 +1,4 @@
+'use client'
 import React from "react";
 import { IoMdSearch } from "react-icons/io";
 import { FaCartShopping } from "react-icons/fa6";
@@ -78,7 +79,7 @@ const Navbar = ({ handleOrderPopup }) => {
           <div>
             <a href="#" className="font-bold text-2xl sm:text-3xl flex gap-2">
               <img src="logo.png" alt="Logo" className="w-14 h-14"  />
-              OWNYOURCAP
+              OwnYourCap
             </a>
           </div>
 

@@ -4,6 +4,7 @@ import { useState } from 'react'
 import { Switch } from '@headlessui/react'
 import * as Yup from 'yup';
 import { useFormik } from 'formik';
+import toast from 'react-hot-toast';
 
 
 function classNames(...classes) {
@@ -88,7 +89,7 @@ const Contact = () => {
           <div className="mt-2.5">
             <input
               type="text"
-              name="first-name"
+              name="firstName"
               id="firstName"
               value={formik.values.firstName}
               onChange={formik.handleChange}
@@ -107,7 +108,7 @@ const Contact = () => {
           <div className="mt-2.5">
             <input
               type="text"
-              name="last-name"
+              name="lastName"
               id="lastName"
               value={formik.values.lastName}
               onChange={formik.handleChange}
@@ -147,7 +148,7 @@ const Contact = () => {
           <div className="mt-2.5">
             <input
               type="number"
-              name="number"
+              name="phoneNumber"
               id="phoneNumber"
               value={formik.values.phoneNumber}
               onChange={formik.handleChange}
