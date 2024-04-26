@@ -14,12 +14,12 @@ const Menu = [
   {
     id: 2,
     name: "About Us",
-    link: "/#",
+    link: "/About",
   },
   {
     id: 3,
     name: "Contact Us",
-    link: "/#",
+    link: "/Contact",
   },
 ];
 
@@ -62,17 +62,22 @@ const DropdownLink = [
     name: "HRX",
     link: "/#",
   },
+  {
+    id: 5,
+    name: "Seloria",
+    link: "/#",
+  },
 ];
 
 const Navbar = ({ handleOrderPopup }) => {
   return (
-    <div className="shadow-md bg-white dark:bg-gray-900 dark:text-white duration-200 relative z-40">
+    <div className="shadow-md bg-white dark:bg-white dark:text-black duration-200 relative z-40">
       {/* upper Navbar */}
       <div className="bg-primary py-2">
         <div className="container flex justify-between items-center">
           <div>
             <a href="#" className="font-bold text-2xl sm:text-3xl flex gap-2">
-              <img src="logo.png" alt="Logo" className="w-10" />
+              <img src="logo.png" alt="Logo" className="w-14 h-14"  />
               OWNYOURCAP
             </a>
           </div>
