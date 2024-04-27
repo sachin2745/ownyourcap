@@ -74,7 +74,7 @@ const Navbar = ({ handleOrderPopup }) => {
   return (
     <div className="shadow-md bg-white dark:bg-primary dark:text-black duration-200 relative z-40">
       {/* upper Navbar */}
-      <div className="bg-primary/40 py-2">
+      <div className="bg-indigo-400 dark:bg-primary py-2">
         <div className="container flex justify-between items-center">
           <div>
             <a href="#" className="font-bold text-white text-2xl  sm:text-3xl flex gap-2">

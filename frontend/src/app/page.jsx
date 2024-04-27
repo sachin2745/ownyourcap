@@ -7,7 +7,6 @@ import Footer from './(main)/Footer'
 import Products from './Products'
 import TopProducts from './TopProducts'
 import Banner from './Banner'
-import Subscribe from './Subscribe'
 import Testimonials from './Testimonial'
 import Aos from 'aos'
 import "aos/dist/aos.css";
@@ -42,7 +41,6 @@ export default function Home() {
         <Products />
         <TopProducts handleOrderPopup={handleOrderPopup} />
         <Banner />
-        <Subscribe />
         <Testimonials />
         <Footer />
       </>
