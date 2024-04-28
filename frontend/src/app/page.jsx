@@ -13,6 +13,8 @@ import "aos/dist/aos.css";
 import About from './(main)/about/page'
 import Hero from './Hero'
 import ProductCollection from './ProductCollection'
+import Brands from './Brands'
+import Features from './Features'
 
 
 export default function Home() {
@@ -38,11 +40,14 @@ export default function Home() {
       <Navbar handleOrderPopup={handleOrderPopup} />    
 
         <Hero />
+        <Features/>
         <About />
         <Products />
         <TopProducts handleOrderPopup={handleOrderPopup} />
         <Banner />
         <ProductCollection/>
+        
+        <Brands/>
         <Testimonials />
         <Footer />
       </>
