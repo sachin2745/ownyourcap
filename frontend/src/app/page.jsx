@@ -12,6 +12,7 @@ import Aos from 'aos'
 import "aos/dist/aos.css";
 import About from './(main)/about/page'
 import Hero from './Hero'
+import ProductCollection from './ProductCollection'
 
 
 export default function Home() {
@@ -41,6 +42,7 @@ export default function Home() {
         <Products />
         <TopProducts handleOrderPopup={handleOrderPopup} />
         <Banner />
+        <ProductCollection/>
         <Testimonials />
         <Footer />
       </>
