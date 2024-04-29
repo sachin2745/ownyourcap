@@ -2,9 +2,9 @@
 import React from 'react'
 import { useState } from 'react'
 import { Switch } from '@headlessui/react'
-import * as Yup from 'yup';
 import { useFormik } from 'formik';
 import toast from 'react-hot-toast';
+import * as Yup from 'yup';
 
 
 function classNames(...classes) {
