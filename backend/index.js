@@ -6,6 +6,7 @@ const app = express();
 //fill the require data
 const signupRouter = require('./router/signupRouter');
 const contactFormRouter = require('./router/contactFormRouter');
+const postRouter = require('./router/postRouter');
 
 app.use(express.json());
 app.use(cors({origin: '*'}));
@@ -14,6 +15,7 @@ app.use(cors({origin: '*'}));
 //that is port to start express server
 app.use('/signup', signupRouter);
 app.use('/contactForm', contactFormRouter);
+app.use('/post', postRouter);
 
 const port = 5000;
 

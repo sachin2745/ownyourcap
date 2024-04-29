@@ -1,4 +1,3 @@
-const { Allura } = require('next/font/google');
 
 
 /** @type {import('tailwindcss').Config} */
@@ -10,7 +9,7 @@ module.exports = {
 
     // Or if using `src` directory:
     "./src/**/*.{html,js,ts,jsx,tsx,mdx}",
-    
+
   ],
   darkMode: "class",
   theme: {
@@ -28,11 +27,12 @@ module.exports = {
       },
     },
     fontFamily: {
-      Quicksand: ["Quicksand","sans-serif"],
-      
+      Quicksand: ["Quicksand", "sans-serif"],
+
     },
   },
-  plugins: [require("daisyui"),
- 
+  plugins: [
+    require("daisyui"),
+    require('@tailwindcss/forms'),
   ],
 }
