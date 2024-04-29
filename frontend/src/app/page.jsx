@@ -7,12 +7,14 @@ import Footer from './(main)/Footer'
 import Products from './Products'
 import TopProducts from './TopProducts'
 import Banner from './Banner'
-import Subscribe from './Subscribe'
 import Testimonials from './Testimonial'
 import Aos from 'aos'
 import "aos/dist/aos.css";
 import About from './(main)/about/page'
 import Hero from './Hero'
+import ProductCollection from './ProductCollection'
+import Brands from './Brands'
+import Features from './Features'
 
 
 export default function Home() {
@@ -38,11 +40,14 @@ export default function Home() {
       <Navbar handleOrderPopup={handleOrderPopup} />    
 
         <Hero />
+        <Features/>
         <About />
         <Products />
         <TopProducts handleOrderPopup={handleOrderPopup} />
         <Banner />
-        <Subscribe />
+        <ProductCollection/>
+        
+        <Brands/>
         <Testimonials />
         <Footer />
       </>

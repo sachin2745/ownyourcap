@@ -72,13 +72,13 @@ const DropdownLink = [
 
 const Navbar = ({ handleOrderPopup }) => {
   return (
-    <div className="shadow-md bg-white dark:bg-white dark:text-black duration-200 relative z-40">
+    <div className="shadow-md bg-white dark:bg-primary dark:text-black duration-200 relative z-40">
       {/* upper Navbar */}
-      <div className="bg-primary py-2">
+      <div className="bg-indigo-400 dark:bg-primary py-2">
         <div className="container flex justify-between items-center">
           <div>
-            <a href="#" className="font-bold text-2xl sm:text-3xl flex gap-2">
-              <img src="logo.png" alt="Logo" className="w-14 h-14"  />
+            <a href="#" className="font-bold text-white text-2xl  sm:text-3xl flex gap-2">
+              <img src="logo.png" alt="Logo" className="w-12 h-12"  />
               OwnYourCap
             </a>
           </div>
@@ -114,7 +114,7 @@ const Navbar = ({ handleOrderPopup }) => {
       </div>
       
       {/* lower Navbar */}
-      <div data-aos="zoom-in" className="flex justify-center">
+      <div data-aos="zoom-in" className="flex justify-center dark:bg-black dark:text-white">
         <ul className="sm:flex hidden items-center gap-4">
           {Menu.map((data) => (
             <li key={data.id}>
