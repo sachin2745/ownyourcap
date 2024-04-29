@@ -40,7 +40,7 @@ const page = () => {
                         <div key={post._id} 
                          className=" mt-6 w-80  bg-gradient-to-l from-slate-300 to-slate-100 text-slate-600 border border-slate-300  j p-4 gap-4 rounded-lg shadow-md">
                         
-                            <div className="lg:w-80 md:w-1/2  w-full">
+                            <div className="lg:w-80 md:w-1/4  w-full">
                                 <a className="block relative h-48 rounded overflow-hidden">
                                     <img
                                         alt="ecommerce"
