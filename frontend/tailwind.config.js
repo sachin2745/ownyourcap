@@ -28,6 +28,7 @@ module.exports = {
     },
     fontFamily: {
       Quicksand: ["Quicksand", "sans-serif"],
+      Allura: ["Allura", "cursive"],
 
     },
   },

@@ -82,6 +82,7 @@ const Navbar = ({ handleOrderPopup }) => {
               OwnYourCap
             </a>
           </div>
+         
 
           {/* search bar */}
           <div className="flex justify-between items-center gap-4">

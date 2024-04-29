@@ -20,7 +20,7 @@ const Hero = () => {
             <h1 className="font-Quicksand -mt-12  text-black md:text-6xl lg:w-10/12">
               Look Stylish with
             </h1>
-            <h2 className="font-Quicksand  text-black md:text-6xl lg:w-10/12">
+            <h2 className="font-Allura  text-black md:text-6xl lg:w-10/12">
               the Best <br /> Caps & Hats
             </h2>                      
           </div>
