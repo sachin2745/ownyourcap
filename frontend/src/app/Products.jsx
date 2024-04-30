@@ -47,14 +47,14 @@ const ProductsData = [
 
 const Products = () => {
   return (
-    <div className="pt-10  pb-10 bg-indigo-400 dark:bg-primary border-b-4 border-white dark:border-black">
+    <div className="pt-10  pb-10 bg-mate_black dark:bg-primary border-b-4 border-white dark:border-black">
       <div className="container ">
         {/* Header section */}
-        <div className="text-center mb-10 max-w-[600px] mx-auto">
-          <p data-aos="fade-up" className="text-lg text-black text-Quicksand">
+        <div className="text-center mb-10 max-w-[600px] mx-auto font-Jost">
+          <p data-aos="fade-up" className="text-lg text-secondary dark:text-black text-Quicksand">
             Top Selling Products for you
           </p>
-          <h1 data-aos="fade-up" className="text-4xl font-bold text-black text-mono">
+          <h1 data-aos="fade-up" className="text-4xl font-bold text-secondary dark:text-black text-mono">
             Products
           </h1>
           
@@ -68,19 +68,19 @@ const Products = () => {
                 data-aos="fade-up"
                 data-aos-delay={data.aosDelay}
                 key={data.id}
-                className="space-y-3 border-4 rounded-lg border-black bg-black"
+                className="space-y-3 border-4 rounded-lg border-secondary bg-secondary dark:border-black dark:bg-black"
               >
                 <img
                   src={data.img}
                   alt=""
                   className="h-[240px] w-[200px] object-cover rounded-md"
                 />
-                <div className="bg-black mt-6">
-                  <h3 className="font-semibold text-white">{data.title}</h3>
-                  <p className="text-sm text-white">{data.color}</p>
+                <div className="bg-secondary mt-6 font-Jost dark:bg-black">
+                  <h3 className="font-semibold text-mate_black dark:text-secondary">{data.title}</h3>
+                  <p className="text-sm text-mate_black dark:text-secondary">{data.color}</p>
                   <div className="flex items-center gap-1">
                     <FaStar className="text-yellow-400" />
-                    <span className="text-white">{data.rating}</span>
+                    <span className="text-mate_black dark:text-secondary">{data.rating}</span>
                   </div>
                 </div>
               </div>
@@ -88,8 +88,8 @@ const Products = () => {
           </div>
           {/* view all button */}
           <div className="flex justify-center">
-            <button class= "mt-10 cursor-pointer py-1 px-5 rounded-md bg-gray-950 text-white border border-gray-400 border-b-4 font-medium overflow-hidden relative px-4 py-2 rounded-md hover:brightness-150 hover:border-t-4 hover:border-b active:opacity-75 outline-none duration-300 group">
-              <span class="bg-gray-400 shadow-gray-400 absolute -top-[150%] left-0 inline-flex w-80 h-[5px] rounded-md opacity-50 group-hover:top-[150%] duration-500 shadow-[0_0_10px_10px_rgba(0,0,0,0.3)]"></span>
+            <button  class= "mt-10 cursor-pointer py-1 px-5 rounded-md bg-gray-950 text-white border border-gray-400 border-b-4 font-medium overflow-hidden relative px-4 py-2 rounded-md hover:brightness-150 hover:border-t-4 hover:border-b active:opacity-75 outline-none duration-300 group">
+              <span href="/MyShop" class="bg-gray-400 shadow-gray-400 absolute -top-[150%] left-0 inline-flex w-80 h-[5px] rounded-md opacity-50 group-hover:top-[150%] duration-500 shadow-[0_0_10px_10px_rgba(0,0,0,0.3)]"></span>
               View All Products
             </button>
            

@@ -28,7 +28,7 @@ const DropdownLinks = [
   {
     id: 1,
     name: "Trending Products",
-    link: "/#",
+    link: "/MyShop",
   },
   {
     id: 2,
@@ -38,7 +38,7 @@ const DropdownLinks = [
   {
     id: 3,
     name: "Top Rated",
-    link: "/#",
+    link: "/TopProducts",
   },
 ];
 
@@ -74,15 +74,15 @@ const Navbar = ({ handleOrderPopup }) => {
   return (
     <div className="shadow-md bg-white dark:bg-primary dark:text-black duration-200 relative z-40">
       {/* upper Navbar */}
-      <div className="bg-indigo-400 dark:bg-primary py-2">
+      <div className="bg-mate_black dark:bg-primary py-2">
         <div className="container flex justify-between items-center">
           <div>
-            <a href="#" className="font-bold text-white text-2xl  sm:text-3xl flex gap-2">
-              <img src="logo.png" alt="Logo" className="w-12 h-12"  />
+            <a href="#" className="font-Jost font-bold text-white dark:text-mate_black text-2xl  sm:text-3xl flex gap-2">
+              <img src="logo.png" alt="Logo" className="w-12 h-12 " />
               OwnYourCap
             </a>
           </div>
-         
+
 
           {/* search bar */}
           <div className="flex justify-between items-center gap-4">
@@ -113,22 +113,22 @@ const Navbar = ({ handleOrderPopup }) => {
           </div>
         </div>
       </div>
-      
+
       {/* lower Navbar */}
-      <div data-aos="zoom-in" className="flex justify-center dark:bg-black dark:text-white">
+      <div data-aos="zoom-in" className="flex justify-center dark:bg-black dark:text-white font-Jost">
         <ul className="sm:flex hidden items-center gap-4">
           {Menu.map((data) => (
             <li key={data.id}>
               <a
                 href={data.link}
-                className="inline-block px-4 hover:text-primary duration-200"
+                className="inline-block px-4 text-black hover:text-perfect_blue dark:hover:text-primary duration-200"
               >
                 {data.name}
               </a>
             </li>
           ))}
           <li className="group relative cursor-pointer">
-            <a href="#" className="flex items-center gap-[2px] py-2">
+            <a href="#" className="flex items-center gap-[2px] py-2 text-black">
               Categories
               <span>
                 <FaCaretDown className="transition-all duration-200 group-hover:rotate-180" />
@@ -140,7 +140,7 @@ const Navbar = ({ handleOrderPopup }) => {
                   <li key={data.id}>
                     <a
                       href={data.link}
-                      className="inline-block w-full rounded-md p-2 hover:bg-primary/20 "
+                      className="inline-block w-full rounded-md p-2 hover:bg-perfect_blue hover:text-white dark:hover:bg-primary dark:hover:text-white"
                     >
                       {data.name}
                     </a>
@@ -151,7 +151,7 @@ const Navbar = ({ handleOrderPopup }) => {
           </li>
           {/* Simple Dropdown and Links */}
           <li className="group relative cursor-pointer">
-            <a href="#" className="flex items-center gap-[2px] py-2">
+            <a href="#" className="flex items-center gap-[2px] py-2 text-black">
               Trending Products
               <span>
                 <FaCaretDown className="transition-all duration-200 group-hover:rotate-180" />
@@ -163,7 +163,7 @@ const Navbar = ({ handleOrderPopup }) => {
                   <li key={data.id}>
                     <a
                       href={data.link}
-                      className="inline-block w-full rounded-md p-2 hover:bg-primary/20 "
+                      className="inline-block w-full rounded-md p-2 text-black  hover:bg-perfect_blue hover:text-white dark:hover:bg-primary dark:hover:text-white "
                     >
                       {data.name}
                     </a>

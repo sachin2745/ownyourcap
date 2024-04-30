@@ -16,7 +16,9 @@ module.exports = {
     extend: {
       colors: {
         primary: "#06DBFF",
+        mate_black: "#28282B",
         secondary: "#e7eff9",
+        perfect_blue: "#2234ae",
       },
       container: {
         center: true,
@@ -29,7 +31,7 @@ module.exports = {
     fontFamily: {
       Quicksand: ["Quicksand", "sans-serif"],
       Allura: ["Allura", "cursive"],
-
+      Jost: ["Jost", "sans-serif"],
     },
   },
   plugins: [

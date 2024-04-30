@@ -57,9 +57,9 @@ const FooterLink = [
 
 const Footer = () => {
   return (
-    <div style={BannerImg} className="text-white  ">
-      <div className="container bg-primary/15">
-        <div data-aos="zoom-in" className="grid md:grid-cols-3 pb-44 pt-5">
+    <div style={BannerImg} className="text-white  dark:text-black ">
+      <div className="container bg-mate_black/20 dark:bg-primary/80">
+        <div data-aos="zoom-in" className="grid md:grid-cols-3 pb-44 pt-5 font-Jost">
           {/* company details */}
           <div className="py-8 px-4">
             <h1 className="sm:text-3xl text-xl font-bold sm:text-left text-justify mb-3 flex items-center gap-3">
@@ -82,7 +82,7 @@ const Footer = () => {
                 <ul className="flex flex-col gap-3">
                   {FooterLinks.map((link) => (
                     <li
-                      className="cursor-pointer hover:text-primary hover:translate-x-1 duration-300 text-gray-200"
+                      className="cursor-pointer hover:text-secondary hover:translate-x-1 duration-300 text-gray-200 dark:text-black "
                       key={link.title}
                     >
                       <span>{link.title}</span>
@@ -99,7 +99,7 @@ const Footer = () => {
                 <ul className="flex flex-col gap-3">
                   {FooterLink.map((link) => (
                     <li
-                      className="cursor-pointer hover:text-primary hover:translate-x-1 duration-300 text-gray-200"
+                      className="cursor-pointer hover:text-secondary hover:translate-x-1 duration-300 text-gray-200 dark:text-black "
                       key={link.title}
                     >
                       <span>{link.title}</span>

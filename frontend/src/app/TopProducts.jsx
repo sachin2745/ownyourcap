@@ -27,13 +27,13 @@ const ProductsData = [
 const TopProducts = ({ handleOrderPopup }) => {
   return (
     <div>
-      <div className="container pt-20 pb-20 bg-indigo-400 dark:bg-primary">
+      <div className="container pt-20 pb-20 bg-mate_black dark:bg-primary">
         {/* Header section */}
-        <div className="text-center mb-24">
-          <p data-aos="fade-up" className="text-lg text-black font-Quicksand font-bold">
+        <div className="text-center mb-24 font-Jost">
+          <p data-aos="fade-up" className="text-lg text-secondary dark:text-black font-Quicksand font-bold">
             Top Rated Products for you
           </p>
-          <h1 data-aos="fade-up" className="text-4xl text-black font-bold">
+          <h1 data-aos="fade-up" className="text-4xl text-secondary dark:text-black font-bold">
             Best Products
           </h1>
          
@@ -43,7 +43,7 @@ const TopProducts = ({ handleOrderPopup }) => {
           {ProductsData.map((data) => (
             <div
               data-aos="zoom-in"
-              className="rounded-2xl bg-white  dark:bg-secondary hover:bg-black/80 dark:hover:bg-primary hover:border-4 hover:text-black relative shadow-xl duration-300 group max-w-[300px]"
+              className="rounded-2xl bg-white  dark:bg-secondary hover:bg-black/80 dark:hover:bg-primary/25 hover:border-4 hover:text-black relative shadow-xl duration-300 group max-w-[300px]"
             >
               {/* image section */}
               <div className="h-[100px]">
@@ -54,7 +54,7 @@ const TopProducts = ({ handleOrderPopup }) => {
                 />
               </div>
               {/* details section */}
-              <div className="p-4 text-center">
+              <div className="p-4 text-center font-Jost">
                 {/* star rating */}
                 <div className="w-full flex items-center justify-center gap-1">
                   <FaStar className="text-yellow-500" />

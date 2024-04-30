@@ -29,19 +29,17 @@ const page = () => {
 
 
     return (
-        <section className="text-gray-600 body-font bg-primary">
-            <div className='text-center font-Quicksand text-black pt-10'>
+        <section className="text-gray-600 body-font bg-mate_black dark:bg-primary ">
+            <div className='text-center font-Jost text-secondary dark:text-black pt-10'>
                 <h1 className='font-bold text-3xl'>My Shop</h1>
                 <h3 className='text-1xl'>Home &rsaquo; My Shop</h3>
             </div>
-            <div className="grid grid-cols-4 gap-4">
+            <div className="grid grid-cols-4  gap-4">
                 {
                     postArray.map((post) => {
                         return (
                             <div>
-                                <div className="container px-5 py-24 mx-auto">
-                                    <div
-                                        className=" mt-6 w-80  bg-gradient-to-l from-slate-300 to-slate-100 text-slate-600 border border-slate-300  j p-4 gap-4 rounded-lg shadow-md">
+                                    <div className=" ml-6 mx-auto my-7 mt-6 w-80 h-auto  bg-secondary text-slate-600 border border-secondary dark:bg-black dark:text-white dark:border-black   p-4 gap-4 rounded-lg shadow-md">
 
                                         <div className="lg:w-80 md:w-1/4  w-full">
                                             <a className="block relative h-48 rounded overflow-hidden">
@@ -51,20 +49,21 @@ const page = () => {
                                                     src={post.image}
                                                 />
                                             </a>
-                                            <div className="mt-4">
-                                                <h2 className="text-gray-900 title-font text-lg font-medium">
+                                            <div className="mt-4 font-Jost w-72 ">
+                                                <h2 className="text-gray-900 dark:text-white title-font text-lg font-medium">
                                                     {post.name}
                                                 </h2>
-                                                <h3 className="text-gray-500 text-xs tracking-widest title-font mb-1">
+                                                <h3 className="text-gray-500 dark:text-white text-sm text-wrap tracking-widest title-font mb-1">
                                                     {post.description}
                                                 </h3>
                                                 <p className="mt-1">Rs.{post.price}</p>
-                                                <button type="submit" className="flex ml-36 text-white bg-black border-0 py-2 px-6 focus:outline-none hover:bg-primary rounded">Add to Cart</button>
                                             </div>
+                                            <button type="submit" className="flex ml-36  text-white bg-black hover:bg-gray-700 dark:bg-primary dark:text-black dark:font-bold border-0 py-2 px-6 focus:outline-none  rounded">Add to Cart</button>
+
                                         </div>
                                     </div>
 
-                                </div>
+                                
                             </div>
 
 

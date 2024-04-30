@@ -3,13 +3,13 @@ import React from 'react'
 const Testimonial = () => {
   return (
     <>
-      <section className="bg-black">
-        <div className="mx-auto max-w-screen-xl px-4 py-12 sm:px-6 lg:px-8 lg:py-16">
-          <h2 className="text-center text-4xl font-bold tracking-tight text-white sm:text-5xl">
+      <section className="bg-mate_black dark:bg-primary">
+        <div className="mx-auto max-w-screen-xl px-4 py-12 sm:px-6 lg:px-8 lg:py-16 font-Jost">
+          <h2 className="text-center text-4xl font-bold tracking-tight text-white dark:text-black sm:text-5xl">
             Read trusted reviews from our customers
           </h2>
-          <div className="mt-8 grid grid-cols-1 gap-4 md:grid-cols-3 md:gap-8  ">
-            <blockquote className="rounded-lg bg-black p-6 shadow-sm sm:p-8 border-2 border-white">
+          <div className="mt-8 grid grid-cols-1 gap-4 md:grid-cols-3 md:gap-8 group ">
+            <blockquote className="rounded-lg duration-500 group-hover:blur-sm hover:!blur-none group-hover:scale-[0.85] hover:!scale-100  cursor-pointer bg-black p-6 shadow-sm sm:p-8 border-2 border-white">
               <div className="flex items-center gap-4">
                 <img
                   alt=""
@@ -71,7 +71,7 @@ const Testimonial = () => {
                 voluptates magnam!
               </p>
             </blockquote>
-            <blockquote className="rounded-lg bg-black p-6 shadow-sm sm:p-8 border-2 border-white">
+            <blockquote className="rounded-lg duration-500 group-hover:blur-sm hover:!blur-none group-hover:scale-[0.85] hover:!scale-100  cursor-pointer bg-black p-6 shadow-sm sm:p-8 border-2 border-white">
               <div className="flex items-center gap-4">
                 <img
                   alt=""
@@ -133,7 +133,7 @@ const Testimonial = () => {
                 voluptates magnam!
               </p>
             </blockquote>
-            <blockquote className="rounded-lg bg-black p-6 shadow-sm sm:p-8 border-2 border-white">
+            <blockquote className="rounded-lg duration-500 group-hover:blur-sm hover:!blur-none group-hover:scale-[0.85] hover:!scale-100  cursor-pointer bg-black p-6 shadow-sm sm:p-8 border-2 border-white">
               <div className="flex items-center gap-4">
                 <img
                   alt=""
