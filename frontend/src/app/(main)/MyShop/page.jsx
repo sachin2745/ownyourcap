@@ -56,7 +56,7 @@ const page = () => {
                                                 <h3 className="text-gray-500 dark:text-white text-sm text-wrap tracking-widest title-font mb-1">
                                                     {post.description}
                                                 </h3>
-                                                <p className="mt-1">Rs.{post.price}</p>
+                                                <p className="mt-1">₹{post.price}/-</p>
                                             </div>
                                             <button type="submit" className="flex ml-36  text-white bg-black hover:bg-gray-700 dark:bg-primary dark:text-black dark:font-bold border-0 py-2 px-6 focus:outline-none  rounded">Add to Cart</button>
 

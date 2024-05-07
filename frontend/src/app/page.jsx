@@ -21,9 +21,6 @@ export default function Home() {
 
   const [orderPopup, setOrderPopup] = React.useState(false);
 
-  const handleOrderPopup = () => {
-    setOrderPopup(!orderPopup);
-  };
   React.useEffect(() => {
     Aos.init({
       offset: 100,
@@ -37,7 +34,7 @@ export default function Home() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
   return (
     <>
-      <Navbar handleOrderPopup={handleOrderPopup} />    
+      <Navbar  />    
 
         <Hero />
         <Features/>

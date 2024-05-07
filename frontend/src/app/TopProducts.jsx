@@ -30,7 +30,7 @@ const TopProducts = ({ handleOrderPopup }) => {
       <div className="container pt-20 pb-20 bg-mate_black dark:bg-primary">
         {/* Header section */}
         <div className="text-center mb-24 font-Jost">
-          <p data-aos="fade-up" className="text-lg text-secondary dark:text-black font-Quicksand font-bold">
+          <p data-aos="fade-up" className="text-md text-secondary dark:text-black font-Quicksand font-bold">
             Top Rated Products for you
           </p>
           <h1 data-aos="fade-up" className="text-4xl text-secondary dark:text-black font-bold">

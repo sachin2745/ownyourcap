@@ -1,3 +1,4 @@
+import Link from "next/link";
 import React from "react";
 
 import { FaStar } from "react-icons/fa6";
@@ -51,7 +52,7 @@ const Products = () => {
       <div className="container ">
         {/* Header section */}
         <div className="text-center mb-10 max-w-[600px] mx-auto font-Jost">
-          <p data-aos="fade-up" className="text-lg text-secondary dark:text-black text-Quicksand">
+          <p data-aos="fade-up" className="text-md text-secondary dark:text-black text-Quicksand">
             Top Selling Products for you
           </p>
           <h1 data-aos="fade-up" className="text-4xl font-bold text-secondary dark:text-black text-mono">
@@ -88,10 +89,10 @@ const Products = () => {
           </div>
           {/* view all button */}
           <div className="flex justify-center">
-            <button  class= "mt-10 cursor-pointer py-1 px-5 rounded-md bg-gray-950 text-white border border-gray-400 border-b-4 font-medium overflow-hidden relative px-4 py-2 rounded-md hover:brightness-150 hover:border-t-4 hover:border-b active:opacity-75 outline-none duration-300 group">
-              <span href="/MyShop" class="bg-gray-400 shadow-gray-400 absolute -top-[150%] left-0 inline-flex w-80 h-[5px] rounded-md opacity-50 group-hover:top-[150%] duration-500 shadow-[0_0_10px_10px_rgba(0,0,0,0.3)]"></span>
+            <Link href={"/MyShop"}  class= "mt-10 cursor-pointer py-1 px-5 rounded-md bg-gray-950 text-white border border-gray-400 border-b-4 font-medium overflow-hidden relative px-4 py-2 rounded-md hover:brightness-150 hover:border-t-4 hover:border-b active:opacity-75 outline-none duration-300 group">
+              <span  class="bg-gray-400 shadow-gray-400 absolute -top-[150%] left-0 inline-flex w-80 h-[5px] rounded-md opacity-50 group-hover:top-[150%] duration-500 shadow-[0_0_10px_10px_rgba(0,0,0,0.3)]"></span>
               View All Products
-            </button>
+            </Link>
            
           </div>
         </div>

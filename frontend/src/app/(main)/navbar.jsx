@@ -96,15 +96,18 @@ const Navbar = ({ handleOrderPopup }) => {
             </div>
 
             {/* order button */}
-            <button
-              onClick={() => handleOrderPopup()}
-              className="bg-gradient-to-r from-primary to-secondary transition-all duration-200 text-white  py-1 px-4 rounded-full flex items-center gap-3 group"
+            <a
+              href="/viewCart"
+              className="bg-gradient-to-r from-primary to-perfect_blue transition-all duration-200 text-white  py-1 px-4 rounded-full flex items-center gap-3 group"
             >
               <span className="group-hover:block hidden transition-all duration-200">
                 Order
               </span>
-              <FaCartShopping className="text-xl text-white drop-shadow-sm cursor-pointer" />
-            </button>
+              <div class="relative scale-75">
+                <FaCartShopping className="text-xl text-white drop-shadow-sm cursor-pointer" />
+                <span class="absolute -top-2 left-4 rounded-full bg-mate_black p-0.5 px-2 text-sm text-red-50">4</span>
+              </div>
+            </a>
 
             {/* Darkmode Switch */}
             <div>
@@ -115,26 +118,26 @@ const Navbar = ({ handleOrderPopup }) => {
       </div>
 
       {/* lower Navbar */}
-      <div data-aos="zoom-in" className="flex justify-center dark:bg-black dark:text-white font-Jost">
+      <div data-aos="zoom-in" className="flex justify-center dark:bg-black  font-Jost">
         <ul className="sm:flex hidden items-center gap-4">
           {Menu.map((data) => (
             <li key={data.id}>
               <a
                 href={data.link}
-                className="inline-block px-4 text-black hover:text-perfect_blue dark:hover:text-primary duration-200"
+                className="inline-block px-4 text-black hover:text-blue-800 dark:text-white  dark:hover:text-primary duration-200"
               >
                 {data.name}
               </a>
             </li>
           ))}
           <li className="group relative cursor-pointer">
-            <a href="#" className="flex items-center gap-[2px] py-2 text-black">
+            <a href="#" className="flex items-center gap-[2px] py-2 text-black dark:text-white">
               Categories
               <span>
                 <FaCaretDown className="transition-all duration-200 group-hover:rotate-180" />
               </span>
             </a>
-            <div className="absolute z-[9999] hidden group-hover:block w-[200px] rounded-md bg-white p-2 text-black shadow-md">
+            <div className="absolute z-[9999] hidden group-hover:block w-[200px] rounded-md bg-white p-2 text-black  shadow-md">
               <ul>
                 {DropdownLink.map((data) => (
                   <li key={data.id}>
@@ -151,13 +154,13 @@ const Navbar = ({ handleOrderPopup }) => {
           </li>
           {/* Simple Dropdown and Links */}
           <li className="group relative cursor-pointer">
-            <a href="#" className="flex items-center gap-[2px] py-2 text-black">
+            <a href="#" className="flex items-center gap-[2px] py-2 text-black dark:text-white">
               Trending Products
               <span>
                 <FaCaretDown className="transition-all duration-200 group-hover:rotate-180" />
               </span>
             </a>
-            <div className="absolute z-[9999] hidden group-hover:block w-[200px] rounded-md bg-white p-2 text-black shadow-md">
+            <div className="absolute z-[9999] hidden group-hover:block w-[200px] rounded-md bg-white p-2 text-black  shadow-md">
               <ul>
                 {DropdownLinks.map((data) => (
                   <li key={data.id}>
