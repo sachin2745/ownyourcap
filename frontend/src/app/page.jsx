@@ -40,7 +40,7 @@ export default function Home() {
         <Features/>
         <About />
         <Products />
-        <TopProducts handleOrderPopup={handleOrderPopup} />
+        <TopProducts />
         <Banner />
         <ProductCollection/>
         
