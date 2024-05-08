@@ -71,6 +71,17 @@ const DropdownLink = [
 ];
 
 const Navbar = ({ handleOrderPopup }) => {
+
+  const {loggedIn, setLoggedIn} = useState(false);
+  const showLoggedIn = () => {
+    if(loggedIn){
+      return(
+        <button onClick={setLoggedIn(false)}>Logout</button>
+      )
+    }else{
+      
+    }
+  }
   return (
     <div className="shadow-md bg-white dark:bg-primary dark:text-black duration-200 relative z-40">
       {/* upper Navbar */}

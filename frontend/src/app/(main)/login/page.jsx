@@ -1,10 +1,13 @@
 'use client'
+import useAppContext from '@/context/AppContext';
 import { useFormik } from 'formik';
 import { useRouter } from 'next/navigation';
 import React from 'react';
 import toast from 'react-hot-toast';
 
 const Login = () => {
+
+  const {setLoggedIn} = useAppContext();
 
   const router = useRouter();
 
@@ -27,6 +30,8 @@ const Login = () => {
           console.log(response.status);
           if (response.status === 200) {
             toast.success('User login successfully');
+            setLoggedIn(true);
+            sessionStorage.setItem('user', JSON.stringify(values));
             formik.resetForm();
             router.push("/")
           } else {
