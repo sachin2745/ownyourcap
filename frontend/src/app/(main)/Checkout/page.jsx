@@ -1,5 +1,6 @@
 import React from 'react'
 import Footer from '../Footer'
+import Navbar from '../navbar'
 
 const Checkout = () => {
     return (
@@ -17,7 +18,11 @@ const Checkout = () => {
                 }}
             />
 
-            <div className="h-screen grid grid-cols-3 ">
+
+            <Navbar />
+
+
+            <div className="h-full grid grid-cols-3 ">
                 <div className="lg:col-span-2 col-span-3 bg-black text-secondary  px-12 p-10">
                     <h1 className=' mb-2  p-2 text-4xl text-secondary font-Jost'>Checkout</h1>
                     <div className="p-4 relative flex flex-col sm:flex-row sm:items-center bg-white shadow rounded-md">
@@ -375,7 +380,7 @@ const Checkout = () => {
 
             </div>
 
-
+<Footer/>
 
         </>
 

@@ -7,7 +7,7 @@ import toast from 'react-hot-toast';
 
 const Login = () => {
 
-  const {setLoggedIn} = useAppContext();
+  // const {setLoggedIn} = useAppContext();
 
   const router = useRouter();
 
@@ -30,8 +30,8 @@ const Login = () => {
           console.log(response.status);
           if (response.status === 200) {
             toast.success('User login successfully');
-            setLoggedIn(true);
-            sessionStorage.setItem('user', JSON.stringify(values));
+            // setLoggedIn(true);
+            // sessionStorage.setItem('user', JSON.stringify(values));
             formik.resetForm();
             router.push("/")
           } else {
@@ -48,7 +48,7 @@ const Login = () => {
 
   });
   return (
-    <div className="flex min-h-full flex-1 flex-col justify-center px-6 py-12 lg:px-8">
+    <div className="flex h-screen flex-1 flex-col justify-center px-6 py-24 lg:px-8 bg-secondary">
       <div className="sm:mx-auto sm:w-full sm:max-w-sm">
         <img
           className="mx-auto h-10 w-auto"
@@ -60,7 +60,7 @@ const Login = () => {
         </h2>
       </div>
 
-      <div className="mt-10 sm:mx-auto sm:w-full sm:max-w-sm">
+      <div className="mt-10 sm:mx-auto sm:w-full sm:max-w-sm bg-secondary">
         <form className="space-y-6" action="#" method="POST" onSubmit={formik.handleSubmit}>
           <div>
             <label htmlFor="email" className="block text-sm font-medium leading-6 text-gray-900">
@@ -79,8 +79,8 @@ const Login = () => {
                 className="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
               />
               {formik.touched.email && formik.errors.email ? (
-                    <div className="text-red-500 text-xs">{formik.errors.email}</div>
-                  ) : null}
+                <div className="text-red-500 text-xs">{formik.errors.email}</div>
+              ) : null}
             </div>
           </div>
 
@@ -130,7 +130,9 @@ const Login = () => {
           </a>
         </p>
       </div>
-    </div>)
+    </div>
+
+  )
 }
 
 export default Login;

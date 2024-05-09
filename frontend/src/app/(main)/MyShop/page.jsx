@@ -1,5 +1,7 @@
 'use client';
 import React, { useEffect, useState } from 'react'
+import Navbar from '../navbar';
+import Footer from '../Footer';
 
 const page = () => {
 
@@ -29,16 +31,19 @@ const page = () => {
 
 
     return (
-        <section className="text-gray-600 body-font bg-mate_black dark:bg-primary ">
-            <div className='text-center font-Jost text-secondary dark:text-black pt-10'>
-                <h1 className='font-bold text-3xl'>My Shop</h1>
-                <h3 className='text-1xl'>Home &rsaquo; My Shop</h3>
-            </div>
-            <div className="grid grid-cols-4  gap-4">
-                {
-                    postArray.map((post) => {
-                        return (
-                            <div>
+        <>
+            <Navbar />
+
+            <section className="text-gray-600 body-font bg-mate_black dark:bg-primary ">
+                <div className='text-center font-Jost text-secondary dark:text-black pt-10'>
+                    <h1 className='font-bold text-3xl'>My Shop</h1>
+                    <h3 className='text-1xl'>Home &rsaquo; My Shop</h3>
+                </div>
+                <div className="grid grid-cols-4  gap-4">
+                    {
+                        postArray.map((post) => {
+                            return (
+                                <div>
                                     <div className=" ml-6 mx-auto my-7 mt-6 w-80 h-auto  bg-secondary text-slate-600 border border-secondary dark:bg-black dark:text-white dark:border-black   p-4 gap-4 rounded-lg shadow-md">
 
                                         <div className="lg:w-80 md:w-1/4  w-full">
@@ -58,23 +63,28 @@ const page = () => {
                                                 </h3>
                                                 <p className="mt-1">₹{post.price}/-</p>
                                             </div>
-                                            <button type="submit" className="flex ml-36  text-white bg-black hover:bg-gray-700 dark:bg-primary dark:text-black dark:font-bold border-0 py-2 px-6 focus:outline-none  rounded">Add to Cart</button>
+                                            <button                                                
+                                                type="submit" className="flex ml-36  text-white bg-black hover:bg-gray-700 dark:bg-primary dark:text-black dark:font-bold border-0 py-2 px-6 focus:outline-none  rounded">
+                                               <a href="/viewCart"> Add to Cart</a>
+                                            </button>
 
                                         </div>
                                     </div>
 
-                                
-                            </div>
+
+                                </div>
 
 
 
-                        )
-                    })
-                }
-            </div>
+                            )
+                        })
+                    }
+                </div>
 
-        </section>
+            </section>
 
+            <Footer />
+        </>
     )
 }
 
