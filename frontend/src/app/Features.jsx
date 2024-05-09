@@ -6,13 +6,13 @@ const Features = () => {
             <div className="container px-32 py-24  mx-auto">
 
                 <div className="flex flex-wrap -m-4 font-Jost ">
-                    <div className="p-3 md:w-1/4">
+                    <div className="p-3 md:w-1/4" data-aos="fade-up">
                         <div className="flex rounded-lg  bg-secondary h-40 p-8 flex-col">
                             <div className="flex items-center mb-3">
                                 <div className="w-12 h-12 mr-3 inline-flex items-center justify-center  text-black flex-shrink-0">
                                     <svg
                                         fill="black"
-                                        
+
                                         strokeWidth={2}
                                         className="w-16 h-16"
                                         viewBox="0 0 1000 1000"
@@ -21,12 +21,12 @@ const Features = () => {
                                         <path d="M572.3 657.52H408.76a16 16 0 010-32H556.3V296.81H116v328.71h137.42a16 16 0 110 32H100a16 16 0 01-16-16V280.81a16 16 0 0116-16h472.3a16 16 0 0116 16v360.71a16 16 0 01-16 16z" />
                                         <path d="M647.74 657.52H572.3a16 16 0 010-32h75.44a16 16 0 010 32zm252.26 0h-96.92a16 16 0 110-32H884v-116.6c0-98.75-80.34-179.1-179.1-179.1H572.3a16 16 0 010-32h132.6A211.1 211.1 0 01916 508.92v132.6a16 16 0 01-16 16z" />
                                         <path d="M839.24 524.92H632.63a16 16 0 01-16-16V374.58a16 16 0 0116-16h72.27c82.9 0 150.34 67.45 150.34 150.34a16 16 0 01-16 16zm-190.61-32h173.53A118.52 118.52 0 00704.9 390.58h-56.27zm76.78 242.27a93.67 93.67 0 1193.67-93.67 93.78 93.78 0 01-93.67 93.67zm0-155.34a61.67 61.67 0 1061.67 61.67 61.73 61.73 0 00-61.67-61.67zM424.51 356H247.79a16 16 0 110-32h176.72a16 16 0 010 32zm0 82.09H298.43a16 16 0 010-32h126.08a16 16 0 010 32zm0 82.13h-65.32a16 16 0 010-32h65.32a16 16 0 010 32z" />              </svg>
-                               
+
                                 </div>
 
                                 <h2 className="text-gray-900  text-lg title-font font-medium">
                                     Free Shipping
-                                </h2>                                
+                                </h2>
                             </div>
                             <div className="flex-grow -mt-5 pl-14  text-gray-900  ">
                                 <p className=" leading-relaxed text-base  ">
@@ -36,13 +36,13 @@ const Features = () => {
                             </div>
                         </div>
                     </div>
-                    <div className="p-3 md:w-1/4">
+                    <div className="p-3 md:w-1/4" data-aos="fade-up">
                         <div className="flex rounded-lg h-40 bg-secondary p-8 flex-col">
                             <div className="flex items-center mb-3">
                                 <div className="w-12 h-12 mr-3 inline-flex items-center justify-center  text-white flex-shrink-0">
                                     <svg
                                         fill="none"
-                                        
+
                                         strokeWidth={2}
                                         className="w-14 h-14"
                                         viewBox="0 0 32 32"
@@ -81,12 +81,12 @@ const Features = () => {
                             </div>
                         </div>
                     </div>
-                    <div className="p-3 md:w-1/4">
+                    <div className="p-3 md:w-1/4" data-aos="fade-up">
                         <div className="flex rounded-lg h-40 bg-secondary p-8 flex-col">
                             <div className="flex items-center mb-3">
                                 <div className="w-12 h-12 mr-3 inline-flex items-center justify-center  text-white flex-shrink-0">
                                     <svg
-                                        fill="black"                                        
+                                        fill="black"
                                         strokeWidth={2}
                                         className="w-12 h-12"
                                         viewBox="0 0 35 35"
@@ -109,12 +109,12 @@ const Features = () => {
                             </div>
                         </div>
                     </div>
-                    <div className="p-3 md:w-1/4">
+                    <div className="p-3 md:w-1/4" data-aos="fade-up">
                         <div className="flex rounded-lg h-40 bg-secondary p-8 flex-col">
                             <div className="flex items-center mb-3">
                                 <div className="w-12 h-12 mr-3 inline-flex items-center justify-center text-white flex-shrink-0">
                                     <svg
-                                        fill="black"                                        
+                                        fill="black"
                                         strokeWidth={2}
                                         className="w-10 h-10"
                                         viewBox="0 0 32 32"
