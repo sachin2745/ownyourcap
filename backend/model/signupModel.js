@@ -28,6 +28,10 @@ const mySchema = new Schema({
     role: {
         type: String,
         default: 'user'
+    },
+    avatar: { 
+        type: String, 
+        default: 'avatar_placeholder.png'
     }
 
 });

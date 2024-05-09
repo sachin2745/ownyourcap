@@ -8,9 +8,10 @@ import toast from 'react-hot-toast';
 const Login = () => {
 
   // const {setLoggedIn} = useAppContext();
-
+  
   const router = useRouter();
-
+  const { setLoggedIn, setCurrentUser } = useAppContext();
+  
   const formik = useFormik({
     initialValues: {
       email: '',
@@ -30,11 +31,13 @@ const Login = () => {
           console.log(response.status);
           if (response.status === 200) {
             toast.success('User login successfully');
-            // setLoggedIn(true);
-            // sessionStorage.setItem('user', JSON.stringify(values));
+            response.json().then(data => {
+              sessionStorage.setItem('user', JSON.stringify(data));
+              setCurrentUser(data);
+              setLoggedIn(true);
             formik.resetForm();
             router.push("/")
-          } else {
+          })} else {
             toast.error('Some Error Occured');
           }
 
