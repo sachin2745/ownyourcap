@@ -12,21 +12,21 @@ const thankYou = () => {
                         Payment Successful
                     </h2>
                     <p className="mt-4 font-normal text-lg leading-8 text-secondary font-Quicksand mb-11 text-center">
-                        Thanks for making a purchase you can check our order summary frm below
+                        Thanks for making a purchase you can check our order summary from below
                     </p>
                     <div className="main-box border border-gray-200 rounded-xl pt-6 max-w-xl max-lg:mx-auto lg:max-w-full font-Jost">
                         <div className="flex flex-col lg:flex-row lg:items-center justify-between px-6 pb-6 border-b border-gray-200">
                             <div className="data">
                                 <p className="font-semibold text-base leading-7 text-white">
                                     Order Id:{" "}
-                                    <span className="text-indigo-600 font-medium">#10234987</span>
+                                    <span className="text-sky-500 font-medium">#10234987</span>
                                 </p>
                                 <p className="font-semibold text-base leading-7 text-white mt-4">
                                     Order Payment :{" "}
                                     <span className="text-gray-400 font-medium"> 18th march 2021</span>
                                 </p>
                             </div>
-                            <button className="rounded-full py-3 px-7 font-semibold text-sm leading-7 text-white bg-sky-500 max-lg:mt-5 shadow-sm shadow-transparent transition-all duration-500 hover:bg-indigo-700 hover:shadow-indigo-400">
+                            <button className="rounded-full py-3 px-4 font-semibold text-sm leading-7 text-white bg-sky-500 max-lg:mt-5 shadow-sm shadow-transparent transition-all duration-500 hover:bg-gray-500 hover:shadow-indigo-400">
                                 Track Your Order
                             </button>
                         </div>
