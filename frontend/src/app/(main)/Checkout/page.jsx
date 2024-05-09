@@ -373,14 +373,16 @@ const Checkout = () => {
                         <p className="p-8  mb-4 items-center my-4 -mt-10"> Your personal data will be used to process your order, support your experience throughout this website, and for other purpose described in our <a href="/privacy">privacy policy</a> . </p>
                     </div>
                     <div className="p-8">
-                        <button type="submit" className="btn bg-sky-500 w-full text-lg text-white">Place Order</button>
+                        <a href="/thankyou" type="submit" className="btn bg-sky-500 w-full text-lg text-white">
+                            Place Order
+                        </a>
                     </div>
 
                 </div>
 
             </div>
 
-<Footer/>
+            <Footer />
 
         </>
 
