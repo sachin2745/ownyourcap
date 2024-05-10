@@ -77,15 +77,7 @@ const Navbar = () => {
 
 
   const { logout, loggedIn, currentUser } = useAppContext();
-  // const showLoggedIn = () => {
-  //   if(loggedIn){
-  //     return(
-  //       <button onClick={setLoggedIn(false)}>Logout</button>
-  //     )
-  //   }else{
 
-  //   }
-  // }
   const [userMenuOpened, setUserMenuOpened] = useState(false);
 
   const displayLoginOptions = () => {
@@ -122,7 +114,7 @@ const Navbar = () => {
             </svg>
           </button>
           <div
-            className="hs-dropdown-menu transition-[opacity,margin] duration hs-dropdown-open:opacity-100 opacity-0 hidden min-w-60 bg-white shadow-md rounded-lg p-2 mt-2 dark:bg-neutral-800 dark:border dark:border-neutral-700"
+            className=" z-10 hs-dropdown-menu transition-[opacity,margin] duration hs-dropdown-open:opacity-100 opacity-0 hidden min-w-60 bg-white shadow-md rounded-lg p-2 mt-2 dark:bg-neutral-800 dark:border dark:border-neutral-700"
             aria-labelledby="hs-dropdown-custom-trigger"
           >
             <p className="text-white">{currentUser.firstName}</p>
@@ -146,39 +138,7 @@ const Navbar = () => {
       </>
 
 
-      // <Menu
-      //   width={260}
-      //   position="bottom-end"
-      //   transitionProps={{ transition: 'pop-top-right' }}
-      //   onClose={() => setUserMenuOpened(false)}
-      //   onOpen={() => setUserMenuOpened(true)}
-      //   withinPortal
-      // >
-      //   <Menu.Target>
-      //     <button
-      //       // className={clsx(classes.user, { [classes.userActive]: userMenuOpened })}
-      //     >
-      //       <div gap={7}>
-      //         <img src={'http://localhost:5000/' + currentUser.avatar} alt={currentUser.name} radius="xl" size={40} />
-      //         <button fw={500} size="sm" lh={1} mr={3}>
-      //           {currentUser.name}
-      //         </button>
-      //         <FaAngleDown style={{ width: '12', height: '12' }} stroke={1.5} />
-      //       </div>
-      //     </button>
-      //   </Menu.Target>
-      //   <Menu.Dropdown>
 
-      //     <Menu.Item
-      //       onClick={logout}
-      //       color='red'
-      //       leftSection={
-      //         <IoIosLogOut style={{ width: '16', height: '16' }} stroke={1.5} />
-      //       }>
-      //       Logout
-      //     </Menu.Item>
-      //   </Menu.Dropdown>
-      // </Menu>
 
     } else {
       return <a href="/login"
@@ -232,7 +192,9 @@ const Navbar = () => {
               </span>
               <div class="relative scale-75">
                 <FaCartShopping className="text-xl text-white drop-shadow-sm cursor-pointer" />
-                <span class="absolute -top-2 left-4 rounded-full bg-mate_black p-0.5 px-2 text-sm text-red-50">4</span>
+                <span class="absolute -top-2 left-4 rounded-full bg-mate_black p-0.5 px-2 text-sm text-red-50">
+                  4
+                </span>
               </div>
             </a>
 

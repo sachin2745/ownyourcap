@@ -1,29 +1,42 @@
+'use client'
 import React from 'react'
 import Navbar from '../navbar'
 import Footer from '../Footer'
+import useProductContext from '@/context/ProductContext'
+import Link from 'next/link'
 
 const ViewCart = () => {
-    return (
-        <>
-            <Navbar />
 
-            <div class="bg-black dark:bg-primary py-6 sm:py-8 lg:py-12 font-Jost ">
-                <div class="mx-auto max-w-screen-xl px-4 md:px-8">
-                    <div class="mb-6 sm:mb-10 lg:mb-16">
-                        <h2 class="mb-4 text-center text-2xl font-bold text-white dark:text-black md:mb-6 lg:text-3xl">Your Cart</h2>
-                    </div>
+    const {
+        cartItems,
+        addItemToCart,
+        removeItemFromCart,
+        clearCart,
+        isInCart,
+        getCartTotal,
+        getCartItemsCount
+    } = useProductContext();
 
-                    <div class="mb-6 flex flex-col gap-4 sm:mb-8 md:gap-6">
-                        {/* <!-- product - start --> */}
+    const displaycartItems = () => {
+        if (getCartItemsCount() === 0) {
+            return (
+                <div>
+                    <h1>cart is emplty</h1>
+                </div>
+            )
+        } else {
+            return (
+                cartItems.map((item) => {
+                    return (
                         <div class="flex flex-wrap gap-x-4 bg-gray-300 overflow-hidden rounded-lg border sm:gap-y-4 lg:gap-6">
                             <a href="#" class="group relative block h-48 w-32 overflow-hidden bg-gray-100 sm:h-56 sm:w-40">
-                                <img src="capimage3.jpg" loading="lazy" alt="Photo by Thái An" class="h-full w-full object-cover object-center transition duration-200 group-hover:scale-110" />
+                                <img src={"http://localhost:5000/" + item.image} loading="lazy" alt="Photo by Thái An" class="h-full w-full object-cover object-center transition duration-200 group-hover:scale-110" />
                             </a>
 
                             <div class="flex flex-1 flex-col justify-between py-4 ">
                                 <div>
                                     <a href="#" class="mb-1 inline-block text-lg font-bold text-black transition duration-100 hover:text-gray-500 lg:text-xl">
-                                        Adidas CAP
+                                        {item.name}
                                     </a>
 
                                     <span class="block text-gray-500">Size: M</span>
@@ -31,7 +44,7 @@ const ViewCart = () => {
                                 </div>
 
                                 <div>
-                                    <span class="mb-1 block font-bold text-black md:text-lg">₹199/-</span>
+                                    <span class="mb-1 block font-bold text-black md:text-lg">₹{item.price}/-</span>
 
                                     <span class="flex items-center gap-1 text-sm text-gray-500">
                                         <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-green-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -46,22 +59,44 @@ const ViewCart = () => {
                             <div class="flex w-full justify-between border-t p-4 sm:w-auto sm:border-none sm:pl-0 lg:p-6 lg:pl-0">
                                 <div class="flex flex-col items-start gap-2">
                                     <div class="flex h-12 w-20 overflow-hidden rounded border">
-                                        <input type="number" value="1" class="w-full px-4 py-2 outline-none ring-inset ring-indigo-300 transition duration-100 focus:ring" />
+                                        <input type="text" value={item.quantity} class="w-full px-4 py-2 outline-none ring-inset ring-indigo-300 transition duration-100 focus:ring" />
 
                                         <div class="flex flex-col divide-y border-l">
-                                            <button class="flex w-6 flex-1 select-none items-center justify-center bg-white leading-none transition duration-100 hover:bg-gray-100 active:bg-gray-200">+</button>
-                                            <button class="flex w-6 flex-1 select-none items-center justify-center bg-white leading-none transition duration-100 hover:bg-gray-100 active:bg-gray-200">-</button>
+                                            <button onClick={e => addItemToCart(item)} className=" flex w-6 flex-1 select-none  items-center justify-center bg-white leading-none transition duration-100 hover:bg-gray-100 active:bg-gray-200">+</button>
+                                            <button onClick={e => removeItemFromCart(item)} class="flex w-6 flex-1 select-none items-center justify-center bg-white leading-none transition duration-100 hover:bg-gray-100 active:bg-gray-200">-</button>
                                         </div>
                                     </div>
 
-                                    <button class="select-none text-sm font-semibold text-indigo-500 transition duration-100 hover:text-indigo-600 active:text-indigo-700">Delete</button>
+                                    <button onClick={() => clearCart()} class="select-none text-sm font-semibold text-indigo-500 transition duration-100 hover:text-indigo-600 active:text-indigo-700">Delete</button>
                                 </div>
 
                                 <div class="ml-4 pt-3 md:ml-8 md:pt-2 lg:ml-16">
-                                    <span class="block font-bold text-black md:text-lg">₹199/-</span>
+                                    <span class="block font-bold text-black md:text-lg">₹{item.price}/-</span>
                                 </div>
                             </div>
                         </div>
+                    )
+                })
+            )
+        }
+
+    }
+
+
+
+    return (
+        <>
+            <Navbar />
+
+            <div class="bg-black dark:bg-primary py-6 sm:py-8 lg:py-12 font-Jost ">
+                <div class="mx-auto max-w-screen-xl px-4 md:px-8">
+                    <div class="mb-6 sm:mb-10 lg:mb-16">
+                        <h2 class="mb-4 text-center text-2xl font-bold text-white dark:text-black md:mb-6 lg:text-3xl">Your Cart</h2>
+                    </div>
+
+                    <div class="mb-6 flex flex-col gap-4 sm:mb-8 md:gap-6">
+                        {/* <!-- product - start --> */}
+                        {displaycartItems()}
                         {/* <!-- product - end --> */}
 
 
@@ -73,7 +108,7 @@ const ViewCart = () => {
                             <div class="space-y-1">
                                 <div class="flex justify-between gap-4 text-gray-500">
                                     <span>Subtotal</span>
-                                    <span>₹199/-</span>
+                                    <span>₹{getCartTotal()}/-</span>
                                 </div>
 
                                 <div class="flex justify-between gap-4 text-gray-500">
@@ -87,16 +122,16 @@ const ViewCart = () => {
                                     <span class="text-lg font-bold">Total</span>
 
                                     <span class="flex flex-col items-end">
-                                        <span class="text-lg font-bold">₹239</span>
+                                        <span class="text-lg font-bold">₹{getCartTotal()}</span>
                                         <span class="text-sm text-gray-500">including VAT</span>
                                     </span>
                                 </div>
                             </div>
                         </div>
 
-                        <a href="/Checkout" class="inline-block rounded-lg bg-indigo-500 px-8 py-3 text-center text-sm font-semibold text-white outline-none ring-indigo-300 transition duration-100 hover:bg-indigo-600 focus-visible:ring active:bg-indigo-700 md:text-base">
+                        <Link href="/Checkout" class="inline-block rounded-lg bg-indigo-500 px-8 py-3 text-center text-sm font-semibold text-white outline-none ring-indigo-300 transition duration-100 hover:bg-indigo-600 focus-visible:ring active:bg-indigo-700 md:text-base">
                             Check out
-                        </a>
+                        </Link>
                     </div>
                     {/* <!-- totals - end --> */}
                 </div>

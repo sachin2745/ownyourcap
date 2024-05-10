@@ -2,8 +2,12 @@
 import React, { useEffect, useState } from 'react'
 import Navbar from '../navbar';
 import Footer from '../Footer';
+import useProductContext from '@/context/ProductContext';
+
 
 const page = () => {
+
+    const { addItemToCart, isInCart } = useProductContext();
 
     const [postArray, setPostArray] = useState([]);
 
@@ -63,9 +67,12 @@ const page = () => {
                                                 </h3>
                                                 <p className="mt-1">₹{post.price}/-</p>
                                             </div>
-                                            <button                                                
-                                                type="submit" className="flex ml-36  text-white bg-black hover:bg-gray-700 dark:bg-primary dark:text-black dark:font-bold border-0 py-2 px-6 focus:outline-none  rounded">
-                                               <a href="/viewCart"> Add to Cart</a>
+                                            <button
+                                                disabled={isInCart(post)}
+                                                onClick={(e) => addItemToCart(post)}
+                                                type="submit"
+                                                className="flex ml-36  text-white bg-black hover:bg-gray-700 dark:bg-primary dark:text-black dark:font-bold border-0 py-2 px-6 focus:outline-none  rounded">
+                                                <span>{isInCart(post) ? "Added" : "Add to cart"}</span>
                                             </button>
 
                                         </div>
