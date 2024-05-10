@@ -5,6 +5,7 @@ import { FaAngleDown, FaCartShopping } from "react-icons/fa6";
 import { FaCaretDown } from "react-icons/fa";
 import DarkMode from "./DarkMode";
 import useAppContext from "@/context/AppContext";
+import useProductContext from "@/context/ProductContext";
 // import clsx from "clsx";
 
 const Menu = [
@@ -74,7 +75,7 @@ const DropdownLink = [
 
 const Navbar = () => {
 
-
+  const {getCartItemsCount} = useProductContext();
 
   const { logout, loggedIn, currentUser } = useAppContext();
 
@@ -193,7 +194,7 @@ const Navbar = () => {
               <div class="relative scale-75">
                 <FaCartShopping className="text-xl text-white drop-shadow-sm cursor-pointer" />
                 <span class="absolute -top-2 left-4 rounded-full bg-mate_black p-0.5 px-2 text-sm text-red-50">
-                  4
+                  {getCartItemsCount()}
                 </span>
               </div>
             </a>

@@ -30,7 +30,7 @@ const ViewCart = () => {
                     return (
                         <div class="flex flex-wrap gap-x-4 bg-gray-300 overflow-hidden rounded-lg border sm:gap-y-4 lg:gap-6">
                             <a href="#" class="group relative block h-48 w-32 overflow-hidden bg-gray-100 sm:h-56 sm:w-40">
-                                <img src={"http://localhost:5000/" + item.image} loading="lazy" alt="Photo by Thái An" class="h-full w-full object-cover object-center transition duration-200 group-hover:scale-110" />
+                                <img src={item.image} loading="lazy" alt="Photo by Thái An" class="h-full w-full object-cover object-center transition duration-200 group-hover:scale-110" />
                             </a>
 
                             <div class="flex flex-1 flex-col justify-between py-4 ">
