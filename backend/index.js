@@ -17,6 +17,9 @@ app.use('/signup', signupRouter);
 app.use('/contactForm', contactFormRouter);
 app.use('/post', postRouter);
 
+
+app.use(express.static('./static/uploads'));
+
 const port = 5000;
 
 app.get('/', (req , res) => {

@@ -5,7 +5,7 @@ import { FaAngleDown, FaCartShopping } from "react-icons/fa6";
 import { FaCaretDown } from "react-icons/fa";
 import DarkMode from "./DarkMode";
 import useAppContext from "@/context/AppContext";
-import clsx from "clsx";
+// import clsx from "clsx";
 
 const Menu = [
   {
@@ -72,10 +72,12 @@ const DropdownLink = [
   },
 ];
 
-const Navbar =() => {
+const Navbar = () => {
 
-  const { logout, loggedIn, currentUser } = useAppContext(); 
-   // const showLoggedIn = () => {
+
+
+  const { logout, loggedIn, currentUser } = useAppContext();
+  // const showLoggedIn = () => {
   //   if(loggedIn){
   //     return(
   //       <button onClick={setLoggedIn(false)}>Logout</button>
@@ -88,39 +90,96 @@ const Navbar =() => {
 
   const displayLoginOptions = () => {
     if (loggedIn) {
-      return <Menu
-        width={260}
-        position="bottom-end"
-        transitionProps={{ transition: 'pop-top-right' }}
-        onClose={() => setUserMenuOpened(false)}
-        onOpen={() => setUserMenuOpened(true)}
-        withinPortal
-      >
-        <Menu.Target>
+      return <>
+        <div className="hs-dropdown relative inline-flex">
           <button
-            // className={clsx(classes.user, { [classes.userActive]: userMenuOpened })}
+            id="hs-dropdown-custom-trigger"
+            type="button"
+            className="hs-dropdown-toggle py-1 ps-1 pe-3 inline-flex items-center gap-x-2 text-sm font-semibold rounded-full border border-gray-200 bg-white text-gray-800 shadow-sm hover:bg-gray-50 disabled:opacity-50 disabled:pointer-events-none dark:bg-neutral-900 dark:border-neutral-700 dark:text-white dark:hover:bg-neutral-800"
           >
-            <div gap={7}>
-              <img src={'http://localhost:5000/' + currentUser.avatar} alt={currentUser.name} radius="xl" size={40} />
-              <button fw={500} size="sm" lh={1} mr={3}>
-                {currentUser.name}
-              </button>
-              <FaAngleDown style={{ width: '12', height: '12' }} stroke={1.5} />
-            </div>
+            <img
+              className="w-8 h-auto rounded-full"
+              src={'http://localhost:5000/' + currentUser.avatar}
+              alt={currentUser.name}
+              rounded-lg w-8 h-8
+            />
+            <span className="text-gray-600 font-medium truncate max-w-[7.5rem] dark:text-neutral-400">
+              {currentUser.firstName}
+            </span>
+            <svg
+              className="hs-dropdown-open:rotate-180 size-4"
+              xmlns="http://www.w3.org/2000/svg"
+              width={24}
+              height={24}
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              strokeWidth={2}
+              strokeLinecap="round"
+              strokeLinejoin="round"
+            >
+              <path d="m6 9 6 6 6-6" />
+            </svg>
           </button>
-        </Menu.Target>
-        <Menu.Dropdown>
+          <div
+            className="hs-dropdown-menu transition-[opacity,margin] duration hs-dropdown-open:opacity-100 opacity-0 hidden min-w-60 bg-white shadow-md rounded-lg p-2 mt-2 dark:bg-neutral-800 dark:border dark:border-neutral-700"
+            aria-labelledby="hs-dropdown-custom-trigger"
+          >
+            <p className="text-white">{currentUser.firstName}</p>
+            <p className="text-white">{currentUser.email}</p>
+            <button onClick={logout}
+              className="bg-red-700 px-4 py-2 text-white rounded-xl font-serif"
+            >
+              Logout
+            </button>
+            <button onClick={logout}
+              className="bg-blue-700 mx-3 px-4 py-2 text-white rounded-xl font-serif"
+            >
+              Profile
+            </button>
 
-          <Menu.Item
-            onClick={logout}
-            color='red'
-            leftSection={
-              <IoIosLogOut style={{ width: '16', height: '16' }} stroke={1.5} />
-            }>
-            Logout
-          </Menu.Item>
-        </Menu.Dropdown>
-      </Menu>
+          </div>
+
+
+        </div>
+
+      </>
+
+
+      // <Menu
+      //   width={260}
+      //   position="bottom-end"
+      //   transitionProps={{ transition: 'pop-top-right' }}
+      //   onClose={() => setUserMenuOpened(false)}
+      //   onOpen={() => setUserMenuOpened(true)}
+      //   withinPortal
+      // >
+      //   <Menu.Target>
+      //     <button
+      //       // className={clsx(classes.user, { [classes.userActive]: userMenuOpened })}
+      //     >
+      //       <div gap={7}>
+      //         <img src={'http://localhost:5000/' + currentUser.avatar} alt={currentUser.name} radius="xl" size={40} />
+      //         <button fw={500} size="sm" lh={1} mr={3}>
+      //           {currentUser.name}
+      //         </button>
+      //         <FaAngleDown style={{ width: '12', height: '12' }} stroke={1.5} />
+      //       </div>
+      //     </button>
+      //   </Menu.Target>
+      //   <Menu.Dropdown>
+
+      //     <Menu.Item
+      //       onClick={logout}
+      //       color='red'
+      //       leftSection={
+      //         <IoIosLogOut style={{ width: '16', height: '16' }} stroke={1.5} />
+      //       }>
+      //       Logout
+      //     </Menu.Item>
+      //   </Menu.Dropdown>
+      // </Menu>
+
     } else {
       return <a href="/login"
         className=" bg-gradient-to-r from-primary to-perfect_blue px-3 py-1  text-white relative overflow-hidden z-30 group hover:bg-sky-800 transition-all duration-500 rounded tracking-wider font-semibold"

@@ -6,7 +6,7 @@ module.exports = {
     "./app/**/*.{js,ts,jsx,tsx,mdx}",
     "./pages/**/*.{html,js,ts,jsx,tsx,mdx}",
     "./components/**/*.{html,js,ts,jsx,tsx,mdx}",
-
+    'node_modules/preline/dist/*.js',
     // Or if using `src` directory:
     "./src/**/*.{html,js,ts,jsx,tsx,mdx}",
 
@@ -37,5 +37,6 @@ module.exports = {
   plugins: [
     require("daisyui"),
     require('@tailwindcss/forms'),
+    require('preline/plugin'),
   ],
 }
