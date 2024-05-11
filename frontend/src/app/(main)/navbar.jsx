@@ -75,7 +75,7 @@ const DropdownLink = [
 
 const Navbar = () => {
 
-  const {getCartItemsCount} = useProductContext();
+  const { getCartItemsCount } = useProductContext();
 
   const { logout, loggedIn, currentUser } = useAppContext();
 
@@ -114,7 +114,7 @@ const Navbar = () => {
               <path d="m6 9 6 6 6-6" />
             </svg>
           </button>
-          <div
+          {/* <div
             className=" z-10 hs-dropdown-menu transition-[opacity,margin] duration hs-dropdown-open:opacity-100 opacity-0 hidden min-w-60 bg-white shadow-md rounded-lg p-2 mt-2 dark:bg-neutral-800 dark:border dark:border-neutral-700"
             aria-labelledby="hs-dropdown-custom-trigger"
           >
@@ -131,31 +131,139 @@ const Navbar = () => {
               Profile
             </button>
 
+          </div> */}
+
+          <div
+            className=" z-10 hs-dropdown-menu transition-[opacity,margin] duration hs-dropdown-open:opacity-100 opacity-0 hidden min-w-60 bg-white shadow-md rounded-lg p-2 mt-2 dark:bg-black dark:border dark:border-neutral-700"
+            aria-labelledby="hs-dropdown-with-header "
+          >
+            <div className="py-3 px-5 -m-2 bg-gray-100 rounded-t-lg dark:bg-neutral-700">
+              <p className="text-sm text-gray-500 dark:text-neutral-400">Signed in as</p>
+              <p className="text-sm font-medium text-gray-800 dark:text-neutral-300 font-Jost">
+                {currentUser.email}
+              </p>
+            </div>
+            <div className="mt-2 py-2 first:pt-0 last:pb-0 font-Jost">
+              <a
+                className="flex items-center  gap-x-3.5 py-2 px-3 rounded-lg text-sm text-gray-800 hover:bg-gray-100 focus:outline-none focus:bg-gray-100 dark:text-neutral-400 dark:hover:bg-neutral-700 dark:hover:text-neutral-300 dark:focus:bg-neutral-700"
+                href="/billing"
+              >
+                <svg
+                  className="flex-shrink-0 size-5"
+                  xmlns="http://www.w3.org/2000/svg"
+                  width={24}
+                  height={24}
+                  viewBox="0 0  31 20"
+                  fill="none"
+                  stroke="currentColor"
+                  strokeWidth={2}
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                >
+                  <path
+                    d="M28.268.5H2.971l-.252.002A2.344 2.344 0 00.5 2.805v14.473a2.333 2.333 0 00.67 1.666 2.326 2.326 0 001.656.701h25.32a2.354 2.354 0 002.344-2.324V2.848c.012-1.229-.945-2.26-2.222-2.348zm-6.116 4.691h1.502l-2.166 4.33h-1.5l2.164-4.33zm-1.207 0l-2.168 4.33h-17.2v-4.33h19.368zm8.47 4.33h-6.718l2.164-4.33h4.553v4.33zM2.75 1.576h25.297l.184-.002c.67.049 1.19.602 1.184 1.268v1.262H1.577V2.811A1.24 1.24 0 012.75 1.576zm26.664 15.738a1.271 1.271 0 01-1.268 1.254H2.832a1.263 1.263 0 01-1.256-1.287v-6.672h27.838v6.705zm-17.533-2.347H2.846a.538.538 0 100 1.076h9.035a.538.538 0 000-1.076zm3.613-1.807H2.846a.538.538 0 100 1.076h12.648a.539.539 0 100-1.076z"
+                    fillRule="evenodd"
+                  />       </svg>
+                Billing
+              </a>
+              <a
+                className="flex items-center gap-x-3.5 py-2 px-3 rounded-lg text-sm text-gray-800 hover:bg-gray-100 focus:outline-none focus:bg-gray-100 dark:text-neutral-400 dark:hover:bg-neutral-700 dark:hover:text-neutral-300 dark:focus:bg-neutral-700"
+                href="/setting"
+              >
+                <svg
+                  className="flex-shrink-0 size-4"
+                  xmlns="http://www.w3.org/2000/svg"
+                  width={24}
+                  height={24}
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  strokeWidth={2}
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                >
+                  <path
+                    d="M12.714 2c.55-.01 1.071.19 1.46.57.391.37.6.88.6 1.42 0 1.1.91 1.991 2.041 1.991.35 0 .7-.1 1.01-.27.97-.522 2.18-.19 2.73.74l.68 1.17c.17.3.27.64.27.99 0 .71-.39 1.37-1.02 1.72-.31.17-.57.43-.75.73a1.96 1.96 0 00.75 2.67 1.978 1.978 0 01.75 2.7l-.68 1.13c-.36.62-1.03 1-1.75 1-.36 0-.72-.09-1.02-.27-.32-.17-.67-.27-1.02-.27-.54 0-1.06.21-1.44.59-.39.37-.6.88-.6 1.41 0 1.09-.91 1.98-2.04 1.98h-1.37c-.54 0-1.05-.22-1.42-.59-.38-.38-.58-.88-.58-1.4 0-1.1-.9-1.99-2.03-1.99-.37 0-.73.1-1.04.29a2.15 2.15 0 01-1.55.2c-.52-.14-.97-.48-1.24-.93l-.64-1.13a1.949 1.949 0 01-.25-1.56c.14-.53.5-.98.99-1.25.31-.17.57-.42.75-.73a1.98 1.98 0 00-.75-2.67 1.947 1.947 0 01-.74-2.67l.64-1.12c.27-.47.72-.81 1.25-.95a2.066 2.066 0 011.56.21c.32.17.67.26 1.02.26.54 0 1.06-.21 1.44-.58.38-.37.59-.88.59-1.4 0-1.1.91-1.99 2.04-1.99zm.401 7.481a2.853 2.853 0 00-3.07.59c-.8.78-1.05 1.97-.61 2.99a2.794 2.794 0 002.59 1.7h.01c.75.01 1.45-.28 1.98-.8.53-.51.83-1.21.83-1.94.01-1.11-.68-2.12-1.73-2.54z"
+                    fill="#200E32"
+                  />
+                </svg>
+                Settings
+              </a>
+              <a
+                className="flex items-center gap-x-3.5 py-2 px-3 rounded-lg text-sm text-gray-800 hover:bg-gray-100 focus:outline-none focus:bg-gray-100 dark:text-neutral-400 dark:hover:bg-neutral-700 dark:hover:text-neutral-300 dark:focus:bg-neutral-700"
+                href="/profile"
+              >
+                <svg
+                  className="flex-shrink-0 size-4"
+                  xmlns="http://www.w3.org/2000/svg"
+                  width={24}
+                  height={24}
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  strokeWidth={2}
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                >
+                  <path
+                    d="M13.25 12.25h-2.5a6.5 6.5 0 00-6.5 6.5 4 4 0 004 4h7.5a4 4 0 004-4 6.5 6.5 0 00-6.5-6.5z"
+                    fill="#81d4fa"
+                  />
+                  <path
+                    d="M16 22.75H8A3.754 3.754 0 014.25 19v-1a6.713 6.713 0 013.207-5.747.75.75 0 01.79 1.277A5.22 5.22 0 005.75 18v1A2.253 2.253 0 008 21.25h8A2.253 2.253 0 0018.25 19v-1A5.256 5.256 0 0013 12.75h-1a.75.75 0 010-1.5h1A6.758 6.758 0 0119.75 18v1A3.754 3.754 0 0116 22.75z"
+                    fill="#1b1464"
+                  />
+                  <path
+                    d="M12 12.75A5.75 5.75 0 1117.75 7 5.756 5.756 0 0112 12.75zm0-10A4.25 4.25 0 1016.25 7 4.255 4.255 0 0012 2.75z"
+                    fill="#1b1464"
+                  />
+                  <circle cx="12" cy="7" fill="#fff" r="5" />
+                </svg>
+                My Account
+              </a>
+              <a class="flex items-center gap-x-3.5 py-2 px-3 rounded-lg text-sm text-gray-800 hover:bg-gray-100 focus:outline-none focus:bg-gray-100 dark:text-neutral-400 dark:hover:bg-neutral-700 dark:hover:text-neutral-300 dark:focus:bg-neutral-700" href="#">
+                {/* Darkmode Switch */}
+                <h3 className="flex-1 ">DarkMode</h3>
+                <DarkMode className="flex-1 " />
+              </a>
+            </div>
+            <div className=" first:pt-0 last:pb-0 font-Jost">
+              <a onClick={logout}
+                className="flex items-center gap-x-3.5 py-2 px-3 rounded-lg text-sm text-gray-800 hover:bg-gray-100 focus:outline-none focus:bg-gray-100 dark:text-neutral-400 dark:hover:bg-neutral-700 dark:hover:text-neutral-300 dark:focus:bg-neutral-700"
+
+              >
+                <svg
+                  className="flex-shrink-0 size-4"
+                  xmlns="http://www.w3.org/2000/svg"
+                  width={24}
+                  height={24}
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  strokeWidth={2}
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                >
+                  <path d="M7 6a1 1 0 000-2H5a1 1 0 00-1 1v14a1 1 0 001 1h2a1 1 0 000-2H6V6zm13.82 5.42l-2.82-4a1 1 0 00-1.39-.24 1 1 0 00-.24 1.4L18.09 11H10a1 1 0 000 2h8l-1.8 2.4a1 1 0 00.2 1.4 1 1 0 00.6.2 1 1 0 00.8-.4l3-4a1 1 0 00.02-1.18z" />
+                </svg>
+                Logout
+              </a>
+
+            </div>
           </div>
-
-
         </div>
-
       </>
-
-
-
-
     } else {
       return <a href="/login"
-        className=" bg-gradient-to-r from-primary to-perfect_blue px-3 py-1  text-white relative overflow-hidden z-30 group hover:bg-sky-800 transition-all duration-500 rounded tracking-wider font-semibold"
-      >
+       className="font-Jost overflow-hidden relative w-20 p-2 h-10 bg-gradient-to-r from-primary to-perfect_blue text-white border-none rounded-md text-xl font-bold cursor-pointer  z-10 group">
         Login
-        <svg
-          className="absolute inset-0 left-0 top-0 fill-sky-300 -z-30 opacity-0 group-hover:opacity-100 group-hover:duration-300 group-hover:transition-all group-active:fill-sky-950"
-          version="1.0"
-          viewBox="0 0 204 113"
-          xmlns="http://www.w3.org/2000/svg"
-        >
-          <path d="M85 6.1c-2.3 4.8-2.7 6.6-1.9 8.5.5 1.4.9 4 .9 5.7 0 1.8.4 3.8.9 4.6.9 1.4 1.9-3.6 1.9-9.9.1-4.4.7-7.1 1.7-7.8.9-.6 3.5-5.6 3.5-6.7 0-.3-.9-.5-2-.5-1.5 0-2.8 1.6-5 6.1zm81.2-3c-2.4 1.7-4 3.4-3.8 3.7.3.3 1.4-.2 2.4-1.1 1-1 2.2-1.7 2.5-1.7.4 0 1.6-.9 2.7-2 3-3 .9-2.4-3.8 1.1zM10.1 2.6c0 1.1.3 1.4.6.6.3-.7.2-1.6-.1-1.9-.3-.4-.6.2-.5 1.3zM109 6c0 .6.7 1 1.5 1s1.5-.2 1.5-.4-.7-.6-1.5-1c-.8-.3-1.5-.1-1.5.4zM.1 10.7c.1 5.3.6 4.9 1.1-1 .2-2 0-3.7-.4-3.7S0 8.1.1 10.7zm112-.1c0 1.1.3 1.4.6.6.3-.7.2-1.6-.1-1.9-.3-.4-.6.2-.5 1.3zm-102 4c0 1.1.3 1.4.6.6.3-.7.2-1.6-.1-1.9-.3-.4-.6.2-.5 1.3zM114 17.2c0 .9.5 2 1 2.3 1.3.8 1.3-.5 0-2.5-.8-1.3-1-1.3-1 .2zm14.6.3c.4.8.8 1.5 1 1.5.2 0 .4-.7.4-1.5s-.4-1.5-1-1.5c-.5 0-.7.7-.4 1.5zm36.1 2.5c-1.3 1.5-1.4 2-.3 2 .7 0 1.6-.9 1.9-2 .3-1.1.4-2 .3-2-.1 0-.9.9-1.9 2zm-47.6.5c.1 1.9 1.8 5.1 1.8 3.5 0-.8-.4-2.2-.9-3-.5-.8-.9-1.1-.9-.5zM.8 25.5c.6 1.1 2.2 3.3 3.6 4.9 2.7 3 3.3 6 1.6 7.1-.6.4-1.9 2.4-3 4.5l-2 3.9 4.3 3.2c2.3 1.8 4.3 3.4 4.5 3.4.1.1.4 6 .7 13.1.4 12.1.6 13 3 15.3 1.9 2 2.5 2.2 2.5.9 0-.8-.7-2.1-1.5-2.8-1.4-1.2-1.5-2.3-1.4-17.7.1-.8-1.3-11.6-6.6-12.9-2.9-.7-3.5-4.4-1-6.4.8-.7 1.5-1.9 1.5-2.7 0-.7.6-1.6 1.4-1.9 2.7-1-1.1-7.8-6.8-12.4-1.8-1.4-1.8-1.4-.8.5zM86.2 30c-1.2 2.7-2.6 5.2-3.1 5.4-.5.3-.2 2.6.7 5.1 1.4 4.4 1.4 4.6-1.3 8.5-2.2 3.2-2.7 4.7-2.2 7.7 1.1 6.3 2.9 6.5 2.1.2-.6-5.2-.5-5.8 2.1-8.2 2.6-2.4 2.7-2.7 1.7-6.9-.9-3.4-.8-4.7.3-6.5 1.6-2.5 3.6-10.3 2.6-10.3-.3 0-1.6 2.2-2.9 5zm33.8-4.2c0 1.6 6.7 8.9 7.4 8.1.3-.3-1.2-2.5-3.4-4.9-2.2-2.4-4-3.8-4-3.2zm36.7 4.6c-.4 1-.1 1.3.8.9.8-.3 1.2-.9.9-1.4-.7-1.2-1.1-1.1-1.7.5zm-3.1 5.3c-.6 1.4-.5 1.5.5.6.7-.7 1-1.5.7-1.8-.3-.3-.9.2-1.2 1.2zM127 36c0 .5.7 1 1.5 1s1.5.7 1.5 1.5.4 1.5.9 1.5 1.1 1 1.4 2.2c.4 1.2.9 1.9 1.2 1.6 1.4-1.3-.9-6-3.6-7.4-1.7-.8-2.9-1-2.9-.4zm7.4 9.8c-1.9 1.2-2.9 10.9-2.4 23.6.5 14.2 1.8 13.5 1.7-.9-.2-15.6.2-18.8 2.6-21.6 1.7-1.9.4-2.7-1.9-1.1zm5.4-.1c.6.2 1.8.2 2.5 0 .6-.3.1-.5-1.3-.5-1.4 0-1.9.2-1.2.5zm6.5 0c.9.2 2.5.2 3.5 0 .9-.3.1-.5-1.8-.5-1.9 0-2.7.2-1.7.5zm-61.5 24c.2 3.6.5 6.3.7 6.1.1-.2.6-2.8.9-5.9.5-4.2.4-5.8-.6-6.1-1-.4-1.2.9-1 5.9zm85 3c.6.2 1.8.2 2.5 0 .6-.3.1-.5-1.3-.5-1.4 0-1.9.2-1.2.5zm-82.6 5.8c0 1.6.2 2.2.5 1.2.2-.9.2-2.3 0-3-.3-.6-.5.1-.5 1.8zm93.8 0c0 1 4 4.5 5.3 4.5.6 0 .8-.1.6-.3-.2-.1-1.6-1.3-3.1-2.6-1.6-1.4-2.8-2.1-2.8-1.6z" />
-        </svg>
-
-      </a>
+        <span className="absolute w-20 h-28 -top-8 -left-2 bg-white rotate-12 transform scale-x-0 group-hover:scale-x-100 transition-transform group-hover:duration-500 duration-1000 origin-left" />
+        <span className="absolute w-24 h-28 -top-8 -left-2 bg-sky-300 rotate-12 transform scale-x-0 group-hover:scale-x-100 transition-transform group-hover:duration-700 duration-700 origin-left" />
+        <span className="absolute w-24 h-28 -top-8 -left-2 bg-sky-500 rotate-12 transform scale-x-0 group-hover:scale-x-50 transition-transform group-hover:duration-1000 duration-500 origin-left" />
+        <span className="group-hover:opacity-100 group-hover:duration-1000   duration-100 opacity-0 absolute  top-1.0 left-3 z-10 ">
+          Login
+        </span>
+      </a>    
     }
   }
 
@@ -201,10 +309,8 @@ const Navbar = () => {
 
             {displayLoginOptions()}
 
-            {/* Darkmode Switch */}
-            <div>
-              <DarkMode />
-            </div>
+
+
 
           </div>
         </div>
