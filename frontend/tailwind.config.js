@@ -32,6 +32,7 @@ module.exports = {
       Quicksand: ["Quicksand", "sans-serif"],
       Allura: ["Allura", "cursive"],
       Jost: ["Jost", "sans-serif"],
+      Sedan: ["Sedan SC", "serif"],
     },
   },
   plugins: [

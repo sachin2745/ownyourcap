@@ -55,7 +55,7 @@ const page = () => {
                                                 <img
                                                     alt="ecommerce"
                                                     className="object-cover object-center w-72 h-full block"
-                                                    src={post.image}
+                                                    src={"http://localhost:3000/" + post.image}
                                                 />
                                             </a>
                                             <div className="mt-4 font-Jost w-72 ">
