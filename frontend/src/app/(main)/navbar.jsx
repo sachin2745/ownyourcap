@@ -114,25 +114,7 @@ const Navbar = () => {
               <path d="m6 9 6 6 6-6" />
             </svg>
           </button>
-          {/* <div
-            className=" z-10 hs-dropdown-menu transition-[opacity,margin] duration hs-dropdown-open:opacity-100 opacity-0 hidden min-w-60 bg-white shadow-md rounded-lg p-2 mt-2 dark:bg-neutral-800 dark:border dark:border-neutral-700"
-            aria-labelledby="hs-dropdown-custom-trigger"
-          >
-            <p className="text-white">{currentUser.firstName}</p>
-            <p className="text-white">{currentUser.email}</p>
-            <button onClick={logout}
-              className="bg-red-700 px-4 py-2 text-white rounded-xl font-serif"
-            >
-              Logout
-            </button>
-            <button onClick={logout}
-              className="bg-blue-700 mx-3 px-4 py-2 text-white rounded-xl font-serif"
-            >
-              Profile
-            </button>
-
-          </div> */}
-
+         
           <div
             className=" z-10 hs-dropdown-menu transition-[opacity,margin] duration hs-dropdown-open:opacity-100 opacity-0 hidden min-w-60 bg-white shadow-md rounded-lg p-2 mt-2 dark:bg-black dark:border dark:border-neutral-700"
             aria-labelledby="hs-dropdown-with-header "
@@ -273,10 +255,19 @@ const Navbar = () => {
       <div className="bg-mate_black dark:bg-primary py-2">
         <div className="container flex justify-between items-center">
           <div>
-            <a href="#" className="font-Jost font-bold text-white dark:text-mate_black text-2xl  sm:text-3xl flex gap-2">
-              <img src="logo.png" alt="Logo" className="w-12 h-12 " />
-              OwnYourCap
-            </a>
+          <a
+            href="/"
+            className="flex items-center justify-between mr-4"
+          >
+            <img
+              src="/logo.png"
+              className="mr-3 h-14 dark:text-primary"
+              alt=" Logo"
+            />
+            <span className="self-center text-3xl font-semibold font-Jost white-nowrap text-white dark:text-black">
+              OWNYOURCAP
+            </span>
+          </a>
           </div>
 
 
