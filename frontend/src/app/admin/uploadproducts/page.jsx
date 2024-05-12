@@ -59,17 +59,18 @@ const page = () => {
 
     return (
         <div className="antialiased bg-mate_black">
-                <div className="flex ml-72 mt-28 ">
-                    <div className="relative flex w-96 flex-col   rounded-xl bg-white bg-clip-border text-gray-700 shadow-md">
-                        <div className="relative mx-4 -mt-6 mb-4 grid h-28 place-items-center overflow-hidden rounded-xl bg-gradient-to-tr from-cyan-600 to-cyan-400 bg-clip-border text-white shadow-lg shadow-cyan-500/40">
-                            <h3 className="block font-sans text-3xl font-semibold leading-snug tracking-normal text-white antialiased">
-                                Upload Products
-                            </h3>
-                        </div>
-                        <form onSubmit={postForm.handleSubmit} >
+            <div className="flex ml-64 mt-28 ">
+                <div className="relative flex w-screen  flex-col   rounded-xl bg-white bg-clip-border text-gray-700 shadow-md">
+                    <div className="relative mx-4 -mt-6 mb-4 grid h-28 place-items-center overflow-hidden rounded-xl bg-gradient-to-tr from-cyan-600 to-cyan-400 bg-clip-border text-white shadow-lg shadow-cyan-500/40">
+                        <h3 className="block font-sans text-3xl font-semibold leading-snug tracking-normal text-white antialiased">
+                            Upload Products
+                        </h3>
+                    </div>
+                    <form onSubmit={postForm.handleSubmit} >
 
-                            <div className="flex flex-col gap-4 p-6">
-                                <div className="relative h-11 w-full min-w-[200px] mb-3">
+                        <div className="flex flex-col gap-4 p-6">
+                            <div className="flex">
+                                <div className="flex-1 relative h-11 w-full min-w-[200px] mb-3 mr-5">
                                     <label
                                         htmlFor="name"
                                         className="font-Jost fw-bold block text-sm font-medium leading-6 text-gray-900"
@@ -90,7 +91,7 @@ const page = () => {
                                         />
                                     </div>
                                 </div>
-                                <div className="relative h-11 w-full min-w-[200px] mb-3">
+                                <div className=" flex-1 relative h-11 w-full min-w-[200px] mb-3">
                                     <label
                                         htmlFor="category"
                                         className="font-Jost fw-bold block text-sm font-medium leading-6 text-gray-900"
@@ -111,29 +112,55 @@ const page = () => {
                                         />
                                     </div>
                                 </div>
-                                <div className="relative h-11 w-full min-w-[200px] mb-3">
+                            </div>
+                            <div className="flex mb-6">
+                                <div className="flex-1  relative h-11 w-full min-w-[200px] mb-3 mr-5">
                                     <label
-                                        htmlFor="description"
+                                        htmlFor="shortdescription"
                                         className="font-Jost fw-bold block text-sm font-medium leading-6 text-gray-900"
                                     >
-                                        Product Description
+                                        Product Short Description
                                     </label>
                                     <div className="mt-1 ">
-                                        <input
-                                            id="description"
-                                            value={postForm.values.description}
+                                        <textarea
+                                            id="shortdescription"
+                                            value={postForm.values.shortdescription}
                                             onChange={postForm.handleChange}
-                                            name="description"
+                                            name="shortdescription"
                                             type="text"
-                                            autoComplete="description"
-                                            placeholder="Product Description"
+                                            autoComplete="shortdescription"
+                                            placeholder="Product Short Description"
                                             required=""
                                             className=" outline  outline-1 block w-full rounded-md border-0 py-1.5 px-2 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-cyan-600 sm:text-sm sm:leading-6"
                                         />
                                     </div>
 
                                 </div>
-                                <div className="relative h-11 w-full min-w-[200px] mb-3">
+                                <div className="flex-1  relative h-11 w-full min-w-[200px] mb-3">
+                                    <label
+                                        htmlFor="longdescription"
+                                        className="font-Jost fw-bold block text-sm font-medium leading-6 text-gray-900"
+                                    >
+                                        Product Long Description
+                                    </label>
+                                    <div className="mt-1 ">
+                                        <textarea
+                                            id="longdescription"
+                                            value={postForm.values.longdescription}
+                                            onChange={postForm.handleChange}
+                                            name="longdescription"
+                                            type="text"
+                                            autoComplete="longdescription"
+                                            placeholder="Product Long Description"
+                                            required=""
+                                            className=" outline  outline-1 block w-full rounded-md border-0 py-1.5 px-2 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-cyan-600 sm:text-sm sm:leading-6"
+                                        />
+                                    </div>
+
+                                </div>
+                            </div>
+                            <div className="flex ">
+                                <div className="relative h-11 w-full min-w-[200px] mb-3 mr-5">
                                     <label
                                         htmlFor="price"
                                         className="font-Jost fw-bold block text-sm font-medium leading-6 text-gray-900"
@@ -155,41 +182,157 @@ const page = () => {
                                     </div>
 
                                 </div>
-                                <div className="relative h-11 w-full min-w-[200px] mb-7">
+                                <div className="relative h-11 w-full min-w-[200px] mb-3">
                                     <label
-                                        htmlFor="uploade-image"
+                                        htmlFor="shipppingprice"
                                         className="font-Jost fw-bold block text-sm font-medium leading-6 text-gray-900"
                                     >
-                                        Choose Product photo
+                                        Product Shipping Price
                                     </label>
-                                    <div className="mt-1  ">
+                                    <div className="mt-1 ">
                                         <input
-                                            onChange={uploadeImage}
-                                            id="update-image"
-                                            name="update-image"
-                                            type="file"
+                                            id="shipppingprice"
+                                            value={postForm.values.shipppingprice}
+                                            onChange={postForm.handleChange}
+                                            name="shipppingprice"
+                                            type="number"
+                                            autoComplete="shipppingprice"
+                                            placeholder="Product Shipping Price"
                                             required=""
                                             className=" outline  outline-1 block w-full rounded-md border-0 py-1.5 px-2 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-cyan-600 sm:text-sm sm:leading-6"
                                         />
+                                    </div>
+
+                                </div>
+                            </div>
+                            <div className="flex">
+                                <div className="flex-1 relative h-11 w-full min-w-[200px] mb-3 mr-5">
+                                    <label
+                                        htmlFor="color"
+                                        className="font-Jost fw-bold block text-sm font-medium leading-6 text-gray-900"
+                                    >
+                                        Product Color
+                                    </label>
+                                    <div className="mt-1 ">
+                                        <input
+                                            id="color"
+                                            value={postForm.values.color}
+                                            onChange={postForm.handleChange}
+                                            name="color"
+                                            type="text"
+                                            autoComplete="color"
+                                            placeholder="Product Color"
+                                            required=""
+                                            className=" outline  outline-1 block w-full rounded-md border-0 py-1.5 px-2 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-cyan-600 sm:text-sm sm:leading-6"
+                                        />
+                                    </div>
+                                </div>
+                                <div className=" flex-1 relative h-11 w-full min-w-[200px] mb-3">
+                                    <label
+                                        htmlFor="style"
+                                        className="font-Jost fw-bold block text-sm font-medium leading-6 text-gray-900"
+                                    >
+                                        Style
+                                    </label>
+                                    <div className="mt-1 ">
+                                        <input
+                                            id="style"
+                                            value={postForm.values.style}
+                                            onChange={postForm.handleChange}
+                                            name="style"
+                                            type="text"
+                                            autoComplete="style"
+                                            placeholder="Style"
+                                            required=""
+                                            className=" outline  outline-1 block w-full rounded-md border-0 py-1.5 px-2 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-cyan-600 sm:text-sm sm:leading-6"
+                                        />
+                                    </div>
+                                </div>
+                            </div>
+                            <div className="flex">
+                                <div className="flex-1 relative h-11 w-full min-w-[200px] mb-3 mr-5">
+                                    <label
+                                        htmlFor="size"
+                                        className="font-Jost fw-bold block text-sm font-medium leading-6 text-gray-900"
+                                    >
+                                        Product Size
+                                    </label>
+                                    <div className="mt-1 ">                                        
+                                        <select
+                                            id="size"
+                                            value={postForm.values.size}
+                                            onChange={postForm.handleChange}
+                                            name="size"
+                                            type="text"
+                                            className=" outline  outline-1 block w-full rounded-md border-0 py-1.5 px-2 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-cyan-600 sm:text-sm sm:leading-6"
+                                        >
+                                            <option selected="">Product Size</option>
+                                            <option>S</option>
+                                            <option>M</option>
+                                            <option>L</option>
+                                            <option>XL</option>
+                                            <option>Free Size</option>
+                                        </select>
 
                                     </div>
+                                </div>
+                                <div className=" flex-1 relative h-11 w-full min-w-[200px] mb-3">
+                                    <label
+                                        htmlFor="fabric"
+                                        className="font-Jost fw-bold block text-sm font-medium leading-6 text-gray-900"
+                                    >
+                                        Fabric
+                                    </label>
+                                    <div className="mt-1 ">
+                                        <input
+                                            id="fabric"
+                                            value={postForm.values.fabric}
+                                            onChange={postForm.handleChange}
+                                            name="fabric"
+                                            type="text"
+                                            autoComplete="fabric"
+                                            placeholder="Fabric"
+                                            required=""
+                                            className=" outline  outline-1 block w-full rounded-md border-0 py-1.5 px-2 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-cyan-600 sm:text-sm sm:leading-6"
+                                        />
+                                    </div>
+                                </div>
+                            </div>
+                            <div className="relative h-11 w-full min-w-[200px] mb-7">
+                                <label
+                                    htmlFor="uploade-image"
+                                    className="font-Jost fw-bold block text-sm font-medium leading-6 text-gray-900"
+                                >
+                                    Choose Product photo
+                                </label>
+                                <div className="mt-1  ">
+                                    <input
+                                        onChange={uploadeImage}
+                                        id="update-image"
+                                        name="update-image"
+                                        type="file"
+                                        required=""
+                                        className=" outline  outline-1 block w-full rounded-md border-0 py-1.5 px-2 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-cyan-600 sm:text-sm sm:leading-6"
+                                    />
 
                                 </div>
 
                             </div>
-                            <div className="p-6 pt-0">
-                                <button
-                                    data-ripple-light="true"
-                                    type="submit"
-                                    className="block w-full select-none rounded-lg bg-gradient-to-tr from-cyan-600 to-cyan-400 py-3 px-6 text-center align-middle font-sans text-xs font-bold uppercase text-white shadow-md shadow-cyan-500/20 transition-all hover:shadow-lg hover:shadow-cyan-500/40 active:opacity-[0.85] disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none"
-                                >
-                                    Upload
-                                </button>
 
-                            </div>
-                        </form>
-                    </div>
+                        </div>
+                        <div className="p-6 pt-0">
+                            <button
+                                data-ripple-light="true"
+                                type="submit"
+                                className="block w-full select-none rounded-lg bg-gradient-to-tr from-cyan-600 to-cyan-400 py-3 px-6 text-center align-middle font-sans text-xs font-bold uppercase text-white shadow-md shadow-cyan-500/20 transition-all hover:shadow-lg hover:shadow-cyan-500/40 active:opacity-[0.85] disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none"
+                            >
+                                Upload
+                            </button>
+
+                        </div>
+                    </form>
                 </div>
+            </div>
         </div>
 
 
