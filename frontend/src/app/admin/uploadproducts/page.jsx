@@ -2,6 +2,12 @@
 import { useFormik } from 'formik';
 import React, { useState } from 'react'
 import toast from 'react-hot-toast';
+import * as Yup from 'yup';
+
+const productSchema = Yup.object().shape({
+    name: Yup.string().required('Name is Required').min(3, 'Name is Too Short'),
+});
+
 
 const page = () => {
 
@@ -60,7 +66,7 @@ const page = () => {
                 toast.error("Something went wrong", { varient: "danger" });
             }
         },
-
+        validationSchema: productSchema
     })
 
     return (
@@ -75,7 +81,7 @@ const page = () => {
                     <form onSubmit={postForm.handleSubmit} >
 
                         <div className="flex flex-col gap-4 p-6">
-                            <div className="flex">
+                            <div className="flex mb-4">
                                 <div className="flex-1 relative h-11 w-full min-w-[200px] mb-3 mr-5">
                                     <label
                                         htmlFor="name"
@@ -93,8 +99,13 @@ const page = () => {
                                             autoComplete="name"
                                             placeholder="Product Name"
                                             required=""
+                                            aria-describedby="name-error"
                                             className=" outline  outline-1 block w-full rounded-md border-0 py-1.5 px-2 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-cyan-600 sm:text-sm sm:leading-6"
                                         />
+                                        {
+                                            postForm.touched.name &&
+                                            <span className="text-danger">{postForm.errors.name}</span>
+                                        }
                                     </div>
                                 </div>
                                 <div className=" flex-1 relative h-11 w-full min-w-[200px] mb-3">
@@ -119,7 +130,7 @@ const page = () => {
                                     </div>
                                 </div>
                             </div>
-                            <div className="flex mb-6">
+                            <div className="flex mb-8">
                                 <div className="flex-1  relative h-11 w-full min-w-[200px] mb-3 mr-5">
                                     <label
                                         htmlFor="shortdescription"
@@ -165,7 +176,7 @@ const page = () => {
 
                                 </div>
                             </div>
-                            <div className="flex ">
+                            <div className="flex mb-4 ">
                                 <div className="relative h-11 w-full min-w-[200px] mb-3 mr-5">
                                     <label
                                         htmlFor="price"
@@ -211,7 +222,7 @@ const page = () => {
 
                                 </div>
                             </div>
-                            <div className="flex">
+                            <div className="flex mb-4">
                                 <div className="flex-1 relative h-11 w-full min-w-[200px] mb-3 mr-5">
                                     <label
                                         htmlFor="color"
@@ -255,7 +266,7 @@ const page = () => {
                                     </div>
                                 </div>
                             </div>
-                            <div className="flex">
+                            <div className="flex mb-4">
                                 <div className="flex-1 relative h-11 w-full min-w-[200px] mb-3 mr-5">
                                     <label
                                         htmlFor="size"
