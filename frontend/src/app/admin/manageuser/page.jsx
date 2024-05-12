@@ -74,7 +74,7 @@ const ManageUser = () => {
   return (
     <div>
       <div className="antialiased bg-mate_black h-screen ">
-        <main className="p-4 md:ml-64 h-auto pt-20">
+        <main className=" h-auto pt-20">
           <div className='container'>
             <h1 className='text-center my-4 text-2xl font-bold font-Sedan text-cyan-300' >Manage User</h1>
             {displayUserData()}

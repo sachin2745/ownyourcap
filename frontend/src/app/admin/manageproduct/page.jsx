@@ -41,8 +41,15 @@ const ManageProduct = () => {
           <th >Image</th>
           <th>Name</th>
           <th>Category</th>
-          <th>Description</th>
+          <th>Short Description</th>
+          <th>Long Description</th>
           <th>Price</th>
+          <th>Shipping Price</th>
+          <th>Color</th>
+          <th>Style</th>
+          <th>Size</th>
+          <th>Fabric</th>
+
 
           <th colSpan={2}>Actions</th>
         </tr>
@@ -54,8 +61,15 @@ const ManageProduct = () => {
               <td><img src={"http://localhost:3000/" + product.image} alt="" style={{ height: 70 }} /></td>
               <td>{product.name}</td>
               <td>{product.category}</td>
-              <td>{product.description}</td>
+              <td>{product.shortdescription}</td>
+              <td>{product.longdescription}</td>
               <td>{product.price}</td>
+              <td>{product.shippingprice}</td>
+              <td>{product.color}</td>
+              <td>{product.style}</td>
+              <td>{product.size}</td>
+              <td>{product.fabric}</td>
+
 
               <td>
                 <a href={`/admin/update/${product._id}`} className='btn btn-primary'>Edit</a>
@@ -73,7 +87,7 @@ const ManageProduct = () => {
   return (
     <div>
       <div className="antialiased bg-mate_black h-screen">
-        <main className="p-4 md:ml-64 h-auto pt-20 ">
+        <main className=" h-auto pt-20 ">
           <div className='container'>
             <h1 className="text-center  my-4 text-2xl font-bold font-Sedan text-cyan-300 " >Manage Product</h1>
             {displayPodcastData()}

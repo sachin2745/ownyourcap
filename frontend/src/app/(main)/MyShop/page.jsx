@@ -63,7 +63,7 @@ const page = () => {
                                                     {post.name}
                                                 </h2>
                                                 <h3 className="text-gray-500 dark:text-white text-sm text-wrap tracking-widest title-font mb-1">
-                                                    {post.description}
+                                                    {post.shortdescription}
                                                 </h3>
                                                 <p className="mt-1">₹{post.price}/-</p>
                                             </div>

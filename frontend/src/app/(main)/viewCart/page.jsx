@@ -40,9 +40,10 @@ const ViewCart = () => {
                                     <a href="#" class="mb-1 inline-block text-lg font-bold text-black transition duration-100 hover:text-gray-500 lg:text-xl">
                                         {item.name}
                                     </a>
-
-                                    <span class="block text-gray-500">Size: M</span>
-                                    <span class="block text-gray-500">Color: Black</span>
+                                    <span class="block text-black"> {item.category}</span>
+                                    <span class="block text-black"> {item.shortdescription}</span>
+                                    <span class="block text-black">Size: {item.size}</span>
+                                    <span class="block text-black">Color: {item.color}</span>
                                 </div>
 
                                 <div>

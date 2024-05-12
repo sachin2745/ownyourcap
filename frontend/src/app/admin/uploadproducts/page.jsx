@@ -28,8 +28,14 @@ const page = () => {
         initialValues: {
             name: '',
             category: "",
-            description: '',
+            shortdescription: '',
+            longdescription: '',
             price: '',
+            shippingprice: '',
+            color: '',
+            style: '',
+            size: '',
+            fabric: '',
             image: '',
             postedAt: new Date()
         },
@@ -59,7 +65,7 @@ const page = () => {
 
     return (
         <div className="antialiased bg-mate_black">
-            <div className="flex ml-64 mt-28 ">
+            <div className="flex  mt-28 ">
                 <div className="relative flex w-screen  flex-col   rounded-xl bg-white bg-clip-border text-gray-700 shadow-md">
                     <div className="relative mx-4 -mt-6 mb-4 grid h-28 place-items-center overflow-hidden rounded-xl bg-gradient-to-tr from-cyan-600 to-cyan-400 bg-clip-border text-white shadow-lg shadow-cyan-500/40">
                         <h3 className="block font-sans text-3xl font-semibold leading-snug tracking-normal text-white antialiased">
@@ -184,19 +190,19 @@ const page = () => {
                                 </div>
                                 <div className="relative h-11 w-full min-w-[200px] mb-3">
                                     <label
-                                        htmlFor="shipppingprice"
+                                        htmlFor="shippingprice"
                                         className="font-Jost fw-bold block text-sm font-medium leading-6 text-gray-900"
                                     >
                                         Product Shipping Price
                                     </label>
                                     <div className="mt-1 ">
                                         <input
-                                            id="shipppingprice"
-                                            value={postForm.values.shipppingprice}
+                                            id="shippingprice"
+                                            value={postForm.values.shippingprice}
                                             onChange={postForm.handleChange}
-                                            name="shipppingprice"
+                                            name="shippingprice"
                                             type="number"
-                                            autoComplete="shipppingprice"
+                                            autoComplete="shippingprice"
                                             placeholder="Product Shipping Price"
                                             required=""
                                             className=" outline  outline-1 block w-full rounded-md border-0 py-1.5 px-2 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-cyan-600 sm:text-sm sm:leading-6"
@@ -257,7 +263,7 @@ const page = () => {
                                     >
                                         Product Size
                                     </label>
-                                    <div className="mt-1 ">                                        
+                                    <div className="mt-1 ">
                                         <select
                                             id="size"
                                             value={postForm.values.size}

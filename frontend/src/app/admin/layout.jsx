@@ -12,7 +12,7 @@ const Layout = ({ children }) => {
     return (
         <>
             <AdminNavbar />
-            <Sidebar openSidebarToggle={openSidebarToggle} OpenSidebar={OpenSidebar} />
+            {/* <Sidebar openSidebarToggle={openSidebarToggle} OpenSidebar={OpenSidebar} /> */}
             {children}
         </>
     )
