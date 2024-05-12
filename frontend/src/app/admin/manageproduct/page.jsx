@@ -37,7 +37,7 @@ const ManageProduct = () => {
 
     return <table className='table shadow  rounded '>
       <thead>
-        <tr className="font-Jost text-lg bg-black">
+        <tr className="font-Jost text-lg bg-black text-secondary">
           <th >Image</th>
           <th>Name</th>
           <th>Category</th>
@@ -72,10 +72,10 @@ const ManageProduct = () => {
 
   return (
     <div>
-      <div className="antialiased">
-        <main className="p-4 md:ml-64 h-auto pt-20">
+      <div className="antialiased bg-mate_black h-screen">
+        <main className="p-4 md:ml-64 h-auto pt-20 ">
           <div className='container'>
-            <h1 className="text-center f my-4 text-xl font-Sedan " >Manage Product</h1>
+            <h1 className="text-center  my-4 text-2xl font-bold font-Sedan text-cyan-300 " >Manage Product</h1>
             {displayPodcastData()}
           </div>
         </main>

@@ -4,6 +4,8 @@ import Navbar from '../navbar'
 import Footer from '../Footer'
 import useProductContext from '@/context/ProductContext'
 import Link from 'next/link'
+import { FaMinus, FaPlus } from 'react-icons/fa6'
+import { FaRegMinusSquare } from 'react-icons/fa'
 
 const ViewCart = () => {
 
@@ -20,8 +22,8 @@ const ViewCart = () => {
     const displaycartItems = () => {
         if (getCartItemsCount() === 0) {
             return (
-                <div>
-                    <h1>cart is emplty</h1>
+                <div className="grid  bg-secondary w-full h-40 rounded-lg justify-center place-content-center">
+                    <h1 className="text-3xl font-bold font-Jost text-black">Cart is Empty</h1>
                 </div>
             )
         } else {
@@ -29,7 +31,7 @@ const ViewCart = () => {
                 cartItems.map((item) => {
                     return (
                         <div class="flex flex-wrap gap-x-4 bg-gray-300 overflow-hidden rounded-lg border sm:gap-y-4 lg:gap-6">
-                            <a href="#" class="group relative block h-48 w-32 overflow-hidden bg-gray-100 sm:h-56 sm:w-40">
+                            <a href="#" class="group relative block h-48 w-32 overflow-hidden bg-gray-100 sm:h-56 sm:w-48">
                                 <img src={item.image} loading="lazy" alt="Photo by Thái An" class="h-full w-full object-cover object-center transition duration-200 group-hover:scale-110" />
                             </a>
 
@@ -62,8 +64,8 @@ const ViewCart = () => {
                                         <input type="text" value={item.quantity} class="w-full px-4 py-2 outline-none ring-inset ring-indigo-300 transition duration-100 focus:ring" />
 
                                         <div class="flex flex-col divide-y border-l">
-                                            <button onClick={e => addItemToCart(item)} className=" flex w-6 flex-1 select-none  items-center justify-center bg-white leading-none transition duration-100 hover:bg-gray-100 active:bg-gray-200">+</button>
-                                            <button onClick={e => removeItemFromCart(item)} class="flex w-6 flex-1 select-none items-center justify-center bg-white leading-none transition duration-100 hover:bg-gray-100 active:bg-gray-200">-</button>
+                                            <button onClick={e => addItemToCart(item)} className=" flex w-6 flex-1 select-none  items-center justify-center bg-white text-black leading-none transition duration-100 hover:bg-gray-100 active:bg-gray-200"><FaPlus /></button>
+                                            <button onClick={e => removeItemFromCart(item)} class="flex w-6 flex-1 select-none items-center justify-center bg-white text-black leading-none transition duration-100 hover:bg-gray-100 active:bg-gray-200"><FaMinus /></button>
                                         </div>
                                     </div>
 
@@ -104,7 +106,7 @@ const ViewCart = () => {
 
                     {/* <!-- totals - start --> */}
                     <div class="flex flex-col items-end gap-4">
-                        <div class="w-full rounded-lg bg-gray-300 p-4 sm:max-w-xs">
+                        <div class="w-full rounded-lg bg-secondary p-4 sm:max-w-xs">
                             <div class="space-y-1">
                                 <div class="flex justify-between gap-4 text-gray-500">
                                     <span>Subtotal</span>
@@ -129,7 +131,7 @@ const ViewCart = () => {
                             </div>
                         </div>
 
-                        <Link href="/Checkout" class="inline-block rounded-lg bg-indigo-500 px-8 py-3 text-center text-sm font-semibold text-white outline-none ring-indigo-300 transition duration-100 hover:bg-indigo-600 focus-visible:ring active:bg-indigo-700 md:text-base">
+                        <Link href="/Checkout" class="inline-block rounded-lg bg-sky-500 px-8 py-3 text-center text-sm font-semibold text-white outline-none ring-indigo-300 transition duration-100 hover:bg-indigo-600 focus-visible:ring active:bg-indigo-700 md:text-base">
                             Check out
                         </Link>
                     </div>

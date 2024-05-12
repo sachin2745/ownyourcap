@@ -38,7 +38,7 @@ const ManageUser = () => {
 
     return <table className='table shadow  rounded '>
       <thead>
-        <tr className="font-Quicksand text-lg bg-black">
+        <tr className="font-Jost text-lg bg-black text-secondary">
           <th>Avatar</th>
           <th>Name</th>
           <th>Email</th>
@@ -73,10 +73,10 @@ const ManageUser = () => {
 
   return (
     <div>
-      <div className="antialiased ">
+      <div className="antialiased bg-mate_black h-screen ">
         <main className="p-4 md:ml-64 h-auto pt-20">
           <div className='container'>
-            <h1 className='text-center my-4 text-xl font-Sedan' >Manage User</h1>
+            <h1 className='text-center my-4 text-2xl font-bold font-Sedan text-cyan-300' >Manage User</h1>
             {displayUserData()}
           </div>
         </main>
