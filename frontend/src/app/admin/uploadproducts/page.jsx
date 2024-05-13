@@ -5,7 +5,11 @@ import toast from 'react-hot-toast';
 import * as Yup from 'yup';
 
 const productSchema = Yup.object().shape({
-    name: Yup.string().required('Name is Required').min(3, 'Name is Too Short'),
+    name: Yup.string().required('Name is Required').min(3, 'Name is Too Short').max(10, "Name must be at most 10 characters"),
+    category: Yup.string().required('Category is Required').min(3, 'Category is Too Short').max(66, "Category must be at most 66 characters or 10 words"),
+    shortdescription: Yup.string().required('Short description is Required').min(50, 'Short description is Too Short').max(296, "Short Description must be at most 296 characters or 50 words"),
+    longdescription: Yup.string().required('Long description is Required').min(301, 'Long description is Too Short').max(1452, "Long Description must be at most 1452 characters or 250 words"),
+
 });
 
 
@@ -104,7 +108,7 @@ const page = () => {
                                         />
                                         {
                                             postForm.touched.name &&
-                                            <span className="text-danger">{postForm.errors.name}</span>
+                                            <span className="text-red-500 font-Jost">{postForm.errors.name}</span>
                                         }
                                     </div>
                                 </div>
@@ -127,10 +131,14 @@ const page = () => {
                                             required=""
                                             className=" outline  outline-1 block w-full rounded-md border-0 py-1.5 px-2 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-cyan-600 sm:text-sm sm:leading-6"
                                         />
+                                        {
+                                            postForm.touched.category &&
+                                            <span className="text-red-500 font-Jost">{postForm.errors.category}</span>
+                                        }
                                     </div>
                                 </div>
                             </div>
-                            <div className="flex mb-8">
+                            <div className="flex mb-10">
                                 <div className="flex-1  relative h-11 w-full min-w-[200px] mb-3 mr-5">
                                     <label
                                         htmlFor="shortdescription"
@@ -150,6 +158,10 @@ const page = () => {
                                             required=""
                                             className=" outline  outline-1 block w-full rounded-md border-0 py-1.5 px-2 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-cyan-600 sm:text-sm sm:leading-6"
                                         />
+                                        {
+                                            postForm.touched.shortdescription &&
+                                            <span className="text-red-500 font-Jost">{postForm.errors.shortdescription}</span>
+                                        }
                                     </div>
 
                                 </div>
@@ -172,6 +184,10 @@ const page = () => {
                                             required=""
                                             className=" outline  outline-1 block w-full rounded-md border-0 py-1.5 px-2 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-cyan-600 sm:text-sm sm:leading-6"
                                         />
+                                        {
+                                            postForm.touched.longdescription &&
+                                            <span className="text-red-500 font-Jost">{postForm.errors.longdescription}</span>
+                                        }
                                     </div>
 
                                 </div>
