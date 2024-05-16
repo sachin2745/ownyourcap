@@ -1,4 +1,5 @@
 'use client';
+import useAppContext from '@/context/AppContext';
 import { useFormik } from 'formik';
 import React, { useState } from 'react'
 import toast from 'react-hot-toast';
@@ -11,7 +12,6 @@ const productSchema = Yup.object().shape({
     longdescription: Yup.string().required('Long description is Required').min(301, 'Long description is Too Short').max(1452, "Long Description must be at most 1452 characters or 250 words"),
 
 });
-
 
 const page = () => {
 
@@ -34,6 +34,9 @@ const page = () => {
 
 
     }
+
+  const { currentUser, setCurrentUser } = useAppContext();
+
     const postForm = useFormik({
         initialValues: {
             name: '',
@@ -57,7 +60,8 @@ const page = () => {
                 method: "POST",
                 body: JSON.stringify(values),
                 headers: {
-                    "Content-Type": "application/json"
+                    "Content-Type": "application/json",
+                    'x-auth-token': currentUser.token
                 }
             });
             console.log(res.status);

@@ -2,9 +2,14 @@
 import ProductCollection from '@/app/ProductCollection'
 import Products from '@/app/Products'
 import Image from 'next/image'
+import { useParams } from 'next/navigation'
 import React from 'react'
 
 const ViewProductDetails = () => {
+
+    const {id} = useParams();
+    
+
     return (
         <div className='container'>
 

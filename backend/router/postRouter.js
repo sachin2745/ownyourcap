@@ -1,8 +1,9 @@
 const express = require('express');
 const router = express.Router();
 const Model = require('../model/postModel');
+const verifyToken = require('./verifyToken');
 
-router.post('/add', (req, res) => {
+router.post('/add', verifyToken,(req, res) => {
     console.log(req.body);
     new Model(req.body).save() //save date in mongoDB
         .then((result) => {
@@ -46,7 +47,7 @@ router.put('/update/:id', (req, res) => {
         });
 })
 
-router.get("/getbyid/:id",(req,res)=>{
+router.get("/getbyid/:id",verifyToken,(req,res)=>{
 
     Model.findById(req.params.id)
 

@@ -8,10 +8,10 @@ import toast from 'react-hot-toast';
 const Login = () => {
 
   // const {setLoggedIn} = useAppContext();
-  
+
   const router = useRouter();
   const { setLoggedIn, setCurrentUser } = useAppContext();
-  
+
   const formik = useFormik({
     initialValues: {
       email: '',
@@ -20,7 +20,8 @@ const Login = () => {
 
     onSubmit: (values) => {
       console.log(values);
-      fetch('http://localhost:5000/signup/authenticate', {
+      // fetch('http://localhost:5000/signup/authenticate', {
+      fetch(`${process.env.NEXT_PUBLIC_API_URL}/signup/authenticate`, {
         method: 'POST',
         body: JSON.stringify(values),
         headers: {
@@ -35,9 +36,10 @@ const Login = () => {
               sessionStorage.setItem('user', JSON.stringify(data));
               setCurrentUser(data);
               setLoggedIn(true);
-            formik.resetForm();
-            router.push("/")
-          })} else {
+              formik.resetForm();
+              router.push("/")
+            })
+          } else {
             toast.error('Some Error Occured');
           }
 

@@ -1,4 +1,4 @@
-'use client'
+'use client';
 import React, { useState } from "react";
 import { IoIosLogOut, IoMdSearch } from "react-icons/io";
 import { FaAngleDown, FaCartShopping } from "react-icons/fa6";
@@ -77,9 +77,11 @@ const Navbar = () => {
 
   const { getCartItemsCount } = useProductContext();
 
-  const { logout, loggedIn, currentUser } = useAppContext();
+  const { logout, loggedIn } = useAppContext();
 
   const [userMenuOpened, setUserMenuOpened] = useState(false);
+
+  const [currentUser, setCurrentUser] = useState(JSON.parse(sessionStorage.getItem('user')));
 
   const displayLoginOptions = () => {
     if (loggedIn) {
@@ -299,9 +301,6 @@ const Navbar = () => {
             </a>
 
             {displayLoginOptions()}
-
-
-
 
           </div>
         </div>

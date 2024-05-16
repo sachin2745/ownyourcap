@@ -1,6 +1,9 @@
 const express = require('express');
 const router = express.Router();
 const Model = require('../model/signupModel');
+require('dotenv').config();
+const jwt = require('jsonwebtoken');
+const verifyToken = require('./verifyToken');
 
 router.post('/sign', (req, res) => {
     console.log(req.body);
@@ -16,17 +19,38 @@ router.post('/sign', (req, res) => {
         });
 });
 
-
 router.post('/authenticate', (req, res) => {
     console.log(req.body);
     Model.findOne(req.body)
+        //match that email and password exists in the database
         .then((result) => {
-            if (result) {
-                res.status(200).json(result);
-            } else {
-                res.status(401).json({ message: "invalide credentials" })
+            if (result)
+            //  res.status(200).json(result)
+            {
+                const { _id, email, firstName, avatar, role } = result;
+                const payload = { _id, email, role };
+
+                //create jwt token
+                jwt.sign(
+                    payload,
+                    process.env.JWT_SECRET,
+                    {
+                        expiresIn: '3 days'
+                    },
+                    (err, token) => {
+                        if (err) {
+                            console.log(err);
+                            res.status(500).json(err);
+                        } else {
+                            res.status(200).json({ token, avatar, firstName, role });
+                        }
+                    }
+                )
             }
+            else res.status(401).json({ message: 'login failed' })
+
         }).catch((err) => {
+            console.log(err);
             res.status(500).json(err);
         });
 });
@@ -56,7 +80,7 @@ router.get("/getbyemail/:email", (req, res) => {
         });
 });
 
-router.get("/getbyid/:id", (req, res) => {
+router.get("/getbyid/:id", verifyToken,(req, res) => {
 
     Model.findById(req.params.id)
 
