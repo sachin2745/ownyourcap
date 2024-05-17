@@ -68,15 +68,27 @@ router.get("/getall", (req, res) => {
 
 });
 
-router.get("/getbyemail/:email", (req, res) => {
+// router.get("/getbyemail/:email", (req, res) => {
 
+//     Model.findOne({ email: req.params.email })
+
+//         .then((result) => {
+//             res.json(result);
+//         }).catch((err) => {
+//             console.error(err)
+//             res.status(500).json(err);
+//         });
+// });
+
+//for OTP verification
+router.get('/getbyemail/:email', (req, res) => {
     Model.findOne({ email: req.params.email })
-
         .then((result) => {
-            res.json(result);
+            if (result) res.json(result);
+            else res.status(404).json({ message: 'not found' });
         }).catch((err) => {
-            console.error(err)
-            res.status(500).json(err);
+            console.log(err)
+            res.json(err)
         });
 });
 
@@ -93,7 +105,7 @@ router.get("/getbyid/:id", verifyToken,(req, res) => {
         });
 });
 
-router.put("/update/:id", (req, res) => {
+router.put("/update/:id", verifyToken, (req, res) => {
 
     Model.findByIdAndUpdate(req.params.id, req.body, { new: true })
 

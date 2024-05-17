@@ -7,6 +7,8 @@ const app = express();
 const signupRouter = require('./router/signupRouter');
 const contactFormRouter = require('./router/contactFormRouter');
 const postRouter = require('./router/postRouter');
+const utilRouter = require('./router/util');
+
 
 app.use(express.json());
 app.use(cors({origin: '*'}));
@@ -16,6 +18,7 @@ app.use(cors({origin: '*'}));
 app.use('/signup', signupRouter);
 app.use('/contactForm', contactFormRouter);
 app.use('/post', postRouter);
+app.use('/util', utilRouter);
 
 
 app.use(express.static('./static/uploads'));
