@@ -105,7 +105,7 @@ router.get("/getbyid/:id", verifyToken,(req, res) => {
         });
 });
 
-router.put("/update/:id", verifyToken, (req, res) => {
+router.put("/update/:id",  (req, res) => {
 
     Model.findByIdAndUpdate(req.params.id, req.body, { new: true })
 
