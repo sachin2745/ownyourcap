@@ -51,11 +51,12 @@ const page = () => {
                                     <div className=" ml-6 mx-auto my-7 mt-6 w-80 h-auto  bg-secondary text-slate-600 border border-secondary dark:bg-black dark:text-white dark:border-black   p-4 gap-4 rounded-lg shadow-md">
 
                                         <div className="lg:w-80 md:w-1/4  w-full">
-                                            <a className="block relative h-48 rounded overflow-hidden">
+                                            <a href={"/viewProduct/" + post._id}
+                                                className="block relative h-48 rounded overflow-hidden">
                                                 <img
                                                     alt="ecommerce"
                                                     className="object-cover object-center w-72 h-full block"
-                                                    src={"http://localhost:3000/" + post.image}
+                                                    src={"http://localhost:5000/" + post.image}
                                                 />
                                             </a>
                                             <div className="mt-4 font-Jost w-72 ">

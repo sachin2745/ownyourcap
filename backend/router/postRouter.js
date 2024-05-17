@@ -47,7 +47,7 @@ router.put('/update/:id', (req, res) => {
         });
 })
 
-router.get("/getbyid/:id",verifyToken,(req,res)=>{
+router.get("/getbyid/:id",(req,res)=>{
 
     Model.findById(req.params.id)
 
