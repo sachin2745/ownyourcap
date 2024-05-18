@@ -1,13 +1,16 @@
 'use client'
 import Products from '@/app/Products'
+import useProductContext from '@/context/ProductContext';
 import { useParams } from 'next/navigation';
 import React, { useEffect, useState } from 'react'
+import Navbar from '../../navbar';
+import Footer from '../../Footer';
 
 
 const ViewProductDetails = () => {
 
     const { id } = useParams();
-
+    const { addItemToCart, isInCart } = useProductContext();
     const [productList, setProductList] = useState([]);
 
     const getProductData = async () => {
@@ -24,6 +27,9 @@ const ViewProductDetails = () => {
     }, [])
 
     return (
+        <>
+        <Navbar />
+
         <div className='container'>
 
             <div className="text-center mb-10 max-w-[600px] mx-auto font-Jost">
@@ -83,11 +89,13 @@ const ViewProductDetails = () => {
                                     </tbody>
                                 </table>
                                 <div className="flex justify-start">
-                                    <a href="/viewCart" type="submit"
+                                    <button
+                                        disabled={isInCart(productList)} onClick={e => addItemToCart(productList)}
+                                       
                                         className="mr-6 inline-block px-8 py-3 bg-slate-950 text-slate-400 border border-slate-400 border-b-4 font-medium overflow-hidden relative  rounded-md hover:brightness-150 hover:border-t-4 hover:border-b active:opacity-75 outline-none duration-300 group">
                                         <span className=" bg-slate-400 shadow-slate-400 absolute -top-[150%] left-0 inline-flex w-80 h-[5px] rounded-md opacity-50 group-hover:top-[150%] duration-500 shadow-[0_0_10px_10px_rgba(0,0,0,0.3)]" />
-                                        Add to Cart
-                                    </a>
+                                        {isInCart(productList) ? 'Already Added' : 'Add to Cart'}
+                                    </button>
 
                                     <a href="/Checkout" type="submit"
                                         className="inline-block px-8 py-3 bg-sky-500 text-black border border-slate-400 border-b-4 font-medium overflow-hidden relative  rounded-md hover:brightness-150 hover:border-t-4 hover:border-b active:opacity-75 outline-none duration-300 group">
@@ -139,6 +147,9 @@ const ViewProductDetails = () => {
             </div>
 
         </div>
+
+        <Footer />
+        </>
     )
 }
 

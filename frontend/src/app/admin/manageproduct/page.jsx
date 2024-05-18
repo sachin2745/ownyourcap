@@ -58,7 +58,7 @@ const ManageProduct = () => {
         {
           productList.map((product) => {
             return <tr className="font-Quicksand">
-              <td><img src={"http://localhost:3000/" + product.image} alt="" style={{ height: 70 }} /></td>
+              <td><img src={"http://localhost:5000/" + product.image} alt="" style={{ height: 70 }} /></td>
               <td>{product.name}</td>
               <td>{product.category}</td>
               <td>{product.shortdescription}</td>

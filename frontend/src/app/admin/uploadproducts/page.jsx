@@ -5,15 +5,17 @@ import React, { useState } from 'react'
 import toast from 'react-hot-toast';
 import * as Yup from 'yup';
 
-const productSchema = Yup.object().shape({
-    name: Yup.string().required('Name is Required').min(3, 'Name is Too Short').max(10, "Name must be at most 10 characters"),
-    category: Yup.string().required('Category is Required').min(3, 'Category is Too Short').max(66, "Category must be at most 66 characters or 10 words"),
-    shortdescription: Yup.string().required('Short description is Required').min(50, 'Short description is Too Short').max(296, "Short Description must be at most 296 characters or 50 words"),
-    longdescription: Yup.string().required('Long description is Required').min(301, 'Long description is Too Short').max(1452, "Long Description must be at most 1452 characters or 250 words"),
 
-});
 
 const page = () => {
+
+    const productSchema = Yup.object().shape({
+        name: Yup.string().required('Name is Required').min(3, 'Name is Too Short').max(10, "Name must be at most 10 characters"),
+        category: Yup.string().required('Category is Required').min(3, 'Category is Too Short').max(66, "Category must be at most 66 characters or 10 words"),
+        shortdescription: Yup.string().required('Short description is Required').min(50, 'Short description is Too Short').max(296, "Short Description must be at most 296 characters or 50 words"),
+        longdescription: Yup.string().required('Long description is Required').min(301, 'Long description is Too Short').max(1452, "Long Description must be at most 1452 characters or 250 words"),
+
+    });
 
     const [selImage, setselImage] = useState('');
 
@@ -35,7 +37,7 @@ const page = () => {
 
     }
 
-  const { currentUser, setCurrentUser } = useAppContext();
+    const { currentUser, setCurrentUser } = useAppContext();
 
     const postForm = useFormik({
         initialValues: {
