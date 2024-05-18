@@ -73,10 +73,17 @@ export const ProductProvider = ({children}) => {
         return cartItems.reduce((acc, item) => acc + item.price * item.quantity, 0);
     };
 
-    // const getsingleitemtotal = (item) => {
-    //     return item.price * item.quantity;
-
-    // }
+    
+    const getSingleItemCartTotal = (item) => {
+        // Get the quantity of the item in the cart
+        const quantity = cartItems.filter((cartItem) => cartItem._id === item._id).length;
+      
+        // Calculate the total price of the item
+        const totalPrice = item.quantity * item.price;
+      
+        // Return the total price
+        return totalPrice;
+      };
 
     const getCartItemsCount = () => {
         return cartItems.reduce((acc, item) => acc + item.quantity, 0);
@@ -92,6 +99,7 @@ export const ProductProvider = ({children}) => {
             getCartTotal,
             getCartItemsCount,
             removeoneitem,
+            getSingleItemCartTotal
         }}>
         {children}
         </ProductContext.Provider>

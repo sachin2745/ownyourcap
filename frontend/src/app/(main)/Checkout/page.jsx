@@ -79,7 +79,8 @@ const Checkout = () => {
         clearCart,
         isInCart,
         getCartTotal,
-        getCartItemsCount
+        getCartItemsCount,
+        getSingleItemCartTotal
     } = useProductContext();
 
     const displaycartItems = () => {
@@ -114,7 +115,7 @@ const Checkout = () => {
                                     <div className="flex items-center space-x-2 text-sm justify-between">
                                         <span className="text-gray-400">{item.quantity} x {item.price}</span>
                                         <span className="text-sky-400 font-semibold inline-block">
-                                            ₹398
+                                      ₹{getSingleItemCartTotal(item)}
                                         </span>
                                     </div>
                                 </div>
@@ -127,6 +128,7 @@ const Checkout = () => {
         }
 
     }
+    const shippingPrice = 40;
 
     return (
         <>
@@ -470,7 +472,7 @@ const Checkout = () => {
                     <div className="px-8 ">
                         <div className="flex justify-between py-4 text-secondary">
                             <span>Subtotal</span>
-                            <span className="font-semibold text-sky-500">₹398/-</span>
+                            <span className="font-semibold text-sky-500">₹{getCartTotal()}/-</span>
                         </div>
                         <div className="flex justify-between py-4 text-secondary">
                             <span>Shipping</span>
@@ -479,7 +481,7 @@ const Checkout = () => {
                     </div>
                     <div className="font-semibold text-xl px-8 flex justify-between py-8 text-secondary border-b">
                         <span>Total</span>
-                        <span>₹{getCartTotal()}/-</span>
+                        <span>₹{getCartTotal() +shippingPrice}/-</span>
                     </div>
 
                     {/* component */}

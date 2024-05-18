@@ -18,6 +18,7 @@ const ViewCart = () => {
         getCartTotal,
         getCartItemsCount,
         removeoneitem,
+        getSingleItemCartTotal
     } = useProductContext();
 
     const displaycartItems = () => {
@@ -75,7 +76,7 @@ const ViewCart = () => {
                                 </div>
 
                                 <div class="ml-4 pt-3 md:ml-8 md:pt-2 lg:ml-16">
-                                    <span class="block font-bold text-black md:text-lg">₹{getCartTotal()}/-</span>
+                                    <span class="block font-bold text-black md:text-lg">₹{getSingleItemCartTotal(item)}/-</span>
                                 </div>
                             </div>
                         </div>
@@ -86,6 +87,7 @@ const ViewCart = () => {
 
     }
 
+const shippingPrice = 40;
 
 
     return (
@@ -126,7 +128,7 @@ const ViewCart = () => {
                                     <span class="text-lg font-bold">Total</span>
 
                                     <span class="flex flex-col items-end">
-                                        <span class="text-lg font-bold">₹{getCartTotal()}</span>
+                                        <span class="text-lg font-bold">₹{getCartTotal() +shippingPrice}</span>
                                         <span class="text-sm text-gray-500">including VAT</span>
                                     </span>
                                 </div>
