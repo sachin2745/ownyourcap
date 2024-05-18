@@ -16,7 +16,8 @@ const ViewCart = () => {
         clearCart,
         isInCart,
         getCartTotal,
-        getCartItemsCount
+        getCartItemsCount,
+        removeoneitem,
     } = useProductContext();
 
     const displaycartItems = () => {
@@ -70,11 +71,11 @@ const ViewCart = () => {
                                         </div>
                                     </div>
 
-                                    <button onClick={() => clearCart()} class="select-none text-sm font-semibold text-indigo-500 transition duration-100 hover:text-indigo-600 active:text-indigo-700">Delete</button>
+                                    <button onClick={() => removeoneitem(item)} class="select-none text-sm font-semibold text-indigo-500 transition duration-100 hover:text-indigo-600 active:text-indigo-700">Delete</button>
                                 </div>
 
                                 <div class="ml-4 pt-3 md:ml-8 md:pt-2 lg:ml-16">
-                                    <span class="block font-bold text-black md:text-lg">₹{item.price}/-</span>
+                                    <span class="block font-bold text-black md:text-lg">₹{getCartTotal()}/-</span>
                                 </div>
                             </div>
                         </div>

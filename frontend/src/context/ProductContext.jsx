@@ -43,11 +43,27 @@ export const ProductProvider = ({children}) => {
             // localStorage.setItem('cartItems', JSON.stringify(cartItems));
         }
     };
+    const removeoneitem = (item) => {
+        const exist = cartItems.find((cartItem) => cartItem._id === item._id);
+        if (exist.quantity === item.quantity){
+            setCartItems(cartItems.filter((cartItem) => cartItem._id !== item._id));
+            localStorage.setItem('cartItems', JSON.stringify(cartItems));
+        } else {
+            setCartItems(
+                cartItems.map((cartItem) =>
+                    cartItem._id === item._id ? { ...exist, quantity: exist.quantity - 1 } : cartItem
+                )
+            );
+            // localStorage.setItem('cartItems', JSON.stringify(cartItems));
+        }
+    };
 
     const clearCart = () => {
         setCartItems([]);
         // localStorage.setItem('cartItems', JSON.stringify(cartItems));
     };
+
+   
 
     const isInCart = (item) => {
         return cartItems.find((cartItem) => cartItem._id === item._id);
@@ -56,6 +72,11 @@ export const ProductProvider = ({children}) => {
     const getCartTotal = () => {
         return cartItems.reduce((acc, item) => acc + item.price * item.quantity, 0);
     };
+
+    // const getsingleitemtotal = (item) => {
+    //     return item.price * item.quantity;
+
+    // }
 
     const getCartItemsCount = () => {
         return cartItems.reduce((acc, item) => acc + item.quantity, 0);
@@ -69,7 +90,8 @@ export const ProductProvider = ({children}) => {
             clearCart,
             isInCart,
             getCartTotal,
-            getCartItemsCount
+            getCartItemsCount,
+            removeoneitem,
         }}>
         {children}
         </ProductContext.Provider>

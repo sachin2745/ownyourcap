@@ -7,6 +7,7 @@ import toast from 'react-hot-toast';
 import { useFormik } from 'formik';
 import * as Yup from 'yup';
 import useAppContext from '@/context/AppContext';
+import useProductContext from '@/context/ProductContext';
 
 
 
@@ -70,6 +71,63 @@ const Checkout = () => {
         validationSchema: checkoutvalidationSchema,
 
     });
+
+    const {
+        cartItems,
+        addItemToCart,
+        removeItemFromCart,
+        clearCart,
+        isInCart,
+        getCartTotal,
+        getCartItemsCount
+    } = useProductContext();
+
+    const displaycartItems = () => {
+        if (getCartItemsCount() === 0) {
+            return (
+                <div className="grid  bg-secondary w-full h-40 rounded-lg justify-center place-content-center">
+                    <h1 className="text-3xl font-bold font-Jost text-black">Cart is Empty</h1>
+                </div>
+            )
+        } else {
+            return (
+                cartItems.map((item) => {
+                    return (
+                        <ul className="py-6  space-y-6 px-8">
+                            <li className="grid grid-cols-6 gap-2 ">
+                                <div className="col-span-1 self-center">
+                                    <img
+                                        src={"http://localhost:5000/" + item.image}
+                                        alt="Product"
+                                        className="rounded w-full"
+                                    />
+                                </div>
+                                <div className="flex flex-col col-span-3 pt-2">
+                                    <span className="text-secondary text-md font-semi-bold">
+                                        {item.name}
+                                    </span>
+                                    <span className="text-gray-400 text-sm inline-block pt-2">
+                                        {item.color}
+                                    </span>
+                                </div>
+                                <div className="col-span-2 pt-3">
+                                    <div className="flex items-center space-x-2 text-sm justify-between">
+                                        <span className="text-gray-400">{item.quantity} x {item.price}</span>
+                                        <span className="text-sky-400 font-semibold inline-block">
+                                            ₹398
+                                        </span>
+                                    </div>
+                                </div>
+                            </li>
+
+                        </ul>
+                    )
+                })
+            )
+        }
+
+    }
+
     return (
         <>
 
@@ -406,34 +464,9 @@ const Checkout = () => {
                     <h1 className="py-6  text-xl text-secondary px-8">
                         Order Summary
                     </h1>
-                    <ul className="py-6  space-y-6 px-8">
-                        <li className="grid grid-cols-6 gap-2 ">
-                            <div className="col-span-1 self-center">
-                                <img
-                                    src="capimage3.jpg"
-                                    alt="Product"
-                                    className="rounded w-full"
-                                />
-                            </div>
-                            <div className="flex flex-col col-span-3 pt-2">
-                                <span className="text-secondary text-md font-semi-bold">
-                                    Adidas  Cap
-                                </span>
-                                <span className="text-gray-400 text-sm inline-block pt-2">
-                                    Black
-                                </span>
-                            </div>
-                            <div className="col-span-2 pt-3">
-                                <div className="flex items-center space-x-2 text-sm justify-between">
-                                    <span className="text-gray-400">2 x ₹199</span>
-                                    <span className="text-sky-400 font-semibold inline-block">
-                                        ₹398
-                                    </span>
-                                </div>
-                            </div>
-                        </li>
-
-                    </ul>
+                    {/* <!-- product - start --> */}
+                    {displaycartItems()}
+                    {/* <!-- product - end --> */}
                     <div className="px-8 ">
                         <div className="flex justify-between py-4 text-secondary">
                             <span>Subtotal</span>
@@ -446,7 +479,7 @@ const Checkout = () => {
                     </div>
                     <div className="font-semibold text-xl px-8 flex justify-between py-8 text-secondary border-b">
                         <span>Total</span>
-                        <span>₹438/-</span>
+                        <span>₹{getCartTotal()}/-</span>
                     </div>
 
                     {/* component */}
