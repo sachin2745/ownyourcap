@@ -8,6 +8,7 @@ const signupRouter = require('./router/signupRouter');
 const contactFormRouter = require('./router/contactFormRouter');
 const postRouter = require('./router/postRouter');
 const utilRouter = require('./router/util');
+const checkoutRouter = require('./router/checkoutRouter');
 
 
 app.use(express.json());
@@ -19,6 +20,7 @@ app.use('/signup', signupRouter);
 app.use('/contactForm', contactFormRouter);
 app.use('/post', postRouter);
 app.use('/util', utilRouter);
+app.use('/checkout', checkoutRouter);
 
 
 app.use(express.static('./static/uploads'));

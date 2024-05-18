@@ -1,8 +1,75 @@
+'use client';
 import React from 'react'
 import Footer from '../Footer'
 import Navbar from '../navbar'
+import { useRouter } from 'next/navigation';
+import toast from 'react-hot-toast';
+import { useFormik } from 'formik';
+import * as Yup from 'yup';
+import useAppContext from '@/context/AppContext';
+
+
 
 const Checkout = () => {
+
+    const checkoutvalidationSchema = Yup.object().shape({
+        firstName: Yup.string().required('First name is required'),
+        lastName: Yup.string().required('Last name is required'),
+        phoneNumber: Yup.string().required('Phone number is required'),
+        email: Yup.string().email('Invalid email address').required('Email is required'),
+        address: Yup.string().required('Address is required'),
+        locality: Yup.string().required('Locality is required'),
+        city: Yup.string().required('City is required'),
+        state: Yup.string().required('State is required'),
+        pincode: Yup.string().required('Pincode is required'),
+    });
+
+    const router = useRouter();
+    const { currentUser, setCurrentUser } = useAppContext();
+
+    const formik = useFormik({
+        initialValues: {
+            firstName: '',
+            lastName: '',
+            phoneNumber: '',
+            email: '',
+            address: '',
+            locality: '',
+            city: '',
+            state: '',
+            pincode: '',
+            landmark: '',
+            alternativephone: ''
+        },
+
+        onSubmit: (values) => {
+            console.log(values);
+            fetch('http://localhost:5000/checkout/add', {
+                method: 'POST',
+                body: JSON.stringify(values),
+                headers: {
+                    "Content-Type": "application/json",
+                    'x-auth-token': currentUser.token
+                }
+            })
+                .then((response) => {
+                    console.log(response.status);
+                    if (response.status === 200) {
+                        toast.success('Ordered successfully');
+                        formik.resetForm();
+                    } else {
+                        toast.error('Some Error Occured');
+                    }
+
+                }).catch((err) => {
+                    console.log(err);
+                    toast.error('Some Error Occured');
+                })
+        },
+
+        validationSchema: checkoutvalidationSchema,
+
+    });
     return (
         <>
 
@@ -66,7 +133,7 @@ const Checkout = () => {
                         </div>
                     </div>
                     <div className="rounded-md mt-9 font-Quicksand">
-                        <form id="payment-form" method="POST" action="">
+                        <form onSubmit={formik.handleSubmit}>
                             <section>
                                 <h2 className="uppercase tracking-wide text-lg font-semibold text-secondary my-2">
                                     Shipping &amp; Billing Information
@@ -75,40 +142,60 @@ const Checkout = () => {
                                 <div className=" grid max-w-screen-md gap-4 sm:grid-cols-2">
                                     <div>
                                         <label
-                                            htmlFor="first-name"
+                                            htmlFor="firstName"
                                             className="mb-2 inline-block text-sm text-secondary sm:text-base"
                                         >
                                             First name*
                                         </label>
                                         <input
                                             type="text"
-                                            name="first-name"
+                                            name="firstName"
+                                            id="firstName"
+                                            value={formik.values.firstName}
+                                            onChange={formik.handleChange}
                                             className="w-full rounded border bg-black text-white px-3 py-2  outline-none ring-mate_black transition duration-100 focus:ring"
                                         />
+                                        {formik.touched.firstName && formik.errors.firstName ? (
+                                            <div className="text-red-500 text-xs">{formik.errors.firstName}</div>
+                                        ) : null}
                                     </div>
                                     <div>
                                         <label
-                                            htmlFor="last-name"
+                                            htmlFor="lastName"
                                             className="mb-2 inline-block text-sm text-secondary sm:text-base"
                                         >
                                             Last name*
                                         </label>
                                         <input
                                             type="text"
-                                            name="last-name"
+                                            name="lastName"
+                                            id="lastName"
+                                            value={formik.values.lastName}
+                                            onChange={formik.handleChange}
                                             className="w-full rounded border bg-black text-white px-3 py-2  outline-none ring-indigo-300 transition duration-100 focus:ring"
                                         />
+                                        {formik.touched.lastName && formik.errors.lastName ? (
+                                            <div className="text-red-500 text-xs">{formik.errors.lastName}</div>
+                                        ) : null}
                                     </div>
                                     <div className="sm:col-span-2">
                                         <label
-                                            htmlFor="country"
+                                            htmlFor="phoneNumber"
                                             className="mb-2 inline-block text-sm text-secondary sm:text-base"
                                         >
                                             Phone Number*
                                         </label>
 
-                                        <input type="number" name="phone" className="w-full rounded border bg-black text-white px-3 py-2  outline-none ring-indigo-300 transition duration-100 focus:ring" />
-
+                                        <input type="number"
+                                            name="phoneNumber"
+                                            id="phoneNumber"
+                                            value={formik.values.phoneNumber}
+                                            onChange={formik.handleChange}
+                                            className="w-full rounded border bg-black text-white px-3 py-2  outline-none ring-indigo-300 transition duration-100 focus:ring"
+                                        />
+                                        {formik.touched.phoneNumber && formik.errors.phoneNumber ? (
+                                            <div className="text-red-500 text-xs">{formik.errors.phoneNumber}</div>
+                                        ) : null}
                                     </div>
                                     <div className="sm:col-span-2">
                                         <label
@@ -120,8 +207,14 @@ const Checkout = () => {
                                         <input
                                             type="email"
                                             name="email"
+                                            id="email"
+                                            value={formik.values.email}
+                                            onChange={formik.handleChange}
                                             className="w-full rounded border bg-black text-white px-3 py-2  outline-none ring-indigo-300 transition duration-100 focus:ring"
                                         />
+                                        {formik.touched.email && formik.errors.email ? (
+                                            <div className="text-red-500 text-xs">{formik.errors.email}</div>
+                                        ) : null}
                                     </div>
                                     <div className="sm:col-span-2">
                                         <label
@@ -130,11 +223,19 @@ const Checkout = () => {
                                         >
                                             Address (Area and Street)*
                                         </label>
-                                        <input
+                                        <textarea
                                             type="text"
+                                            rows={3}
+                                            defaultValue={""}
                                             name="address"
+                                            id="address"
+                                            value={formik.values.address}
+                                            onChange={formik.handleChange}
                                             className="w-full h-20 rounded border bg-black text-white px-3 py-2  outline-none ring-indigo-300 transition duration-100 focus:ring"
                                         />
+                                        {formik.touched.address && formik.errors.address ? (
+                                            <div className="text-red-500 text-xs">{formik.errors.address}</div>
+                                        ) : null}
                                     </div>
                                     <div className="sm:col-span-2">
                                         <label
@@ -146,8 +247,14 @@ const Checkout = () => {
                                         <input
                                             type="text"
                                             name="locality"
+                                            id="locality"
+                                            value={formik.values.locality}
+                                            onChange={formik.handleChange}
                                             className="w-full rounded border bg-black text-whitepx-3 py-2  outline-none ring-indigo-300 transition duration-100 focus:ring"
                                         />
+                                        {formik.touched.locality && formik.errors.locality ? (
+                                            <div className="text-red-500 text-xs">{formik.errors.locality}</div>
+                                        ) : null}
                                     </div>
                                     <div className="sm:col-span-2">
                                         <label
@@ -157,9 +264,17 @@ const Checkout = () => {
                                             City/ District/ Town*
                                         </label>
 
-                                        <input type="text" name="city" className="w-full rounded border bg-black text-white px-3 py-2  outline-none ring-indigo-300 transition duration-100 focus:ring" />
+                                        <input type="text"
+                                            name="city"
+                                            id="city"
+                                            value={formik.values.city}
+                                            onChange={formik.handleChange}
+                                            className="w-full rounded border bg-black text-white px-3 py-2  outline-none ring-indigo-300 transition duration-100 focus:ring"
+                                        />
 
-
+                                        {formik.touched.city && formik.errors.city ? (
+                                            <div className="text-red-500 text-xs">{formik.errors.city}</div>)
+                                            : null}
                                     </div>
                                     <div className="sm:col-span-2">
                                         <label
@@ -171,8 +286,12 @@ const Checkout = () => {
 
                                         <select
                                             name="state"
+                                            id="state"
+                                            value={formik.values.state}
+                                            onChange={formik.handleChange}
                                             className="w-full rounded border bg-black text-white px-3 py-2  outline-none ring-indigo-300 transition duration-100 focus:ring"
                                         >
+                                            <option value="Select">Select State</option>
                                             <option value="AP">Andhra Pradesh</option>
                                             <option value="AP">Arunachal Pradesh</option>
                                             <option value="Assam">Assam</option>
@@ -198,10 +317,12 @@ const Checkout = () => {
                                             <option value="TN">Tamil Nadu</option>
                                             <option value="Telangana">Telangana</option>
                                             <option value="Tripura">Tripura</option>
-                                            <option value="UP" selected="selected"> Uttar Pradesh </option>
+                                            <option value="UP" > Uttar Pradesh </option>
 
                                         </select>
-
+                                        {formik.touched.state && formik.errors.state ?
+                                            <div className="text-red-500 text-xs">{formik.errors.state}</div>
+                                            : null}
                                     </div>
                                     <div className="sm:col-span-2">
                                         <label
@@ -213,8 +334,14 @@ const Checkout = () => {
                                         <input
                                             type="number"
                                             name="pincode"
+                                            id="pincode"
+                                            value={formik.values.pincode}
+                                            onChange={formik.handleChange}
                                             className="w-full rounded border bg-black text-white px-3 py-2  outline-none ring-indigo-300 transition duration-100 focus:ring"
                                         />
+                                        {formik.touched.pincode && formik.errors.pincode ?
+                                            <div className="text-red-500 text-xs">{formik.errors.pincode}</div>
+                                            : null}
                                     </div>
 
                                     <h2 className="uppercase tracking-wide text-lg font-semibold text-secondary my-2">
@@ -229,10 +356,18 @@ const Checkout = () => {
                                         </label>
                                         <textarea
                                             type="text"
-                                            name="landmark"
-                                            className="h-24 w-full rounded border bg-black text-white px-3 py-2  outline-none ring-indigo-300 transition duration-100 focus:ring"
+                                            rows={3}
                                             defaultValue={""}
+                                            name="landmark"
+                                            id="landmark"
+                                            value={formik.values.landmark}
+                                            onChange={formik.handleChange}
+                                            className="h-24 w-full rounded border bg-black text-white px-3 py-2  outline-none ring-indigo-300 transition duration-100 focus:ring"
+
                                         />
+                                        {formik.touched.landmark && formik.errors.landmark ? (
+                                            <div className="text-red-500 text-xs">{formik.errors.landmark}</div>)
+                                            : null}
                                     </div>
 
                                     <div className="sm:col-span-2 mb-10">
@@ -245,12 +380,22 @@ const Checkout = () => {
                                         <input
                                             type="number"
                                             name="alternativephone"
+                                            id="alternativephone"
+                                            value={formik.values.alternativephone}
+                                            onChange={formik.handleChange}
                                             className=" w-full rounded border bg-black text-white px-3 py-2  outline-none ring-indigo-300 transition duration-100 focus:ring"
 
                                         />
+                                        {formik.touched.alternativephone && formik.errors.alternativephone ? (
+                                            <div className="text-red-500 text-xs">{formik.errors.alternativephone}</div>)
+                                            : null}
                                     </div>
                                 </div>
-
+                                <div className="w-80">
+                                    <button type="submit" className="btn bg-sky-500 w-full text-lg text-white">
+                                        Submit Detail
+                                    </button>
+                                </div>
                             </section>
                         </form>
                     </div>
@@ -373,9 +518,9 @@ const Checkout = () => {
                         <p className="p-8  mb-4 items-center my-4 -mt-10"> Your personal data will be used to process your order, support your experience throughout this website, and for other purpose described in our <a href="/privacy">privacy policy</a> . </p>
                     </div>
                     <div className="p-8">
-                        <a href="/thankyou" type="submit" className="btn bg-sky-500 w-full text-lg text-white">
+                        <button type="submit" className="btn bg-sky-500 w-full text-lg text-white">
                             Place Order
-                        </a>
+                        </button>
                     </div>
 
                 </div>

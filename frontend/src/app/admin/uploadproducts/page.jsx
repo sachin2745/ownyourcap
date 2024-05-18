@@ -67,11 +67,11 @@ const page = () => {
             console.log(res.status);
 
             if (res.status === 200) {
-                toast.success("Publish Successfully", { varient: "success" });
+                toast.success("Uploaded Successfully");
             } else if (res.status === 400) {
-                toast.error("Something went wrong", { varient: "danger" });
+                toast.error("Something went wrong");
             } else {
-                toast.error("Something went wrong", { varient: "danger" });
+                toast.error("Something went wrong");
             }
         },
         validationSchema: productSchema
