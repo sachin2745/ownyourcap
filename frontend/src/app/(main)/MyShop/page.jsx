@@ -48,14 +48,14 @@ const page = () => {
                         postArray.map((post) => {
                             return (
                                 <div>
-                                    <div className=" ml-6 mx-auto my-7 mt-6 w-80 h-auto  bg-secondary text-slate-600 border border-secondary dark:bg-black dark:text-white dark:border-black   p-4 gap-4 rounded-lg shadow-md">
+                                    <div className=" ml-6 mx-auto my-7 mt-6 w-80 h-auto  bg-white text-slate-600 border border-secondary dark:bg-black dark:text-white dark:border-black   p-4 gap-4 rounded-lg shadow-md">
 
-                                        <div className="lg:w-80 md:w-1/4  w-full">
+                                        <div className="lg:w-72 md:w-1/4  w-full">
                                             <a href={"/viewProduct/" + post._id}
                                                 className="block relative h-48 rounded overflow-hidden">
                                                 <img
                                                     alt="ecommerce"
-                                                    className="object-cover object-center w-72 h-full block"
+                                                    className="object-cover object-center w-full h-full block"
                                                     src={"http://localhost:5000/" + post.image}
                                                 />
                                             </a>
@@ -63,16 +63,17 @@ const page = () => {
                                                 <h2 className="text-gray-900 dark:text-white title-font text-lg font-medium">
                                                     {post.name}
                                                 </h2>
-                                                <h3 className="text-gray-500 dark:text-white text-sm text-wrap tracking-widest title-font mb-1">
+                                                <h3 className="text-gray-500 dark:text-white text-[13px] text-wrap tracking-widest title-font mb-1">
                                                     {post.category}
                                                 </h3>
-                                                <p className="mt-1">₹{post.price}/-</p>
+                                                    <p className="mt-3 ">₹{post.price}/-</p>
+                                               
                                             </div>
                                             <button
                                                 disabled={isInCart(post)}
                                                 onClick={(e) => addItemToCart(post)}
                                                 type="submit"
-                                                className="flex ml-36  text-white bg-black hover:bg-gray-700 dark:bg-primary dark:text-black dark:font-bold border-0 py-2 px-6 focus:outline-none  rounded">
+                                                className="flex-1 w-72 py-2 mt-4 text-center text-white bg-black hover:bg-gray-700 dark:bg-primary dark:text-black dark:font-bold border-0  focus:outline-none  rounded">
                                                 <span>{isInCart(post) ? "Added" : "Add to cart"}</span>
                                             </button>
 
