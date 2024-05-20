@@ -33,7 +33,7 @@ const ViewCart = () => {
                 cartItems.map((item) => {
                     return (
                         <div class="flex flex-wrap gap-x-4 bg-gray-300 overflow-hidden rounded-lg border sm:gap-y-4 lg:gap-6">
-                            <a href="#" class="group relative block h-48 w-32 overflow-hidden bg-gray-100 sm:h-56 sm:w-48">
+                            <a href="#" class="group relative block h-48 w-32 overflow-hidden bg-gray-100 sm:h-72 sm:w-48">
                                 <img src={"http://localhost:5000/" + item.image} loading="lazy" alt="Photo by Thái An" class="h-full w-full object-cover object-center transition duration-200 group-hover:scale-110" />
                             </a>
 
@@ -42,9 +42,9 @@ const ViewCart = () => {
                                     <a href="#" class="mb-1 inline-block text-lg font-bold text-black transition duration-100 hover:text-gray-500 lg:text-xl">
                                         {item.name}
                                     </a>
-                                    <span class="block text-black"> {item.category}</span>
-                                    <span class="block text-black"> {item.shortdescription}</span>
-                                    <span class="block text-black">Size: {item.size}</span>
+                                    <span class="block text-perfect_blue mb-2"> {item.category}</span>
+                                    <span class="block text-black mb-1"> {item.shortdescription}</span>
+                                    <span class="block text-black mb-1">Size: {item.size}</span>
                                     <span class="block text-black">Color: {item.color}</span>
                                 </div>
 
@@ -64,7 +64,7 @@ const ViewCart = () => {
                             <div class="flex w-full justify-between border-t p-4 sm:w-auto sm:border-none sm:pl-0 lg:p-6 lg:pl-0">
                                 <div class="flex flex-col items-start gap-2">
                                     <div class="flex h-12 w-20 overflow-hidden rounded border">
-                                        <input type="text" value={item.quantity} class="w-full px-4 py-2 outline-none ring-inset ring-indigo-300 transition duration-100 focus:ring" />
+                                        <input type="text" value={item.quantity} class="w-full text-black px-4 py-2 outline-none ring-inset ring-indigo-300 transition duration-100 focus:ring" />
 
                                         <div class="flex flex-col divide-y border-l">
                                             <button onClick={e => addItemToCart(item)} className=" flex w-6 flex-1 select-none  items-center justify-center bg-white text-black leading-none transition duration-100 hover:bg-gray-100 active:bg-gray-200"><FaPlus /></button>
