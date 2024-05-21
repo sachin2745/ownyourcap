@@ -3,7 +3,7 @@ import React from 'react'
 const AdminNavbar = () => {
   return (
     <>
-      <nav className="bg-mate_black border-b border-gray-200 px-4 py-2.5 dark:bg-gray-800 dark:border-gray-700 fixed left-0 right-0 top-0 z-50">
+      <nav className="bg-gradient-to-tr from-cyan-600 to-cyan-400 border-b border-gray-200 px-4 py-2.5 dark:bg-gray-800 dark:border-gray-700 fixed left-0 right-0 top-0 z-50">
         <div className="flex flex-wrap justify-between items-center">
           <div className="flex justify-start items-center">
 
@@ -16,7 +16,7 @@ const AdminNavbar = () => {
                 className="mr-3 h-12"
                 alt=" Logo"
               />
-              <span className="self-center text-2xl font-semibold whitespace-nowrap dark:text-white">
+              <span className="self-center text-2xl font-semibold whitespace-nowrap text-white dark:text-black">
                 OWNYOURCAP
               </span>
             </a>
@@ -75,7 +75,7 @@ const AdminNavbar = () => {
             <div className="hs-dropdown [--strategy:static] sm:[--strategy:absolute] [--adaptive:none] ">
               <button
                 type="button"
-                className="sm:py-4 flex items-center font-Jost font-bold w-full text-white hover:text-gray-400 font-medium dark:text-neutral-400 dark:hover:text-neutral-500"
+                className="sm:py-4 flex items-center font-Jost w-full text-white hover:text-black font-medium dark:text-neutral-400 dark:hover:text-neutral-500"
               >
                 Manage
                 <svg
@@ -115,8 +115,9 @@ const AdminNavbar = () => {
                       className="flex items-center gap-x-3.5 py-2 px-3 rounded-lg text-sm text-white hover:bg-gray-600 focus:ring-2 focus:ring-blue-500 dark:text-neutral-400 dark:hover:bg-neutral-700 dark:hover:text-neutral-300"
                       href="/admin/uploadproducts"
                     >
-                     Upload Products
+                     Upload Product
                     </a>
+                    
                   </div>
                   <div className="flex flex-col">
                     <a
