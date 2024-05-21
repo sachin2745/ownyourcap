@@ -72,7 +72,7 @@ const ManageProduct = () => {
 
 
               <td>
-                <a href={`/admin/update/${product._id}`} className='btn btn-primary'>Edit</a>
+                <a href={"/admin/updateProduct/" + product._id} className='btn btn-primary'>Edit</a>
               </td>
               <td>
                 <button className='btn btn-error font-Jost' onClick={e => deletepodcast(product._id)} >Delete</button>
