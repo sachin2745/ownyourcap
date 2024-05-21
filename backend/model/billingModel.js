@@ -49,4 +49,4 @@ const mySchema = new Schema({
 
 });
 
-module.exports = model('checkout', mySchema);
+module.exports = model('billing', mySchema);

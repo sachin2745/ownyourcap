@@ -11,7 +11,7 @@ import useProductContext from '@/context/ProductContext';
 
 
 
-const Checkout = () => {
+const billingInformation = () => {
 
     const checkoutvalidationSchema = Yup.object().shape({
         firstName: Yup.string().required('First name is required'),
@@ -45,7 +45,7 @@ const Checkout = () => {
 
         onSubmit: (values) => {
             console.log(values);
-            fetch('http://localhost:5000/checkout/add', {
+            fetch('http://localhost:5000/billing/add', {
                 method: 'POST',
                 body: JSON.stringify(values),
                 headers: {
@@ -569,4 +569,4 @@ const Checkout = () => {
     )
 }
 
-export default Checkout
+export default billingInformation

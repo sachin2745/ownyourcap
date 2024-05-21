@@ -1,6 +1,6 @@
 const express = require('express');
 const router = express.Router();
-const Model = require('../model/checkoutModel');
+const Model = require('../model/billingModel');
 const verifyToken = require('./verifyToken');
 
 router.post('/add', verifyToken, (req, res) => {
