@@ -1,0 +1,28 @@
+/* MyComponent.css */
+.wrapper {
+    display: flex;
+    background-color: #f8f9fa;
+    border-radius: 12px;
+    padding: 4px;
+    border: 1px solid #dee2e6;
+}
+
+@media (max-width: 600px) {
+    .wrapper {
+        flex-direction: column;
+    }
+}
+
+.form {
+    flex: 1;
+    padding: 24px;
+    padding-left: 48px;
+    border-left: 0;
+}
+
+@media (max-width: 600px) {
+    .form {
+        padding: 16px;
+        padding-left: 16px;
+    }
+}

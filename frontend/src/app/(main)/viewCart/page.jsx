@@ -96,8 +96,8 @@ const shippingPrice = 40;
 
             <div class="bg-black dark:bg-primary py-6 sm:py-8 lg:py-12 font-Jost ">
                 <div class="mx-auto max-w-screen-xl px-4 md:px-8">
-                    <div class="mb-6 sm:mb-10 lg:mb-16">
-                        <h2 class="mb-4 text-center text-2xl font-bold text-white dark:text-black md:mb-6 lg:text-3xl">Your Cart</h2>
+                    <div class="mb-6 sm:mb-10 lg:mb-16 text-center">
+                        <a href='/MyShop' class="mb-4 text-center h-1 text-2xl font-bold text-white dark:text-black md:mb-6 lg:text-3xl">Your Cart</a>
                     </div>
 
                     <div class="mb-6 flex flex-col gap-4 sm:mb-8 md:gap-6">
@@ -135,7 +135,7 @@ const shippingPrice = 40;
                             </div>
                         </div>
 
-                        <Link href="/Checkout" class="inline-block rounded-lg bg-sky-500 px-8 py-3 text-center text-sm font-semibold text-white outline-none ring-indigo-300 transition duration-100 hover:bg-indigo-600 focus-visible:ring active:bg-indigo-700 md:text-base">
+                        <Link href="/checkout" class="inline-block rounded-lg bg-sky-500 px-8 py-3 text-center text-sm font-semibold text-white outline-none ring-indigo-300 transition duration-100 hover:bg-indigo-600 focus-visible:ring active:bg-indigo-700 md:text-base">
                             Check out
                         </Link>
                     </div>
