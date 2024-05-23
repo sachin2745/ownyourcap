@@ -97,7 +97,7 @@ const ViewProductDetails = () => {
                                         {isInCart(productList) ? 'Already Added' : 'Add to Cart'}
                                     </button>
 
-                                    <a href="/Checkout" type="submit"
+                                    <a href="/checkout" type="submit"  onClick={e => addItemToCart(productList)}
                                         className="inline-block px-8 py-3 bg-sky-500 text-black border border-slate-400 border-b-4 font-medium overflow-hidden relative  rounded-md hover:brightness-150 hover:border-t-4 hover:border-b active:opacity-75 outline-none duration-300 group">
                                         <span className="bg-sky-400 shadow-sky-400 absolute -top-[150%] left-0 inline-flex w-80 h-[5px] rounded-md opacity-50 group-hover:top-[150%] duration-500 shadow-[0_0_10px_10px_rgba(0,0,0,0.3)]" />
                                         Buy Now

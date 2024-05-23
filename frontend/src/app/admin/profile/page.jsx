@@ -2,8 +2,8 @@ import React from 'react'
 
 const AdminProfile = () => {
   return (
-    <div>Profile</div>
+    <div>AdminProfile</div>
   )
 }
 
-export default AdminProfile;
+export default AdminProfile
