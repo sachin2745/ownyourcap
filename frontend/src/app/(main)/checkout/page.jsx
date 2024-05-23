@@ -143,11 +143,13 @@ function Checkout() {
     const stateRef = useRef();
     const cityRef = useRef();
     const localityRef = useRef();
+    const fnRef = useRef();
+    const lnRef = useRef();
 
     const stripePromise = loadStripe(process.env.NEXT_PUBLIC_STRIPE_KEY);
     const getPaymentIntent = async () => {
-        const shipping = {
-            name: currentUser.firstName,
+        const shipping = {            
+            name: fnRef.current.value+' '+lnRef.current.value,
             address: {
                 line1: addressRef.current.value,
                 line2: localityRef.current.value,
@@ -263,6 +265,7 @@ function Checkout() {
                                         </label>
                                         <input
                                             type="text"
+                                            ref={fnRef}
                                             name="firstName"
                                             id="firstName"
                                             value={formik.values.firstName}
@@ -282,6 +285,7 @@ function Checkout() {
                                         </label>
                                         <input
                                             type="text"
+                                            ref={lnRef}
                                             name="lastName"
                                             id="lastName"
                                             value={formik.values.lastName}
