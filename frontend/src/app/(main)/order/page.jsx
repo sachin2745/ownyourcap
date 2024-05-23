@@ -38,12 +38,19 @@ const OrderHistory = () => {
                 <p className="text-muted">Shipping Address</p>
                 <p>{order.shipping.name}</p>
                 <p>{order.shipping.address.line1}</p>
+                <p>{order.shipping.address.line2}</p>
+                <p>{order.shipping.address.city}</p>
+                <p>{order.shipping.address.state}</p>
                 <p>{order.shipping.address.postal_code}</p>
               </Col>
               <Col sm={6}>
-                <p className="text-muted">Order Details</p>
+                <p className="text-muted">Order Details</p>                
                 <p>Order ID: {order._id}</p>
-                <p>Amount: ₹{order.details.amount/100}</p>
+                <p>Order Date: {new Date(order.createdAt).toDateString()}</p>
+                <p>Items: {order.items.length}</p>
+                <p>Payment Method: {order.details.payment_method}</p>
+                <p>Amount: ₹{order.details.amount / 100}</p>
+                <p>Receipt URL: <a href={order.details.receipt_url} target="_blank">Click here</a></p>
                 <p>Payment Status: {order.status}</p>
               </Col>
             </Row>

@@ -38,12 +38,10 @@ const mySchema = new Schema({
         required: true
     },
     landmark: {
-        type: String,
-        required: true
+        type: String        
     },
     alternativephone: {
-        type: Number,
-        required: true
+        type: Number        
     },
 
 

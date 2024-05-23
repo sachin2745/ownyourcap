@@ -1,15 +1,17 @@
+'use client';
 import React, { useState } from 'react';
 import { ElementsConsumer, PaymentElement, useElements, useStripe } from '@stripe/react-stripe-js';
 // import useUserContext from '../../context/UserContext';
 
 
 
-const PaymentGateway = ({email}) => {
+const PaymentGateway = ({ email }) => {
 
     // const {currentUser, setCurrentUser} = useState(JSON.parse(sessionStorage.getItem('user')));
 
     const stripe = useStripe();
     const elements = useElements();
+
 
     const handleSubmit = async (event) => {
         // We don't want to let default form submission happen here,
@@ -31,12 +33,13 @@ const PaymentGateway = ({email}) => {
             confirmParams: {
                 return_url: "http://localhost:3000/thankyou",
                 receipt_email: email,
-                
+
             },
         });
 
         if (result.error) {
             // Show error to your customer (for example, payment details incomplete)
+
             console.log(result.error.message);
         } else {
             // Your customer will be redirected to your return_url. For some payment
@@ -44,14 +47,17 @@ const PaymentGateway = ({email}) => {
             // site first to authorize the payment, then redirected to the return_url.
         }
     };
+   
 
     return (
-        <div className='"max-w-sm rounded overflow-hidden shadow-lg"'  withBorder p={30} mt={30}>
-            
+        <div className="max-w-sm rounded overflow-hidden shadow-lg font-Jost" withBorder p={30} mt={30}>
+
             <form onSubmit={handleSubmit}>
-                <h1 order={3} my={30} mx="auto">Secure Payment Gateway</h1>
-                <PaymentElement />
-                <button disabled={!stripe} type="submit" variant='filled' mt={20}>Submit</button>
+                <h1  className='font-Jost my-5'>Secure Payment Gateway</h1>
+                <PaymentElement  />
+                <button disabled={!stripe} type="submit" className="btn bg-sky-500 w-full text-lg text-white mt-10">
+                    Place Order
+                </button>
             </form>
         </div>
     )
