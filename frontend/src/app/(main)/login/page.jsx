@@ -4,6 +4,7 @@ import { useFormik } from 'formik';
 import { useRouter } from 'next/navigation';
 import React from 'react';
 import toast from 'react-hot-toast';
+import './login.css'
 
 const Login = () => {
 
@@ -54,19 +55,20 @@ const Login = () => {
   });
   return (
     <div className="flex h-screen flex-1 flex-col justify-center px-6 py-24 lg:px-8 bg-mate_black">
-      <div className='border-solid border-2 border-sky-500 sm:mx-auto sm:w-full sm:max-w-md rounded-lg'>
-        <div className="sm:mx-auto sm:w-full sm:max-w-sm mt-10">
+      <div className=' sm:mx-auto sm:w-full sm:max-w-md rounded-lg animated_card2'>
+        <div className="group">
+        <div className="">
           <img
             className="mx-auto h-20 w-auto text-sky-500 bg-sky-500 rounded-full"
             src="/logo.png"
-            alt="Your Company"
+            alt="OWNYOURCAP"
           />
           <h2 className="mt-2 text-center text-3xl font-bold leading-9 tracking-tight text-sky-500 font-Jost">
             Login to your account
           </h2>
         </div>
 
-        <div className="mt-10 sm:mx-auto sm:w-full sm:max-w-sm bg-mate_black">
+        <div className="mt-10 sm:mx-auto sm:w-full sm:max-w-md ">
           <form className="space-y-6" action="#" method="POST" onSubmit={formik.handleSubmit}>
             <div>
               <label htmlFor="email" className="block text-sm font-medium leading-6 text-white">
@@ -135,6 +137,7 @@ const Login = () => {
               Register for an account
             </a>
           </p>
+        </div>
         </div>
       </div>
     </div>
