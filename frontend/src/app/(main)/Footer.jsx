@@ -19,41 +19,41 @@ const BannerImg = {
 const FooterLinks = [
   {
     title: "Home",
-    link: "/#",
+    link: "/",
   },
   {
     title: "About",
-    link: "/#about",
+    link: "/about",
   },
   {
     title: "Featured Products",
-    link: "/#contact",
+    link: "/MyShop",
   },
   {
     title: "Contact Us",
-    link: "/#blog",
+    link: "/contact",
   },
 ];
 
 
 const FooterLink = [
-    {
-      title: "Privacy Policy",
-      link: "/#",
-    },
-    {
-      title: "Categories",
-      link: "/#about",
-    },
-    {
-      title: "Gallery",
-      link: "/#contact",
-    },
-    {
-      title: "Testimonials",
-      link: "/#blog",
-    },
-  ];
+  {
+    title: "Privacy Policy",
+    link: "/#",
+  },
+  {
+    title: "Categories",
+    link: "/#about",
+  },
+  {
+    title: "Gallery",
+    link: "/#contact",
+  },
+  {
+    title: "Testimonials",
+    link: "/#blog",
+  },
+];
 
 const Footer = () => {
   return (
@@ -85,7 +85,7 @@ const Footer = () => {
                       className="cursor-pointer hover:text-secondary hover:translate-x-1 duration-300 text-gray-200 dark:text-black "
                       key={link.title}
                     >
-                      <span>{link.title}</span>
+                      <a href={link.link}>  <span>{link.title}</span></a>
                     </li>
                   ))}
                 </ul>
