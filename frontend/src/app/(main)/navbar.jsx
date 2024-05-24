@@ -263,7 +263,7 @@ const Navbar = () => {
           >
             <img
               src="/logo.png"
-              className="mr-3 h-14 dark:text-primary"
+              className="mr-3 h-14 dark:bg-black  rounded-full bg-black"
               alt=" Logo"
             />
             <span className="self-center text-3xl font-semibold font-Jost white-nowrap text-white dark:text-black">
@@ -287,7 +287,7 @@ const Navbar = () => {
             {/* order button */}
             <a
               href="/viewCart"
-              className="bg-gradient-to-r from-primary to-perfect_blue transition-all duration-200 text-white  py-1 px-4 rounded-full flex items-center gap-3 group"
+              className="bg-gradient-to-r from-primary to-sky-500 transition-all duration-200 text-white  py-1 px-4 rounded-full flex items-center gap-3 group"
             >
               <span className="group-hover:block hidden transition-all duration-200">
                 Order
