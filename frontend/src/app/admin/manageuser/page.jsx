@@ -8,7 +8,7 @@ const ManageUser = () => {
   const [userList, setUserList] = useState([]);
 
   const fetchUserList = async () => {
-    const res = await fetch("http://localhost:5000/signup/getall");
+    const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/signup/getall`);
     console.log(res.status);
     const data = await res.json();
     console.log(data);
@@ -22,7 +22,7 @@ const ManageUser = () => {
   const deleteUser = async (id) => {
     console.log(id);
 
-    const res = await fetch("http://localhost:5000/signup/delete/" + id, {
+    const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/signup/delete/` + id, {
       method: "DELETE",
     });
     console.log(res.status);

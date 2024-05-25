@@ -69,7 +69,7 @@ const thankYou = () => {
 
     const fetchPaymentHistory = async () => {
         setLoading(true);
-        const response = await fetch("http://localhost:5000/order/getbyuser", {
+        const response = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/order/getbyuser`, {
             headers: {
                 'x-auth-token': (JSON.parse(sessionStorage.getItem('user')))
             }

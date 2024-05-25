@@ -34,7 +34,7 @@ const Contact = () => {
 
     onSubmit: (values) => {
       console.log(values);
-      fetch('http://localhost:5000/contactForm/contact', {
+      fetch(`${process.env.NEXT_PUBLIC_API_URL}/contactForm/contact`, {
         method: 'POST',
         body: JSON.stringify(values),
         headers: {

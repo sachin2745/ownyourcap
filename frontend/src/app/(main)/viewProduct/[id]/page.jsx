@@ -14,7 +14,7 @@ const ViewProductDetails = () => {
     const [productList, setProductList] = useState([]);
 
     const getProductData = async () => {
-        const res = await fetch("http://localhost:5000/post/getbyid/" + id);
+        const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/post/getbyid/` + id);
         console.log(res.status);
 
         const data = await res.json();

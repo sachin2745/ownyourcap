@@ -13,7 +13,7 @@ const page = () => {
 
     const fetchPostData = () => {
 
-        fetch('http://localhost:5000/post/getall')
+        fetch(`${process.env.NEXT_PUBLIC_API_URL}/post/getall`)
             .then((response) => {
                 console.log(response.status);
                 return response.json();

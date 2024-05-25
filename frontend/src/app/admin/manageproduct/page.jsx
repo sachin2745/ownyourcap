@@ -7,7 +7,7 @@ const ManageProduct = () => {
   const [productList, setProductList] = useState([]);
 
   const fetchProductList = async () => {
-    const res = await fetch("http://localhost:5000/post/getall");
+    const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/post/getall`);
     console.log(res.status);
     const data = await res.json();
     console.log(data);
@@ -21,7 +21,7 @@ const ManageProduct = () => {
   const deletepodcast = async (id) => {
     console.log(id);
 
-    const res = await fetch("http://localhost:5000/post/delete/" + id, {
+    const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/post/delete/` + id, {
       method: "DELETE",
     });
     console.log(res.status);

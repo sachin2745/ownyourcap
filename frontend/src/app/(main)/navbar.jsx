@@ -6,7 +6,6 @@ import { FaCaretDown } from "react-icons/fa";
 import DarkMode from "./DarkMode";
 import useAppContext from "@/context/AppContext";
 import useProductContext from "@/context/ProductContext";
-// import clsx from "clsx";
 
 const Menu = [
   {

@@ -75,7 +75,7 @@ const updateProduct = () => {
 
         onSubmit: async (values) => {
             values.image = selImage.name;
-            const res = await fetch('http://localhost:5000/post/update/' + id, {
+            const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/post/update/` + id, {
                 method: 'PUT',
                 body: JSON.stringify(values),
                 headers: {
