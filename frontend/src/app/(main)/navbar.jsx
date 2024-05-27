@@ -17,12 +17,12 @@ const Menu = [
   {
     id: 2,
     name: "About Us",
-    link: "/About",
+    link: "#about",
   },
   {
     id: 3,
     name: "Contact Us",
-    link: "/Contact",
+    link: "/contact",
   },
 ];
 
@@ -35,40 +35,40 @@ const DropdownLinks = [
   {
     id: 2,
     name: "Best Selling",
-    link: "/#",
+    link: "/MyShop",
   },
   {
     id: 3,
     name: "Top Rated",
-    link: "/TopProducts",
+    link: "TopProducts",
   },
 ];
 
 const DropdownLink = [
   {
     id: 1,
-    name: "Nike",
-    link: "/#",
+    name: "All",
+    link: "/MyShop",
   },
   {
     id: 2,
-    name: "Adidas",
-    link: "/#",
+    name: "Baseball Caps",
+    link: "/MyShop",
   },
   {
     id: 3,
-    name: "Under Armour",
-    link: "/#",
+    name: "Snapback Caps",
+    link: "/MyShop",
   },
   {
     id: 4,
-    name: "HRX",
-    link: "/#",
+    name: "Dockers Hats",
+    link: "/MyShop",
   },
   {
     id: 5,
-    name: "Seloria",
-    link: "/#",
+    name: "Sports",
+    link: "/MyShop",
   },
 ];
 
