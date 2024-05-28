@@ -10,11 +10,11 @@ import Banner from './Banner'
 import Testimonials from './Testimonial'
 import Aos from 'aos'
 import "aos/dist/aos.css";
-import About from './(main)/about/page'
 import Hero from './Hero'
 import ProductCollection from './ProductCollection'
 import Brands from './Brands'
 import Features from './Features'
+import About from './about'
 
 
 export default function Home() {

@@ -17,7 +17,7 @@ const Menu = [
   {
     id: 2,
     name: "About Us",
-    link: "#about",
+    link: "/about",
   },
   {
     id: 3,
@@ -117,7 +117,7 @@ const Navbar = () => {
           </button>
          
           <div
-            className=" z-10 hs-dropdown-menu transition-[opacity,margin] duration hs-dropdown-open:opacity-100 opacity-0 hidden min-w-60 bg-white shadow-md rounded-lg p-2 mt-2 dark:bg-black dark:border dark:border-neutral-700"
+            className=" z-50 hs-dropdown-menu transition-[opacity,margin] duration hs-dropdown-open:opacity-100 opacity-0 hidden min-w-60 bg-white shadow-md rounded-lg p-2 mt-2 dark:bg-black dark:border dark:border-neutral-700"
             aria-labelledby="hs-dropdown-with-header "
           >
             <div className="py-3 px-5 -m-2 bg-gray-100 rounded-t-lg dark:bg-neutral-700">
@@ -127,7 +127,7 @@ const Navbar = () => {
               </p>
             </div>
             <div className="mt-2 py-2 first:pt-0 last:pb-0 font-Jost">
-              <a
+              {/* <a
                 className="flex items-center  gap-x-3.5 py-2 px-3 rounded-lg text-sm text-gray-800 hover:bg-gray-100 focus:outline-none focus:bg-gray-100 dark:text-neutral-400 dark:hover:bg-neutral-700 dark:hover:text-neutral-300 dark:focus:bg-neutral-700"
                 href="/billing"
               >
@@ -148,7 +148,7 @@ const Navbar = () => {
                     fillRule="evenodd"
                   />       </svg>
                 Billing
-              </a>
+              </a> */}
               <a
                 className="flex items-center gap-x-3.5 py-2 px-3 rounded-lg text-sm text-gray-800 hover:bg-gray-100 focus:outline-none focus:bg-gray-100 dark:text-neutral-400 dark:hover:bg-neutral-700 dark:hover:text-neutral-300 dark:focus:bg-neutral-700"
                 href="/setting"
@@ -204,7 +204,7 @@ const Navbar = () => {
                 </svg>
                 My Account
               </a>
-              <a class="flex items-center gap-x-3.5 py-2 px-3 rounded-lg text-sm text-gray-800 hover:bg-gray-100 focus:outline-none focus:bg-gray-100 dark:text-neutral-400 dark:hover:bg-neutral-700 dark:hover:text-neutral-300 dark:focus:bg-neutral-700" href="#">
+              <a class="flex items-center gap-x-3.5 py-2 px-3 rounded-lg text-sm text-gray-800 hover:bg-gray-100 focus:outline-none focus:bg-gray-100 dark:text-neutral-400 dark:hover:bg-neutral-700 dark:hover:text-neutral-300 dark:focus:bg-neutral-700" >
                 {/* Darkmode Switch */}
                 <h3 className="flex-1 ">DarkMode</h3>
                 <DarkMode className="flex-1 " />
