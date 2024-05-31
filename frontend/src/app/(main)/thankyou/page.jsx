@@ -95,7 +95,7 @@ const thankYou = () => {
                             params.get('redirect_status') === 'succeeded' ?
                                 <>
                                     <div className="flex justify-center  font-manrope font-bold text-6xl leading-10 font-Quicksand text-secondary items-center content-center">
-                                        <GiConfirmed className='text-sky-500 mb-5 ' />
+                                        <GiConfirmed className='text-green-500 mb-5 ' />
                                     </div>
                                     <h2 className="font-manrope font-bold text-4xl leading-10 font-Quicksand text-secondary text-center">
                                         Payment Successful

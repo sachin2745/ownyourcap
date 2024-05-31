@@ -555,11 +555,11 @@ function Checkout() {
                     </div> */}
                     <div className="bg-black border-solid border-2 border-white shadow p-8 rounded-lg">
                         <div className=" items-center mb-4">
-                            <h2 className="text-md"> Pay with your credit card via Stripe.</h2>
+                            <h2 className="text-md text-white"> Pay with your credit card via Stripe.</h2>
                         </div>
 
                         <div className="w-full">
-                            <label htmlFor="payment" className="block text-lg font-bold mb-2">
+                            <label htmlFor="payment" className="block text-lg font-bold mb-2 text-white">
                                 Credit Card
                             </label>
                             {clientSecret && (
