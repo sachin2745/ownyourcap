@@ -149,7 +149,7 @@ const Navbar = () => {
                   />       </svg>
                 Billing
               </a> */}
-              <a
+              {/* <a
                 className="flex items-center gap-x-3.5 py-2 px-3 rounded-lg text-sm text-gray-800 hover:bg-gray-100 focus:outline-none focus:bg-gray-100 dark:text-neutral-400 dark:hover:bg-neutral-700 dark:hover:text-neutral-300 dark:focus:bg-neutral-700"
                 href="/setting"
               >
@@ -171,10 +171,10 @@ const Navbar = () => {
                   />
                 </svg>
                 Settings
-              </a>
+              </a> */}
               <a
                 className="flex items-center gap-x-3.5 py-2 px-3 rounded-lg text-sm text-gray-800 hover:bg-gray-100 focus:outline-none focus:bg-gray-100 dark:text-neutral-400 dark:hover:bg-neutral-700 dark:hover:text-neutral-300 dark:focus:bg-neutral-700"
-                href="/profile"
+                href="/user/profile"
               >
                 <svg
                   className="flex-shrink-0 size-4"
