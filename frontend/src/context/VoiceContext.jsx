@@ -351,8 +351,8 @@ export const VoiceProvider = ({ children }) => {
     useEffect(() => {
         if (!hasRun.current) {
             hasRun.current = true;
-            // SpeechRecognition.startListening({ continuous: true });
-            // voiceResponse('Welcome to Vox Market. What are you shopping today?');
+            SpeechRecognition.startListening({ continuous: true });
+            // voiceResponse('Welcome to Own Your cap. What are you shopping today?');
             // triggerModal('Voice Assistant', 'I am listening');
         }
     }, [])
@@ -376,7 +376,7 @@ export const VoiceProvider = ({ children }) => {
             SpeechRecognition.stopListening();
             triggerModal('Voice Assistant', 'Good Bye! Have a nice day!', false, <IconMicrophoneOff size={50} />);
         }
-        if (finalTranscript.includes('hello box')) {
+        if (finalTranscript.includes('hello shinchan')) {
             resetTranscript();
             voiceResponse('Hello! How can I help you today?');
             SpeechRecognition.startListening({ continuous: true });
@@ -389,7 +389,7 @@ export const VoiceProvider = ({ children }) => {
         if (finalTranscript.includes('scroll up')) {
             window.scrollBy(0, -window.innerHeight / 2);
             // trigger info modal here
-            // setShowModal(true);
+            setShowModal(true);
             triggerModal('Scrolling Up');
             resetTranscript();
             triggerModal('Scrolling Up', '', true, <IconArrowUp size={50} />);
@@ -397,7 +397,7 @@ export const VoiceProvider = ({ children }) => {
 
         if (finalTranscript.includes('scroll down')) {
             window.scrollBy(0, window.innerHeight / 2);
-            // setShowModal(true);
+            setShowModal(true);
             triggerModal('Scrolling Down');
             resetTranscript();
             triggerModal('Scrolling Down', '', true, <IconArrowDown size={50} />);
