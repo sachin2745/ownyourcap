@@ -3,13 +3,66 @@ import React, { useEffect, useState } from 'react'
 import Navbar from '../navbar';
 import Footer from '../Footer';
 import useProductContext from '@/context/ProductContext';
+import useVoiceContext from '@/context/VoiceContext';
+import { IconShoppingCart } from '@tabler/icons-react';
+import { useRouter } from 'next/navigation';
 
 
 const page = () => {
 
     const { addItemToCart, isInCart } = useProductContext();
-
+    const router = useRouter();
     const [postArray, setPostArray] = useState([]);
+
+    const {
+        transcript,
+        resetTranscript,
+        interpretVoiceCommand,
+        fillInputUsingVoice,
+        performActionUsingVoice,
+        finalTranscript,
+        voiceResponse,
+        voices,
+        triggerModal,
+        checkExistenceInTranscript
+    } = useVoiceContext();
+
+    useEffect(() => {
+        if (finalTranscript.includes('show me some ')) {
+            const post = pluralize.singular(finalTranscript.split(' ').at(-1));
+            // console.log((product), product);
+            searchProduct(post);
+            resetTranscript();
+            voiceResponse(`Here are some ${post}s for you`);
+            triggerModal(
+                `Here are some ${post} for you`,
+                'Please ask or select the product you want to buy',
+                true,
+                <IconShoppingCart size={50} />
+            );
+        }
+        else if (finalTranscript.includes('search product') || finalTranscript.includes('browse product')) {
+            const post = pluralize.singular(finalTranscript.split(' ').slice(2).join(' '));
+            // console.log((product), product);
+            searchProduct(post);
+            resetTranscript();
+            voiceResponse(`Here is your ${post}`);
+            triggerModal(
+                `Here is your ${post}`,
+                'Please ask or select the product you want to buy',
+                true,
+                <IconShoppingCart size={50} />
+            );
+        }
+        else if (finalTranscript.includes('View Product number '.toLowerCase()) || finalTranscript.includes('Open Product number '.toLowerCase())) {
+            console.log(finalTranscript);
+            const post = parseInt(finalTranscript.split(' ').at(-1));
+            // console.log((product), product);
+            resetTranscript();
+            router.push(`/viewProduct/${postArray[post - 1]._id}`);
+        }
+    }, [finalTranscript])
+
 
     const fetchPostData = () => {
 
@@ -45,7 +98,7 @@ const page = () => {
                 </div>
                 <div className="grid grid-cols-4  gap-4">
                     {
-                        postArray.map((post) => {
+                        postArray.map((post, index) => {
                             return (
                                 <div>
                                     <div className=" ml-6 mx-auto my-7 mt-6 w-80 h-auto  bg-white text-slate-600 border border-secondary dark:bg-black dark:text-white dark:border-black   p-4 gap-4 rounded-lg shadow-md">
@@ -58,6 +111,9 @@ const page = () => {
                                                     className="object-cover object-center w-full h-full block"
                                                     src={"http://localhost:5000/" + post.image}
                                                 />
+                                                <span className="absolute top-0 left-0 m-2 rounded-full bg-black px-2 text-center text-sm font-medium text-white">
+                                                    Product No. {index + 1}
+                                                </span>
                                             </a>
                                             <div className="mt-4 font-Jost w-72 ">
                                                 <h2 className="text-gray-900 dark:text-white title-font text-lg font-medium">
@@ -66,8 +122,8 @@ const page = () => {
                                                 <h3 className="text-gray-500 dark:text-white text-[13px] text-wrap tracking-widest title-font mb-1">
                                                     {post.category}
                                                 </h3>
-                                                    <p className="mt-3 ">₹{post.price}/-</p>
-                                               
+                                                <p className="mt-3 ">₹{post.price}/-</p>
+
                                             </div>
                                             <button
                                                 disabled={isInCart(post)}
