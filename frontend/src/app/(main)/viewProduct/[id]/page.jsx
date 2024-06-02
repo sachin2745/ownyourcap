@@ -14,7 +14,6 @@ const ViewProductDetails = () => {
     const { id } = useParams();
     const { addItemToCart, isInCart } = useProductContext();
     const [productList, setProductList] = useState([]);
-
     const {
         transcript,
         resetTranscript,

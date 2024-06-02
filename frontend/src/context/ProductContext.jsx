@@ -1,9 +1,12 @@
+"use client";
 import { createContext, useContext, useEffect, useState } from "react";
 
 const ProductContext = createContext();
 
 export const ProductProvider = ({children}) => {
     
+    const [cartOpen, setCartOpen] = useState(false);
+
     const cartItemsinSession = JSON.parse(localStorage.getItem('cartItems'));
 
     const [cartItems, setCartItems] = useState(cartItemsinSession? cartItemsinSession : []);
@@ -91,6 +94,8 @@ export const ProductProvider = ({children}) => {
     
     return (
         <ProductContext.Provider value={{
+            cartOpen,
+            setCartOpen,
             cartItems,
             addItemToCart,
             removeItemFromCart,

@@ -107,6 +107,7 @@ const pageDetails = [
         pageName: 'uploadProduct',
         pagePath: '/admin/uploadProducts'
     },
+   
     {
         pageName: 'profile',
         pagePath: '/user/profile'
@@ -201,6 +202,13 @@ export const VoiceProvider = ({ children }) => {
                 voicePageNavigator('checkout')
             }
         },
+        {
+            command: 'open cart page',
+            callback: (pageName) => {
+              console.log('Opening page: ', pageName);
+              voicePageNavigator('MyCart')
+            }
+          },
 
         {
             command: 'open contact page',

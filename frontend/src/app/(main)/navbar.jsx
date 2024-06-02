@@ -1,11 +1,13 @@
 'use client';
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { IoIosLogOut, IoMdSearch } from "react-icons/io";
 import { FaAngleDown, FaCartShopping } from "react-icons/fa6";
 import { FaCaretDown } from "react-icons/fa";
 import DarkMode from "./DarkMode";
 import useAppContext from "@/context/AppContext";
 import useProductContext from "@/context/ProductContext";
+import useVoiceContext from "@/context/VoiceContext";
+import CartPage from "../CartPage";
 
 const Menu = [
   {
@@ -249,8 +251,26 @@ const Navbar = () => {
       </a>    
     }
   }
+  const { cartItems, cartOpen, setCartOpen } = useProductContext();
+  const {finalTranscript, voiceResponse, resetTranscript} = useVoiceContext();
+  useEffect(() => {
+    if (finalTranscript.includes('open card') || finalTranscript.includes('open card')) {
+      voiceResponse('Opening cart page.');
+      setCartOpen(true);
+      resetTranscript(); 
+    }
+    else if (finalTranscript.includes('close cart') || finalTranscript.includes('close card')) {
+      voiceResponse('Closing cart page');
+      setCartOpen(false);
+      resetTranscript();
+    }
+    
+  }, [finalTranscript])
 
   return (
+    <>
+    {cartOpen && <CartPage />}
+
     <div className="shadow-md bg-white dark:bg-primary dark:text-black duration-200 relative z-40">
       {/* upper Navbar */}
       <div className="bg-mate_black dark:bg-primary py-2">
@@ -366,6 +386,7 @@ const Navbar = () => {
         </ul>
       </div>
     </div>
+    </>
   );
 };
 
