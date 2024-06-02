@@ -111,7 +111,7 @@ const page = () => {
                                                     className="object-cover object-center w-full h-full block"
                                                     src={"http://localhost:5000/" + post.image}
                                                 />
-                                                <span className="absolute top-0 left-0 m-2 rounded-full bg-black px-2 text-center text-sm font-medium text-white">
+                                                <span className="absolute top-0 left-0 m-2 rounded-md bg-black px-2 text-center text-sm font-medium text-white">
                                                     Product No. {index + 1}
                                                 </span>
                                             </a>
