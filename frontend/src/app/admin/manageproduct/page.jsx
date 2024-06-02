@@ -37,44 +37,44 @@ const ManageProduct = () => {
 
     return <table className='table shadow  rounded '>
       <thead>
-        <tr className="font-Jost text-lg bg-black text-secondary">
-          <th >Image</th>
-          <th>Name</th>
-          <th>Category</th>
-          <th>Short Description</th>
-          <th>Long Description</th>
-          <th>Price</th>
-          <th>Shipping Price</th>
-          <th>Color</th>
-          <th>Style</th>
-          <th>Size</th>
-          <th>Fabric</th>
+        <tr className="font-Jost text-lg bg-black text-primary">
+          <th className='border-2 border-solid border-sky-400'>Image</th>
+          <th className='border-2 border-solid border-sky-400'>Name</th>
+          <th className='border-2 border-solid border-sky-400'>Category</th>
+          <th className='border-2 border-solid border-sky-400'>Short Description</th>
+          <th className='border-2 border-solid border-sky-400'>Long Description</th>
+          <th className='border-2 border-solid border-sky-400'>Price</th>
+          <th className='border-2 border-solid border-sky-400'>Shipping Price</th>
+          <th className='border-2 border-solid border-sky-400'>Color</th>
+          <th className='border-2 border-solid border-sky-400'>Style</th>
+          <th className='border-2 border-solid border-sky-400'>Size</th>
+          <th className='border-2 border-solid border-sky-400'>Fabric</th>
 
 
-          <th colSpan={2}>Actions</th>
+          <th colSpan={2} className='border-2 border-solid border-red-400 text-red-400'>Actions</th>
         </tr>
       </thead>
       <tbody>
         {
           productList.map((product) => {
             return <tr className="font-Quicksand">
-              <td><img src={"http://localhost:5000/" + product.image} alt="" className="h-full w-full" /></td>
-              <td>{product.name}</td>
-              <td>{product.category}</td>
-              <td>{product.shortdescription}</td>
-              <td>{product.longdescription}</td>
-              <td>{product.price}</td>
-              <td>{product.shippingprice}</td>
-              <td>{product.color}</td>
-              <td>{product.style}</td>
-              <td>{product.size}</td>
-              <td>{product.fabric}</td>
+              <td className='border-2 border-solid border-sky-400'><img src={"http://localhost:5000/" + product.image} alt="" className="h-full w-full" /></td>
+              <td className='border-2 border-solid border-sky-400'>{product.name}</td>
+              <td className='border-2 border-solid border-sky-400'>{product.category}</td>
+              <td className='border-2 border-solid border-sky-400' >{product.shortdescription}</td>
+              <td className='border-2 border-solid border-sky-400'>{product.longdescription}</td>
+              <td className='border-2 border-solid border-sky-400'>{product.price}</td>
+              <td className='border-2 border-solid border-sky-400'>{product.shippingprice}</td>
+              <td className='border-2 border-solid border-sky-400'>{product.color}</td>
+              <td className='border-2 border-solid border-sky-400'>{product.style}</td>
+              <td className='border-2 border-solid border-sky-400'>{product.size}</td>
+              <td className='border-2 border-solid border-sky-400'>{product.fabric}</td>
 
 
-              <td>
+              <td className='border-2 border-solid border-red-400'>
                 <a href={"/admin/updateProduct/" + product._id} className='btn btn-primary'>Edit</a>
               </td>
-              <td>
+              <td className='border-2 border-solid border-red-400'>
                 <button className='btn btn-error font-Jost' onClick={e => deletepodcast(product._id)} >Delete</button>
               </td>
             </tr>
@@ -89,7 +89,7 @@ const ManageProduct = () => {
       <div className="antialiased bg-mate_black h-screen">
         <main className=" h-auto pt-20 ">
           <div className='container'>
-            <h1 className="text-center  my-4 text-2xl font-bold font-Sedan text-cyan-300 " >Manage Product</h1>
+            <h1 className="text-center  my-4 text-2xl font-bold font-Sedan text-white " >Manage Product</h1>
             {displayPodcastData()}
           </div>
         </main>

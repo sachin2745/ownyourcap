@@ -98,9 +98,9 @@ const AdminNavbar = () => {
                   <div className="flex flex-col ">
                     <a
                       className="flex items-center gap-x-3.5 py-2 px-3 rounded-lg text-sm text-white hover:bg-gray-600 focus:ring-2 focus:ring-blue-500 dark:text-neutral-400 dark:hover:bg-neutral-700 dark:hover:text-neutral-300"
-                      href="/admin/dashboard"
+                      href="/admin/manageorder"
                     >
-                      DashBoard
+                      Manage order
                     </a>
 
                   </div>
@@ -126,7 +126,7 @@ const AdminNavbar = () => {
                     >
                       Users
                     </a>
-
+                    
                   </div>
                 </div>
               </div>

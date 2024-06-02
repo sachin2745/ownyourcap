@@ -38,30 +38,28 @@ const ManageUser = () => {
 
     return <table className='table shadow  rounded '>
       <thead>
-        <tr className="font-Jost text-lg bg-black text-secondary">
-          <th>Avatar</th>
-          <th>Name</th>
-          <th>Email</th>
-          <th>Password</th>
-          <th>Created At</th>
+        <tr className="font-Jost text-lg bg-black text-primary">
+          <th className='border-2 border-solid border-sky-400'>Avatar</th>
+          <th className='border-2 border-solid border-sky-400'>Name</th>
+          <th className='border-2 border-solid border-sky-400'>Email</th>
+          <th className='border-2 border-solid border-sky-400'>Password</th>
+          <th className='border-2 border-solid border-sky-400'>Created At</th>
 
-          <th colSpan={2}>Actions</th>
+          <th colSpan={2} className='border-2 border-solid border-red-400 text-red-400'>Actions</th>
         </tr>
       </thead>
       <tbody>
         {
           userList.map((user) => {
             return <tr className='font-Jost' >
-              <td><img src={"http://localhost:5000/" + user.avatar} alt="" style={{ height: 40 }} /></td>
-              <td>{user.firstName} {user.lastName} </td>
-              <td>{user.email}</td>
-              <td>{user.password}</td>
-              <td>{user.createdAt}</td>
+              <td className='border-2 border-solid border-white'><img src={"http://localhost:5000/" + user.avatar} alt="" style={{ height: 40 }} /></td>
+              <td className='border-2 border-solid border-white'>{user.firstName} {user.lastName} </td>
+              <td className='border-2 border-solid border-white'>{user.email}</td>
+              <td className='border-2 border-solid border-white'>{user.password}</td>
+              <td className='border-2 border-solid border-white'>{user.createdAt}</td>
 
-              <td>
-                {/* <a href={`/admin/update/${pod._id}`} className='btn btn-primary'>Edit</a> */}
-              </td>
-              <td>
+              
+              <td className='border-2 border-solid border-red-400'>
                 <button className='btn btn-error' onClick={e => deleteUser(user._id)} >Delete</button>
               </td>
             </tr>
@@ -76,7 +74,7 @@ const ManageUser = () => {
       <div className="antialiased bg-mate_black h-screen ">
         <main className=" h-auto pt-20">
           <div className='container'>
-            <h1 className='text-center my-4 text-2xl font-bold font-Sedan text-cyan-300' >Manage User</h1>
+            <h1 className='text-center my-4 text-3xl font-bold font-Sedan text-white' >Manage User</h1>
             {displayUserData()}
           </div>
         </main>
