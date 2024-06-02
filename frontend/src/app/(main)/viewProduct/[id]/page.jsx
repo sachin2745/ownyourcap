@@ -5,6 +5,8 @@ import { useParams } from 'next/navigation';
 import React, { useEffect, useState } from 'react'
 import Navbar from '../../navbar';
 import Footer from '../../Footer';
+import useVoiceContext from '@/context/VoiceContext';
+import { IconShoppingCartCopy } from '@tabler/icons-react';
 
 
 const ViewProductDetails = () => {
@@ -12,6 +14,35 @@ const ViewProductDetails = () => {
     const { id } = useParams();
     const { addItemToCart, isInCart } = useProductContext();
     const [productList, setProductList] = useState([]);
+
+    const {
+        transcript,
+        resetTranscript,
+        interpretVoiceCommand,
+        fillInputUsingVoice,
+        performActionUsingVoice,
+        finalTranscript,
+        voiceResponse,
+        voices,
+        triggerModal,
+        checkExistenceInTranscript,
+    } = useVoiceContext();
+
+    useEffect(() => {
+        if (
+            finalTranscript.includes("add to cart") ||
+            finalTranscript.includes("add to card")
+        ) {
+            voiceResponse(`${productList.name} added to cart`);
+            addItemToCart(productList);
+            triggerModal(
+                "Product added to cart",
+                `${productList.name} added to cart`,
+                true,
+                <IconShoppingCartCopy size={50} />
+            );
+        }
+    }, [finalTranscript]);
 
     const getProductData = async () => {
         const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/post/getbyid/` + id);
@@ -83,7 +114,7 @@ const ViewProductDetails = () => {
                                                 <td className='' >{productList.style}</td>
                                             </tr>
                                             <tr>
-                                                <td className='font-semibold'>Net Quantity</td>                                                
+                                                <td className='font-semibold'>Net Quantity</td>
                                                 <td className='' >1</td>
                                             </tr>
                                         </tbody>

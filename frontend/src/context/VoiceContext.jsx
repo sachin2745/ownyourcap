@@ -88,6 +88,10 @@ const pageDetails = [
         pagePath: '/productView'
     },
     {
+        pageName: 'viewCart',
+        pagePath: '/viewCart'
+    },
+    {
         pageName: 'manageProduct',
         pagePath: '/admin/manageProduct'
     },
@@ -166,7 +170,7 @@ export const VoiceProvider = ({ children }) => {
             command: 'I want to buy something',
             callback: (pageName) => {
                 console.log('Opening page: ', pageName);
-                voicePageNavigator('productView')
+                voicePageNavigator('MyShop')
             }
         },
         {
@@ -210,6 +214,13 @@ export const VoiceProvider = ({ children }) => {
             callback: (pageName) => {
                 console.log('Opening page: ', pageName);
                 voicePageNavigator('resetPassword')
+            }
+        },
+        {
+            command: 'open product view page',            
+            callback: (pageName) => {
+                console.log('Opening page: ', pageName);
+                voicePageNavigator('viewCart')
             }
         },
         {
