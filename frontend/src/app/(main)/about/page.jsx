@@ -46,6 +46,301 @@ const About = () => {
         </div>
 
       </section>
+      {/* our story */}
+      <section>
+        <div className="bg-mate_black py-6 sm:py-8 lg:py-12">
+          <div className="mx-auto max-w-screen-xl px-4 md:px-8">
+            <div className="grid gap-8 md:grid-cols-2 lg:gap-12">
+              <div>
+                <div className="h-auto overflow-hidden rounded-lg bg-gray-100 shadow-lg md:h-96">
+                  <img
+                    src="https://images.unsplash.com/photo-1610465299996-30f240ac2b1c?auto=format&q=75&fit=crop&w=600&h=750"
+                    loading="lazy"
+                    alt="Photo by Martin Sanchez"
+                    className="h-full w-full object-cover object-center"
+                  />
+                </div>
+              </div>
+              <div className="md:pt-16">
+
+                <h1 className="mb-4 text-center text-2xl font-bold font-Quicksand text-primary sm:text-4xl md:mb-6 md:text-left">
+                  Our Story
+                </h1>
+                <p className="mb-6 text-white sm:text-lg md:mb-8 font-Jost">
+                  Founded in 2024, Own Your Cap was born out of a passion for headwear and a desire to bring high-quality,
+                  personalized caps to people everywhere. What started as a small venture has grown into a thriving community
+                  of cap enthusiasts who share our love for craftsmanship, creativity, and style.
+                </p>
+
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </section>
+      {/* our mission */}
+      <section>
+        <div className="bg-mate_black py-6 sm:py-8 lg:py-12">
+          <div className="mx-auto max-w-screen-xl px-4 md:px-8">
+            <div className="grid gap-8 md:grid-cols-2 lg:gap-12">
+
+              <div className="md:pt-16">
+
+                <h1 className="mb-4 text-center text-2xl font-extrabold font-Quicksand text-primary sm:text-4xl md:mb-6 md:text-left">
+                  Our Mission
+                </h1>
+                <p className="mb-6 text-white sm:text-lg md:mb-8 font-Jost">
+                  Our mission is simple: to provide you with the best caps that reflect your individuality and taste.
+                  We are dedicated to offering a wide range of designs,
+                  materials, and customization options to ensure that your cap is truly your own.
+                </p>
+
+              </div>
+              <div>
+                <div className="h-auto overflow-hidden rounded-lg bg-gray-100 shadow-lg md:h-96">
+                  <img
+                    src="https://images.unsplash.com/photo-1610465299996-30f240ac2b1c?auto=format&q=75&fit=crop&w=600&h=750"
+                    loading="lazy"
+                    alt="Photo by Martin Sanchez"
+                    className="h-full w-full object-cover object-center"
+                  />
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* why choose us */}
+      <section>
+        <div className="bg-mate_black py-6 sm:py-8 lg:py-12">
+          <div className="mx-auto max-w-screen-2xl px-4 md:px-8">
+            {/* text - start */}
+            <div className="mb-10 md:mb-16">
+              <h2 className="mb-4 text-center text-2xl font-extrabold text-primary md:mb-6 lg:text-4xl font-Quicksand">
+                Why Choose Us?
+              </h2>
+
+            </div>
+            {/* text - end */}
+            <div className="grid gap-4 sm:grid-cols-2 md:gap-6 lg:grid-cols-3 xl:grid-cols-4 xl:gap-8">
+              {/* article - start */}
+              <div className="flex flex-col overflow-hidden rounded-lg border bg-mate_black">
+                <a
+                  href="#"
+                  className="group relative block h-48 overflow-hidden bg-gray-100 md:h-64"
+                >
+                  <img
+                    src="https://images.unsplash.com/photo-1593508512255-86ab42a8e620?auto=format&q=75&fit=crop&w=600"
+                    loading="lazy"
+                    alt="Photo by Minh Pham"
+                    className="absolute inset-0 h-full w-full object-cover object-center transition duration-200 group-hover:scale-110"
+                  />
+                </a>
+                <div className="flex flex-1 flex-col p-4 sm:p-6">
+                  <h2 className="mb-2 text-lg font-semibold text-primary font-Quicksand">
+                    <a
+                      href="#"
+                      className="transition duration-100 hover:text-sky-500 active:text-sky-600"
+                    >
+                      Quality Craftsmanship
+                    </a>
+                  </h2>
+                  <p className="mb-8 text-white font-Jost">
+                    Each cap is meticulously crafted using premium materials to ensure durability and comfort.
+                  </p>
+
+                </div>
+              </div>
+              {/* article - end */}
+              {/* article - start */}
+              <div className="flex flex-col overflow-hidden rounded-lg border bg-mate_black">
+                <a
+                  href="#"
+                  className="group relative block h-48 overflow-hidden bg-gray-100 md:h-64"
+                >
+                  <img
+                    src="https://images.unsplash.com/photo-1550745165-9bc0b252726f?auto=format&q=75&fit=crop&w=600"
+                    loading="lazy"
+                    alt="Photo by Lorenzo Herrera"
+                    className="absolute inset-0 h-full w-full object-cover object-center transition duration-200 group-hover:scale-110"
+                  />
+                </a>
+                <div className="flex flex-1 flex-col p-4 sm:p-6">
+                  <h2 className="mb-2 text-lg font-semibold text-primary font-Quicksand">
+                    <a
+                      href="#"
+                      className="transition duration-100 hover:text-sky-500 active:text-sky-600"
+                    >
+                      Unique Designs
+                    </a>
+                  </h2>
+                  <p className="mb-8 text-white font-Jost">
+                    From classic styles to the latest trends, our collection features a diverse array of designs to suit any preference.
+                  </p>
+
+                </div>
+              </div>
+              {/* article - end */}
+              {/* article - start */}
+              <div className="flex flex-col overflow-hidden rounded-lg border bg-mate_black">
+                <a
+                  href="#"
+                  className="group relative block h-48 overflow-hidden bg-gray-100 md:h-64"
+                >
+                  <img
+                    src="https://images.unsplash.com/photo-1542759564-7ccbb6ac450a?auto=format&q=75&fit=crop&w=600"
+                    loading="lazy"
+                    alt="Photo by Magicle"
+                    className="absolute inset-0 h-full w-full object-cover object-center transition duration-200 group-hover:scale-110"
+                  />
+                </a>
+                <div className="flex flex-1 flex-col p-4 sm:p-6">
+                  <h2 className="mb-2 text-lg font-semibold text-primary font-Quicksand">
+                    <a
+                      href="#"
+                      className="transition duration-100 hover:text-sky-500 active:text-sky-600"
+                    >
+                      Customization Options
+                    </a>
+                  </h2>
+                  <p className="mb-8 text-white font-Jost">
+                    Personalize your cap with our easy-to-use customization tools. Add your name, a special date, or a unique design to make it one-of-a-kind.
+                  </p>
+
+                </div>
+              </div>
+              {/* article - end */}
+              {/* article - start */}
+              <div className="flex flex-col overflow-hidden rounded-lg border bg-mate_black">
+                <a
+                  href="#"
+                  className="group relative block h-48 overflow-hidden bg-gray-100 md:h-64"
+                >
+                  <img
+                    src="https://images.unsplash.com/photo-1610465299996-30f240ac2b1c?auto=format&q=75&fit=crop&w=600"
+                    loading="lazy"
+                    alt="Photo by Martin Sanchez"
+                    className="absolute inset-0 h-full w-full object-cover object-center transition duration-200 group-hover:scale-110"
+                  />
+                </a>
+                <div className="flex flex-1 flex-col p-4 sm:p-6">
+                  <h2 className="mb-2 text-lg font-semibold text-primary font-Quicksand">
+                    <a
+                      href="#"
+                      className="transition duration-100 hover:text-sky-500 active:text-sky-600"
+                    >
+                      Customer Satisfaction
+                    </a>
+                  </h2>
+                  <p className="mb-8 text-white font-Jost">
+                    Your satisfaction is our top priority. Our friendly and responsive customer service team is here to assist you with any questions or concerns.
+                  </p>
+
+                </div>
+              </div>
+              {/* article - end */}
+            </div>
+          </div>
+        </div>
+
+      </section>
+
+      {/* our collection */}
+      <section>
+        <div className="bg-mate_black py-6 sm:py-8 lg:py-12">
+          <div className="mx-auto max-w-screen-2xl px-4 md:px-8">
+            {/* text - start */}
+            <div className=" md:mb-6">
+              <h2 className="mb-4 text-center text-2xl font-extrabold text-primary md:mb-6 lg:text-4xl font-Quicksand">
+                Our Collection
+              </h2>
+              <p class="mx-auto max-w-screen-md text-center text-white md:text-2xl font-Quicksand">
+                Explore our extensive collection of caps, including:
+              </p>
+            </div>
+            <div className="bg-mate_black py-6 sm:py-8 lg:py-12">
+              <div className="mx-auto max-w-screen-2xl px-4 md:px-8">
+                
+                <div className="mb-4 grid grid-cols-2 gap-4 sm:grid-cols-3 md:mb-8 md:grid-cols-4 md:gap-6 xl:gap-8">
+                  {/* image - start */}
+                  <a
+                    href="#"
+                    className="group relative flex h-48 items-end overflow-hidden rounded-lg bg-gray-100 shadow-lg md:h-80"
+                  >
+                    <img
+                      src="capcarosel.jpg"
+                      loading="lazy"
+                      alt="Photo by Minh Pham"
+                      className="absolute inset-0 h-full w-full object-cover object-center transition duration-200 group-hover:scale-110"
+                    />
+                    <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-gray-800 via-transparent to-transparent opacity-50" />
+                    <span className="relative ml-4 mb-3 inline-block text-sm text-white md:ml-5 md:text-lg">
+                    The perfect blend of style and comfort.
+                    </span>
+                  </a>
+                  {/* image - end */}
+                  {/* image - start */}
+                  <a
+                    href="#"
+                    className="group relative flex h-48 items-end overflow-hidden rounded-lg bg-gray-100 shadow-lg md:h-80"
+                  >
+                    <img
+                      src="capcollection.jpg"
+                      loading="lazy"
+                      alt="Photo by Magicle"
+                      className="absolute inset-0 h-full w-full object-cover object-center transition duration-200 group-hover:scale-110"
+                    />
+                    <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-gray-800 via-transparent to-transparent opacity-50" />
+                    <span className="relative ml-4 mb-3 inline-block text-sm text-white md:ml-5 md:text-lg">
+                    Casual and trendy, ideal for everyday wear.
+                    </span>
+                  </a>
+                  {/* image - end */}
+                  {/* image - start */}
+                  <a
+                    href="#"
+                    className="group relative flex h-48 items-end overflow-hidden rounded-lg bg-gray-100 shadow-lg md:h-80"
+                  >
+                    <img
+                      src="capcollection2.jpg"
+                      loading="lazy"
+                      alt="Photo by Martin Sanchez"
+                      className="absolute inset-0 h-full w-full object-cover object-center transition duration-200 group-hover:scale-110"
+                    />
+                    <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-gray-800 via-transparent to-transparent opacity-50" />
+                    <span className="relative ml-4 mb-3 inline-block text-sm text-white md:ml-5 md:text-lg">
+                    Keep warm with our cozy and stylish beanies.
+                    </span>
+                  </a>
+                  {/* image - end */}
+                  {/* image - start */}
+                  <a
+                    href="#"
+                    className="group relative flex h-48 items-end overflow-hidden rounded-lg bg-gray-100 shadow-lg md:h-80"
+                  >
+                    <img
+                      src="capcollection4.jpg"
+                      loading="lazy"
+                      alt="Photo by Lorenzo Herrera"
+                      className="absolute inset-0 h-full w-full object-cover object-center transition duration-200 group-hover:scale-110"
+                    />
+                    <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-gray-800 via-transparent to-transparent opacity-50" />
+                    <span className="relative ml-4 mb-3 inline-block text-sm text-white md:ml-5 md:text-lg">
+                    Design your own cap to match your unique style.
+                    </span>
+                  </a>
+                  {/* image - end */}
+                </div>
+                
+              </div>
+            </div>
+
+
+          </div>
+        </div>
+
+      </section>
 
       <Footer />
     </>
