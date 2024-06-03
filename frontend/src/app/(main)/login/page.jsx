@@ -5,6 +5,7 @@ import { useRouter } from 'next/navigation';
 import React from 'react';
 import toast from 'react-hot-toast';
 import './login.css'
+import Link from 'next/link';
 
 const Login = () => {
 
@@ -133,9 +134,9 @@ const Login = () => {
 
           <p className="mt-10 mb-5 text-center text-sm text-gray-500">
             Not a member?{' '}
-            <a href="/signup" className="font-semibold font-Jost leading-6 text-sky-500 hover:text-sky-500">
+            <Link href="/signup" className="font-semibold font-Jost leading-6 text-sky-500 hover:text-sky-500">
               Register for an account
-            </a>
+            </Link>
           </p>
         </div>
         </div>

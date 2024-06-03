@@ -6,6 +6,7 @@ import useProductContext from '@/context/ProductContext';
 import useVoiceContext from '@/context/VoiceContext';
 import { IconShoppingCart } from '@tabler/icons-react';
 import { useRouter } from 'next/navigation';
+import Link from 'next/link';
 
 
 const page = () => {
@@ -104,7 +105,7 @@ const page = () => {
                                     <div className=" ml-6 mx-auto my-7 mt-6 w-80 h-auto  bg-white text-slate-600 border border-secondary dark:bg-black dark:text-white dark:border-black   p-4 gap-4 rounded-lg shadow-md">
 
                                         <div className="lg:w-72 md:w-1/4  w-full">
-                                            <a href={"/viewProduct/" + post._id}
+                                            <Link href={"/viewProduct/" + post._id}
                                                 className="block relative h-48 rounded overflow-hidden">
                                                 <img
                                                     alt="ecommerce"
@@ -114,7 +115,7 @@ const page = () => {
                                                 <span className="absolute top-0 left-0 m-2 rounded-md bg-black px-2 text-center text-sm font-medium text-white">
                                                     Product No. {index + 1}
                                                 </span>
-                                            </a>
+                                            </Link>
                                             <div className="mt-4 font-Jost w-72 ">
                                                 <h2 className="text-gray-900 dark:text-white title-font text-lg font-medium">
                                                     {post.name}

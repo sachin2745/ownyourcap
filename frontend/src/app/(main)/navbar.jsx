@@ -8,6 +8,7 @@ import useAppContext from "@/context/AppContext";
 import useProductContext from "@/context/ProductContext";
 import useVoiceContext from "@/context/VoiceContext";
 import CartPage from "../CartPage";
+import Link from "next/link";
 
 const Menu = [
   {
@@ -174,7 +175,7 @@ const Navbar = () => {
                 </svg>
                 Settings
               </a> */}
-              <a
+              <Link
                 className="flex items-center gap-x-3.5 py-2 px-3 rounded-lg text-sm text-gray-800 hover:bg-gray-100 focus:outline-none focus:bg-gray-100 dark:text-neutral-400 dark:hover:bg-neutral-700 dark:hover:text-neutral-300 dark:focus:bg-neutral-700"
                 href="/user/profile"
               >
@@ -205,7 +206,7 @@ const Navbar = () => {
                   <circle cx="12" cy="7" fill="#fff" r="5" />
                 </svg>
                 My Account
-              </a>
+              </Link>
               <a class="flex items-center gap-x-3.5 py-2 px-3 rounded-lg text-sm text-gray-800 hover:bg-gray-100 focus:outline-none focus:bg-gray-100 dark:text-neutral-400 dark:hover:bg-neutral-700 dark:hover:text-neutral-300 dark:focus:bg-neutral-700" >
                 {/* Darkmode Switch */}
                 <h3 className="flex-1 ">DarkMode</h3>
@@ -239,7 +240,7 @@ const Navbar = () => {
         </div>
       </>
     } else {
-      return <a href="/login"
+      return <Link href="/login"
        className="font-Jost overflow-hidden relative w-20 p-2 h-10 bg-gradient-to-r from-primary to-perfect_blue text-white border-none rounded-md text-xl font-bold cursor-pointer  z-10 group">
         Login
         <span className="absolute w-20 h-28 -top-8 -left-2 bg-white rotate-12 transform scale-x-0 group-hover:scale-x-100 transition-transform group-hover:duration-500 duration-1000 origin-left" />
@@ -248,7 +249,7 @@ const Navbar = () => {
         <span className="group-hover:opacity-100 group-hover:duration-1000   duration-100 opacity-0 absolute  top-1.0 left-3 z-10 ">
           Login
         </span>
-      </a>    
+      </Link>    
     }
   }
   const { cartItems, cartOpen, setCartOpen } = useProductContext();
@@ -276,7 +277,7 @@ const Navbar = () => {
       <div className="bg-mate_black dark:bg-primary py-2">
         <div className="container flex justify-between items-center">
           <div>
-          <a
+          <Link
             href="/"
             className="flex items-center justify-between mr-4"
           >
@@ -288,7 +289,7 @@ const Navbar = () => {
             <span className="self-center text-3xl font-semibold font-Jost white-nowrap text-white dark:text-black">
               OWNYOURCAP
             </span>
-          </a>
+          </Link>
           </div>
 
 
@@ -304,7 +305,7 @@ const Navbar = () => {
             </div>
 
             {/* order button */}
-            <a
+            <Link
               href="/viewCart"
               className="bg-gradient-to-r from-primary to-sky-500 transition-all duration-200 text-white  py-1 px-4 rounded-full flex items-center gap-3 group"
             >
@@ -317,7 +318,7 @@ const Navbar = () => {
                   {getCartItemsCount()}
                 </span>
               </div>
-            </a>
+            </Link>
 
             {displayLoginOptions()}
 
@@ -330,31 +331,31 @@ const Navbar = () => {
         <ul className="sm:flex hidden items-center gap-4">
           {Menu.map((data) => (
             <li key={data.id}>
-              <a
-                href={data.link}
+              <Link
+                href={`${data.link}`}
                 className="inline-block px-4 text-black hover:text-blue-800 dark:text-white  dark:hover:text-primary duration-200"
               >
                 {data.name}
-              </a>
+              </Link>
             </li>
           ))}
           <li className="group relative cursor-pointer">
-            <a href="#" className="flex items-center gap-[2px] py-2 text-black dark:text-white">
+            <Link href="#" className="flex items-center gap-[2px] py-2 text-black dark:text-white">
               Categories
               <span>
                 <FaCaretDown className="transition-all duration-200 group-hover:rotate-180" />
               </span>
-            </a>
+            </Link>
             <div className="absolute z-[9999] hidden group-hover:block w-[200px] rounded-md bg-white p-2 text-black  shadow-md">
               <ul>
                 {DropdownLink.map((data) => (
                   <li key={data.id}>
-                    <a
-                      href={data.link}
+                    <Link
+                      href={`${data.link}`}
                       className="inline-block w-full rounded-md p-2 hover:bg-perfect_blue hover:text-white dark:hover:bg-primary dark:hover:text-white"
                     >
                       {data.name}
-                    </a>
+                    </Link>
                   </li>
                 ))}
               </ul>
@@ -362,22 +363,22 @@ const Navbar = () => {
           </li>
           {/* Simple Dropdown and Links */}
           <li className="group relative cursor-pointer">
-            <a href="#" className="flex items-center gap-[2px] py-2 text-black dark:text-white">
+            <Link href="#" className="flex items-center gap-[2px] py-2 text-black dark:text-white">
               Trending Products
               <span>
                 <FaCaretDown className="transition-all duration-200 group-hover:rotate-180" />
               </span>
-            </a>
+            </Link>
             <div className="absolute z-[9999] hidden group-hover:block w-[200px] rounded-md bg-white p-2 text-black  shadow-md">
               <ul>
                 {DropdownLinks.map((data) => (
                   <li key={data.id}>
-                    <a
-                      href={data.link}
+                    <Link
+                      href={`${data.link}`}
                       className="inline-block w-full rounded-md p-2 text-black  hover:bg-perfect_blue hover:text-white dark:hover:bg-primary dark:hover:text-white "
                     >
                       {data.name}
-                    </a>
+                    </Link>
                   </li>
                 ))}
               </ul>

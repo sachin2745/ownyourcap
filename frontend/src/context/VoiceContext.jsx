@@ -370,7 +370,8 @@ export const VoiceProvider = ({ children }) => {
     useEffect(() => {
         if (!hasRun.current) {
             hasRun.current = true;
-            SpeechRecognition.startListening({ continuous: true });
+            //for continuous listening of voice
+            // SpeechRecognition.startListening({ continuous: true });
             // voiceResponse('Welcome to Own Your cap. What are you shopping today?');
             // triggerModal('Voice Assistant', 'I am listening');
         }

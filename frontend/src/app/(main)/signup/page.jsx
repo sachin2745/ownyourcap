@@ -1,5 +1,6 @@
 'use client'
 import { useFormik } from 'formik'
+import Link from 'next/link';
 import { useRouter } from 'next/navigation';
 import React from 'react'
 import toast from 'react-hot-toast';
@@ -219,9 +220,9 @@ const Signup = () => {
 
           <p className="mt-10 mb-5 text-center text-sm text-gray-500">
             Already have an account?{' '}
-            <a href="/login" className="font-semibold leading-6 text-sky-500 hover:text-sky-500">
+            <Link href='/login' className="font-semibold leading-6 text-sky-500 hover:text-sky-500">
               Login
-            </a>
+            </Link>
           </p>
         </div>
       </div>

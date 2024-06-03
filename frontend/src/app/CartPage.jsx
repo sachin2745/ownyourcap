@@ -7,6 +7,7 @@ import { IconShoppingCartX } from '@tabler/icons-react';
 import useVoiceContext from '@/context/VoiceContext';
 import useProductContext from '@/context/ProductContext';
 import { FaMinus, FaPlus } from 'react-icons/fa6';
+import pluralize from 'pluralize';
 
 const CartPage = () => {
 

@@ -1,3 +1,4 @@
+import Link from "next/link";
 import React from "react";
 import {
   FaFacebook,
@@ -85,7 +86,7 @@ const Footer = () => {
                       className="cursor-pointer hover:text-secondary hover:translate-x-1 duration-300 text-gray-200 dark:text-black "
                       key={link.title}
                     >
-                      <a href={link.link}>  <span>{link.title}</span></a>
+                      <Link href={link.link}>  <span>{link.title}</span></Link>
                     </li>
                   ))}
                 </ul>
@@ -102,7 +103,7 @@ const Footer = () => {
                       className="cursor-pointer hover:text-secondary hover:translate-x-1 duration-300 text-gray-200 dark:text-black "
                       key={link.title}
                     >
-                      <span>{link.title}</span>
+                      <Link href={link.link}>  <span>{link.title}</span></Link>
                     </li>
                   ))}
                 </ul>
