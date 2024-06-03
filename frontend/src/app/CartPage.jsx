@@ -1,13 +1,13 @@
 "use client";
 import React, { useEffect, useState } from 'react'
 import Link from 'next/link';
-
-import { useParams } from 'next/navigation';
 import { IconShoppingCartX } from '@tabler/icons-react';
 import useVoiceContext from '@/context/VoiceContext';
 import useProductContext from '@/context/ProductContext';
 import { FaMinus, FaPlus } from 'react-icons/fa6';
 import pluralize from 'pluralize';
+import toast from 'react-hot-toast';
+import { useParams, useRouter } from 'next/navigation';
 
 const CartPage = () => {
 
@@ -18,6 +18,9 @@ const CartPage = () => {
         toast.success("Item added In Your Cart")
     }
     const [productList, setproductList] = useState([]);
+    const router = useRouter();
+    const [masterList, setMasterList] = useState([]);
+
 
     const {
         transcript,
@@ -34,9 +37,9 @@ const CartPage = () => {
 
     useEffect(() => {
         if (finalTranscript.includes('clear cart') || finalTranscript.includes('clear card')) {
-            const product = pluralize.singular(finalTranscript.split(' ').at(-1));
+            const post = pluralize.singular(finalTranscript.split(' ').at(-1));
             // console.log((product), product);
-            searchProduct(product);
+            searchProduct(post);
             resetTranscript();
             voiceResponse(`Cart has been cleared`);
             triggerModal(
@@ -46,6 +49,43 @@ const CartPage = () => {
                 <IconShoppingCartX size={50} />
             );
         }
+
+        else if (finalTranscript.includes('checkout') || finalTranscript.includes('check out')) {
+            resetTranscript();
+            router.push('/checkout');
+            voiceResponse(`Proceeding to checkout`);
+            triggerModal(
+                `Proceeding to checkout`,
+                '',
+                true,
+                <IconShoppingCartX size={50} />
+            );
+        }
+        else if (finalTranscript.includes('continue shopping')) {
+            resetTranscript();
+            router.push('/MyShop');
+            voiceResponse(`Continuing shopping`);
+            triggerModal(
+                `Continuing shopping`,
+                '',
+                true,
+                <IconShoppingCartX size={50} />
+            );
+        }
+        //process to pay goes to checkout page
+        else if (finalTranscript.includes('process to pay')) {
+            resetTranscript();
+            router.push('/checkout');
+            voiceResponse(`Proceeding to checkout`);
+            triggerModal(
+                `Proceeding to checkout`,
+                '',
+                true,
+                <IconShoppingCartX size={50} />
+            );
+        }
+
+
     }, [finalTranscript])
 
     const fetchUserData = async () => {
@@ -56,12 +96,19 @@ const CartPage = () => {
             const data = await res.json();
             console.log(data);
             setproductList(data);
+            setMasterList(data);
+
         }
     }
 
     useEffect(() => {
         fetchUserData();
     }, [])
+
+    const searchProduct = (query) => {
+        const filteredProduct = masterList.filter(post => post.name.toLowerCase().includes(query.toLowerCase()));
+        setproductList(filteredProduct);
+    }
 
 
     const { setCartOpen } = useProductContext();
@@ -83,14 +130,13 @@ const CartPage = () => {
                 {/* <p alt="login form" className='rounded-start mt-4 w-25 text-center' /> */}
                 <h3>Your Cart is Currently Empty!</h3>
                 <p className="text-muted">Before proceed to checkout you must add some products to your shopping cart. <br />You will fill a lot of interesting products on our "Product" page.</p>
-                <Link className=" mt-10 btn rounded-pill" onClick={() => setCartOpen(false)} style={{ backgroundColor: "blue", color: "#fff" }} href={"/MyShop"}>Return To Shop</Link>
+                <Link className=" mt-10 btn rounded-pill" onClick={() => setCartOpen(false)} style={{ backgroundColor: " rgb(14 165 233)", color: "#fff" }} href={"/MyShop"}>Return To Shop</Link>
             </div>
         );
         return cartItems.map((item) => (
             <div key={item._id} className="grid grid-cols-3 mb-4  font-Jost">
                 <div className="">
                     <img src={'http://localhost:5000/' + item.image} alt="" className="w-auto mx-auto  h-24  py-1 " style={{ objectFit: "cover" }} />
-
 
                 </div>
                 <div className="">
@@ -165,10 +211,9 @@ const CartPage = () => {
                                         </div>
                                         <div className="mt-8">
                                             <div className="flow-root">
-                                                <ul role="list" className="-my-6 divide-y divide-gray-200">
+                                                <ul role="list" className="-my-6 divide-y divide-gray-400">
                                                     <li className="flex py-6">
-
-                                                        <div className="ml-4 flex flex-1 flex-col">
+                                                        <div className=" flex flex-1 flex-col">
                                                             {displayCartItems()}
                                                         </div>
                                                     </li>
@@ -194,14 +239,14 @@ const CartPage = () => {
                                                 or
 
                                             </p>
-                                            <Link onClick={() => setCartOpen(false)}
+                                            <a onClick={() => setCartOpen(false)}
                                                 href={"/MyShop"}
                                                 type="button"
                                                 className="font-medium text-sky-500 hover:text-indigo-400"
                                             >
                                                 Continue Shopping
                                                 <span aria-hidden="true"> →</span>
-                                            </Link>
+                                            </a>
                                         </div>
                                     </div>
                                 </div>

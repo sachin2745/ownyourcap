@@ -107,10 +107,19 @@ const pageDetails = [
         pageName: 'uploadProduct',
         pagePath: '/admin/uploadProducts'
     },
-   
+
     {
         pageName: 'profile',
         pagePath: '/user/profile'
+    },
+    {
+        pageName: 'order',
+        pagePath: '/viewCart'
+    },
+    {
+
+        pageName: 'orderhistory',
+        pagePath: '/order'
     }
 
 ]
@@ -205,10 +214,24 @@ export const VoiceProvider = ({ children }) => {
         {
             command: 'open cart page',
             callback: (pageName) => {
-              console.log('Opening page: ', pageName);
-              voicePageNavigator('MyCart')
+                console.log('Opening page: ', pageName);
+                voicePageNavigator('MyCart')
             }
-          },
+        },
+        {
+            command: 'open order page',
+            callback: (pageName) => {
+                console.log('Opening page: ', pageName);
+                voicePageNavigator('order')
+            }
+        },
+        {
+            command: 'open order history page',
+            callback: (pageName) => {
+                console.log('Opening page: ', pageName);
+                voicePageNavigator('orderhistory')
+            }
+        },
 
         {
             command: 'open contact page',
@@ -225,7 +248,7 @@ export const VoiceProvider = ({ children }) => {
             }
         },
         {
-            command: 'open product view page',            
+            command: 'open product view page',
             callback: (pageName) => {
                 console.log('Opening page: ', pageName);
                 voicePageNavigator('viewCart')
@@ -401,7 +424,7 @@ export const VoiceProvider = ({ children }) => {
             voiceResponse('Hello! How can I help you today?');
             SpeechRecognition.startListening({ continuous: true });
         }
-        if (finalTranscript.includes('goodbye box')) {
+        if (finalTranscript.includes('goodbye shinchan')) {
             voiceResponse('Goodbye! Have a nice day!');
             SpeechRecognition.stopListening();
             triggerModal('Voice Assistant', 'Good bye! have a nice Day', false, <IconMicrophoneOff size={50} />);

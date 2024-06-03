@@ -13,6 +13,7 @@ const page = () => {
 
     const { addItemToCart, isInCart } = useProductContext();
     const router = useRouter();
+    const [masterList, setMasterList] = useState([]);
     const [postArray, setPostArray] = useState([]);
 
     const {
@@ -75,6 +76,7 @@ const page = () => {
             .then((data) => {
                 console.log(data);
                 setPostArray(data);
+                setMasterList(data);
             })
             .catch((err) => {
                 console.log(err);
@@ -85,7 +87,10 @@ const page = () => {
         fetchPostData();
     }, []);
 
-
+    const searchProduct = (query) => {
+        const filteredProduct = masterList.filter(post => post.name.toLowerCase().includes(query.toLowerCase()));
+        setPostArray(filteredProduct);
+      }
 
 
     return (
