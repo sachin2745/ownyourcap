@@ -1,6 +1,7 @@
 import React from 'react'
 import Navbar from '../navbar'
 import Footer from '../Footer'
+import Link from 'next/link'
 
 const About = () => {
   return (
@@ -54,7 +55,7 @@ const About = () => {
               <div>
                 <div className="h-auto overflow-hidden rounded-lg bg-gray-100 shadow-lg md:h-96">
                   <img
-                    src="https://images.unsplash.com/photo-1610465299996-30f240ac2b1c?auto=format&q=75&fit=crop&w=600&h=750"
+                    src="ourstory.jpg"
                     loading="lazy"
                     alt="Photo by Martin Sanchez"
                     className="h-full w-full object-cover object-center"
@@ -66,7 +67,7 @@ const About = () => {
                 <h1 className="mb-4 text-center text-2xl font-bold font-Quicksand text-primary sm:text-4xl md:mb-6 md:text-left">
                   Our Story
                 </h1>
-                <p className="mb-6 text-white sm:text-lg md:mb-8 font-Jost">
+                <p className="mb-6 text-white sm:text-xl md:mb-8 font-Jost">
                   Founded in 2024, Own Your Cap was born out of a passion for headwear and a desire to bring high-quality,
                   personalized caps to people everywhere. What started as a small venture has grown into a thriving community
                   of cap enthusiasts who share our love for craftsmanship, creativity, and style.
@@ -89,7 +90,7 @@ const About = () => {
                 <h1 className="mb-4 text-center text-2xl font-extrabold font-Quicksand text-primary sm:text-4xl md:mb-6 md:text-left">
                   Our Mission
                 </h1>
-                <p className="mb-6 text-white sm:text-lg md:mb-8 font-Jost">
+                <p className="mb-6 text-white sm:text-xl md:mb-8 font-Jost">
                   Our mission is simple: to provide you with the best caps that reflect your individuality and taste.
                   We are dedicated to offering a wide range of designs,
                   materials, and customization options to ensure that your cap is truly your own.
@@ -99,10 +100,10 @@ const About = () => {
               <div>
                 <div className="h-auto overflow-hidden rounded-lg bg-gray-100 shadow-lg md:h-96">
                   <img
-                    src="https://images.unsplash.com/photo-1610465299996-30f240ac2b1c?auto=format&q=75&fit=crop&w=600&h=750"
+                    src="ourmission.jpg"
                     loading="lazy"
                     alt="Photo by Martin Sanchez"
-                    className="h-full w-full object-cover object-center"
+                    className="h-full w-full object-cover  object-center"
                   />
                 </div>
               </div>
@@ -131,7 +132,7 @@ const About = () => {
                   className="group relative block h-48 overflow-hidden bg-gray-100 md:h-64"
                 >
                   <img
-                    src="https://images.unsplash.com/photo-1593508512255-86ab42a8e620?auto=format&q=75&fit=crop&w=600"
+                    src="quality.jpg"
                     loading="lazy"
                     alt="Photo by Minh Pham"
                     className="absolute inset-0 h-full w-full object-cover object-center transition duration-200 group-hover:scale-110"
@@ -160,7 +161,7 @@ const About = () => {
                   className="group relative block h-48 overflow-hidden bg-gray-100 md:h-64"
                 >
                   <img
-                    src="https://images.unsplash.com/photo-1550745165-9bc0b252726f?auto=format&q=75&fit=crop&w=600"
+                    src="unique.jpg"
                     loading="lazy"
                     alt="Photo by Lorenzo Herrera"
                     className="absolute inset-0 h-full w-full object-cover object-center transition duration-200 group-hover:scale-110"
@@ -189,7 +190,7 @@ const About = () => {
                   className="group relative block h-48 overflow-hidden bg-gray-100 md:h-64"
                 >
                   <img
-                    src="https://images.unsplash.com/photo-1542759564-7ccbb6ac450a?auto=format&q=75&fit=crop&w=600"
+                    src="customization.jpg"
                     loading="lazy"
                     alt="Photo by Magicle"
                     className="absolute inset-0 h-full w-full object-cover object-center transition duration-200 group-hover:scale-110"
@@ -218,7 +219,7 @@ const About = () => {
                   className="group relative block h-48 overflow-hidden bg-gray-100 md:h-64"
                 >
                   <img
-                    src="https://images.unsplash.com/photo-1610465299996-30f240ac2b1c?auto=format&q=75&fit=crop&w=600"
+                    src="satisfaction.jpg"
                     loading="lazy"
                     alt="Photo by Martin Sanchez"
                     className="absolute inset-0 h-full w-full object-cover object-center transition duration-200 group-hover:scale-110"
@@ -261,7 +262,7 @@ const About = () => {
             </div>
             <div className="bg-mate_black py-6 sm:py-8 lg:py-12">
               <div className="mx-auto max-w-screen-2xl px-4 md:px-8">
-                
+
                 <div className="mb-4 grid grid-cols-2 gap-4 sm:grid-cols-3 md:mb-8 md:grid-cols-4 md:gap-6 xl:gap-8">
                   {/* image - start */}
                   <a
@@ -276,7 +277,7 @@ const About = () => {
                     />
                     <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-gray-800 via-transparent to-transparent opacity-50" />
                     <span className="relative ml-4 mb-3 inline-block text-sm text-white md:ml-5 md:text-lg">
-                    The perfect blend of style and comfort.
+                      The perfect blend of style and comfort.
                     </span>
                   </a>
                   {/* image - end */}
@@ -293,7 +294,7 @@ const About = () => {
                     />
                     <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-gray-800 via-transparent to-transparent opacity-50" />
                     <span className="relative ml-4 mb-3 inline-block text-sm text-white md:ml-5 md:text-lg">
-                    Casual and trendy, ideal for everyday wear.
+                      Casual and trendy, ideal for everyday wear.
                     </span>
                   </a>
                   {/* image - end */}
@@ -310,7 +311,7 @@ const About = () => {
                     />
                     <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-gray-800 via-transparent to-transparent opacity-50" />
                     <span className="relative ml-4 mb-3 inline-block text-sm text-white md:ml-5 md:text-lg">
-                    Keep warm with our cozy and stylish beanies.
+                      Keep warm with our cozy and stylish beanies.
                     </span>
                   </a>
                   {/* image - end */}
@@ -327,16 +328,58 @@ const About = () => {
                     />
                     <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-gray-800 via-transparent to-transparent opacity-50" />
                     <span className="relative ml-4 mb-3 inline-block text-sm text-white md:ml-5 md:text-lg">
-                    Design your own cap to match your unique style.
+                      Design your own cap to match your unique style.
                     </span>
                   </a>
                   {/* image - end */}
                 </div>
-                
+
               </div>
             </div>
 
 
+          </div>
+        </div>
+
+      </section>
+
+      {/* contact us */}
+      <section>
+        <div className="bg-mate_black py-6 sm:py-8 lg:py-12">
+          <div className="mx-auto max-w-screen-2xl px-4 md:px-8">
+            <div className="flex flex-col overflow-hidden rounded-lg bg-mate_black sm:flex-row md:h-96">
+              {/* image - start */}
+              <div className="order-first h-48 w-full  bg-mate_black sm:order-none sm:h-auto sm:w-1/2 lg:w-2/4">
+                <img
+                  src="contact.jpg"
+                  loading="lazy"
+                  alt="Photo by Andras Vas"
+                  className="h-full w-full"
+                />
+              </div>
+              {/* image - end */}
+              {/* content - start */}
+              <div className="flex w-full  flex-col p-4 sm:w-1/2 sm:p-8 lg:w-3/5">
+                <h2 className="mb-5 text-xl font-extrabold text-primary font-Quicksand md:text-2xl lg:text-4xl">
+                  Help center
+                </h2>
+                <p className="mb-6 max-w-xl text-white font-Jost text-xl">
+                  Have questions or need assistance?<br />
+                  We&apos;re here to help! Reach out to us at ownyourcap@gmail.com or call us at 1284785478.<br/> You can also visit our Contact Us page for more information.
+                  <br />
+                </p>
+                <div className="mt-auto">
+                  <Link
+                    href="/contact"
+                    className="inline-block rounded-lg bg-sky-500 px-8 py-3 text-center text-sm font-semibold text-white outline-none ring-indigo-300 transition duration-100 hover:bg-sky-400 focus-visible:ring active:bg-sky-400 md:text-base"
+                  >
+                    Contact support
+                  </Link>
+                </div>
+
+              </div>
+              {/* content - end */}
+            </div>
           </div>
         </div>
 

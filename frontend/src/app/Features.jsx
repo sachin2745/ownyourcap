@@ -9,26 +9,22 @@ const Features = () => {
                     <div className="p-3 md:w-1/4" data-aos="fade-up">
                         <div className="flex rounded-lg  bg-secondary h-40 p-8 flex-col">
                             <div className="flex items-center mb-3">
-                                <div className="w-12 h-12 mr-3 inline-flex items-center justify-center  text-black flex-shrink-0">
+                                <div className="w-14 h-14 mr-3 inline-flex items-center justify-center  text-black flex-shrink-0">
                                     <svg
                                         fill="black"
-
                                         strokeWidth={2}
-                                        className="w-16 h-16"
-                                        viewBox="0 0 1000 1000"
+                                        className="w-18 h-18"
+                                        viewBox="0 0 25 25"
                                     >
-                                        <path d="M331.09 735.19a93.67 93.67 0 1193.67-93.67 93.78 93.78 0 01-93.67 93.67zm0-155.34a61.67 61.67 0 1061.67 61.67 61.73 61.73 0 00-61.67-61.67z" />
-                                        <path d="M572.3 657.52H408.76a16 16 0 010-32H556.3V296.81H116v328.71h137.42a16 16 0 110 32H100a16 16 0 01-16-16V280.81a16 16 0 0116-16h472.3a16 16 0 0116 16v360.71a16 16 0 01-16 16z" />
-                                        <path d="M647.74 657.52H572.3a16 16 0 010-32h75.44a16 16 0 010 32zm252.26 0h-96.92a16 16 0 110-32H884v-116.6c0-98.75-80.34-179.1-179.1-179.1H572.3a16 16 0 010-32h132.6A211.1 211.1 0 01916 508.92v132.6a16 16 0 01-16 16z" />
-                                        <path d="M839.24 524.92H632.63a16 16 0 01-16-16V374.58a16 16 0 0116-16h72.27c82.9 0 150.34 67.45 150.34 150.34a16 16 0 01-16 16zm-190.61-32h173.53A118.52 118.52 0 00704.9 390.58h-56.27zm76.78 242.27a93.67 93.67 0 1193.67-93.67 93.78 93.78 0 01-93.67 93.67zm0-155.34a61.67 61.67 0 1061.67 61.67 61.73 61.73 0 00-61.67-61.67zM424.51 356H247.79a16 16 0 110-32h176.72a16 16 0 010 32zm0 82.09H298.43a16 16 0 010-32h126.08a16 16 0 010 32zm0 82.13h-65.32a16 16 0 010-32h65.32a16 16 0 010 32z" />              </svg>
-
+                                        <path d="M22.5 11.667L20.2 8.6A1.506 1.506 0 0019 8h-3V6.5A1.5 1.5 0 0014.5 5h-11A1.5 1.5 0 002 6.5v10A1.5 1.5 0 003.5 18h.551a2.5 2.5 0 004.9 0h7.1a2.5 2.5 0 004.9 0h.549a1.5 1.5 0 001.5-1.5v-3.333a2.515 2.515 0 00-.5-1.5zM3 16.5v-10a.5.5 0 01.5-.5h11a.5.5 0 01.5.5V17H8.949a2.5 2.5 0 00-4.9 0H3.5a.5.5 0 01-.5-.5zM6.5 19A1.5 1.5 0 118 17.5 1.5 1.5 0 016.5 19zm12 0a1.5 1.5 0 111.5-1.5 1.5 1.5 0 01-1.5 1.5zm3-2h-.551a2.5 2.5 0 00-4.9 0H16V9h3a.5.5 0 01.4.2l.975 1.3H17.5v2h4.322a1.486 1.486 0 01.178.667V15h-.5a.5.5 0 000 1h.5v.5a.5.5 0 01-.5.5zm-2.65.15a.469.469 0 01.15.35.433.433 0 01-.04.19.355.355 0 01-.11.16.483.483 0 01-.7 0 .355.355 0 01-.11-.16.433.433 0 01-.04-.19.469.469 0 01.15-.35.5.5 0 01.7 0zm-11.89.16a.471.471 0 010 .38.533.533 0 01-.27.27.433.433 0 01-.19.04.406.406 0 01-.19-.04.355.355 0 01-.16-.11.483.483 0 010-.7.5.5 0 01.54-.11.533.533 0 01.27.27zM9.5 12.5v-3A.5.5 0 0110 9h1a.5.5 0 010 1h-.5v.5h.5a.5.5 0 010 1h-.5v.5h.5a.5.5 0 010 1h-1a.5.5 0 01-.5-.5zm2.5 0v-3a.5.5 0 01.5-.5h1a.5.5 0 010 1H13v.5h.5a.5.5 0 010 1H13v.5h.5a.5.5 0 010 1h-1a.5.5 0 01-.5-.5zm-8 0v-3a.5.5 0 01.5-.5h1a.5.5 0 010 1H5v.5h.5a.5.5 0 010 1H5v1a.5.5 0 01-1 0zm3.016.5a.5.5 0 00.5-.5v-.85l.537 1.074a.5.5 0 00.894-.448l-.5-.992A1.249 1.249 0 007.75 9h-.734a.5.5 0 00-.5.5v3a.5.5 0 00.5.5zM8 10.25a.25.25 0 01-.25.25.5.5 0 00-.234.061V10h.234a.25.25 0 01.25.25z" />
+                                    </svg>
                                 </div>
 
                                 <h2 className="text-gray-900  text-lg title-font font-medium">
                                     Free Shipping
                                 </h2>
                             </div>
-                            <div className="flex-grow -mt-5 pl-14  text-gray-900  ">
+                            <div className="flex-grow -mt-5 ml-3 pl-14  text-gray-900  ">
                                 <p className=" leading-relaxed text-base  ">
                                     Free Shipping World wide
                                 </p>
@@ -73,7 +69,7 @@ const Features = () => {
                                     Secured Payment
                                 </h2>
                             </div>
-                            <div className="flex-grow -mt-5 pl-14">
+                            <div className="flex-grow -mt-5 ml-1 pl-14">
                                 <p className="leading-relaxed text-base">
                                     Sale and  Secured Payments
                                 </p>
@@ -101,7 +97,7 @@ const Features = () => {
                                     24/7 Support
                                 </h2>
                             </div>
-                            <div className="flex-grow -mt-5 pl-14">
+                            <div className="flex-grow -mt-5 ml-1 pl-14">
                                 <p className="leading-relaxed text-base">
                                     Support Around the Clock
                                 </p>
@@ -126,7 +122,7 @@ const Features = () => {
                                     Surprise Gifts
                                 </h2>
                             </div>
-                            <div className="flex-grow -mt-5 pl-14">
+                            <div className="flex-grow -mt-5 ml-1 pl-14">
                                 <p className="leading-relaxed text-base">
                                     Free Gift Cards & Vouchers
                                 </p>

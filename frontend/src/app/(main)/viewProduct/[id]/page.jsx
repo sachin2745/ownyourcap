@@ -94,27 +94,27 @@ const ViewProductDetails = () => {
                                     </div>
                                     <h2 className='text-lg  ' >₹{productList.price}/- <span className='text-xs	ml-2' > <del>₹999/-</del> </span> </h2>
                                     <h3 className='text-xl font-semibold mt-5 mb-2' >Product Details</h3>
-                                    <table border-spacing-2 className='mb-5 table-auto w-52 '  >
+                                    <table border-spacing-2 className='mb-5 table-auto w-64 '  >
                                         <tbody>
                                             <tr>
                                                 <td className='font-semibold ' >Fabric</td>
-                                                <td className='' >{productList.fabric}</td>
+                                                <td className='' >: {productList.fabric}</td>
                                             </tr>
                                             <tr>
                                                 <td className='font-semibold' >Color</td>
-                                                <td className='' >{productList.color}</td>
+                                                <td className='' >: {productList.color}</td>
                                             </tr>
                                             <tr>
                                                 <td className='font-semibold' >Size</td>
-                                                <td className='' >{productList.size}</td>
+                                                <td className='' >: {productList.size}</td>
                                             </tr>
                                             <tr>
                                                 <td className='font-semibold' >Style code</td>
-                                                <td className='' >{productList.style}</td>
+                                                <td className='' >: {productList.style}</td>
                                             </tr>
                                             <tr>
                                                 <td className='font-semibold'>Net Quantity</td>
-                                                <td className='' >1</td>
+                                                <td className='' >: 1</td>
                                             </tr>
                                         </tbody>
                                     </table>
