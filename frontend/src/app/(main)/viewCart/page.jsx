@@ -24,8 +24,9 @@ const ViewCart = () => {
     const displaycartItems = () => {
         if (getCartItemsCount() === 0) {
             return (
-                <div className="grid  bg-secondary w-full h-40 rounded-lg justify-center place-content-center">
-                    <h1 className="text-3xl font-bold font-Jost text-black">Cart is Empty</h1>
+                <div className="grid  bg-secondary w-full h-40 rounded-lg justify-center place-content-center justify-items-center items-center">
+                    <h1 className="text-3xl font-bold font-Jost text-black ">Cart is Empty</h1>
+                    <h3 className="text-lg font-semibold font-Jost text-black ">Looks like you haven't added anything to your cart yet</h3>
                 </div>
             )
         } else {
@@ -87,7 +88,7 @@ const ViewCart = () => {
 
     }
 
-const shippingPrice = 40;
+    const shippingPrice = 40;
 
 
     return (
@@ -107,37 +108,45 @@ const shippingPrice = 40;
 
 
                     </div>
+                    {/* clear cart */}
+                    <div class="flex justify-between">
+                        <div class=" ">
 
-                    {/* <!-- totals - start --> */}
-                    <div class="flex flex-col items-end gap-4">
-                        <div class="w-full rounded-lg bg-secondary p-4 sm:max-w-xs">
-                            <div class="space-y-1">
-                                <div class="flex justify-between gap-4 text-gray-500">
-                                    <span>Subtotal</span>
-                                    <span>₹{getCartTotal()}/-</span>
-                                </div>
-
-                                <div class="flex justify-between gap-4 text-gray-500">
-                                    <span>Shipping</span>
-                                    <span>₹40/-</span>
-                                </div>
-                            </div>
-
-                            <div class="mt-4 border-t pt-4">
-                                <div class="flex items-start justify-between gap-4 text-black">
-                                    <span class="text-lg font-bold">Total</span>
-
-                                    <span class="flex flex-col items-end">
-                                        <span class="text-lg font-bold">₹{getCartTotal() +shippingPrice}</span>
-                                        <span class="text-sm text-gray-500">including VAT</span>
-                                    </span>
-                                </div>
-                            </div>
+                            <button onClick={() => clearCart()}  className="inline-block rounded-lg bg-red-500 px-8 py-3 text-center text-sm font-semibold text-white outline-none ring-red-300 transition duration-100 hover:bg-red-600 focus-visible:ring active:bg-red-700 md:text-base">
+                                Clear Cart
+                            </button>
                         </div>
+                        {/* <!-- totals - start --> */}
+                        <div class="mb-20 ">
+                            <div class="w-72 rounded-lg bg-secondary p-4 ">
+                                <div class="space-y-1">
+                                    <div class="flex justify-between gap-4 text-gray-500">
+                                        <span>Subtotal</span>
+                                        <span>₹{getCartTotal()}/-</span>
+                                    </div>
 
-                        <Link href="/checkout" class="inline-block rounded-lg bg-sky-500 px-8 py-3 text-center text-sm font-semibold text-white outline-none ring-indigo-300 transition duration-100 hover:bg-indigo-600 focus-visible:ring active:bg-indigo-700 md:text-base">
-                            Check out
-                        </Link>
+                                    <div class="flex justify-between gap-4 text-gray-500">
+                                        <span>Shipping</span>
+                                        <span>₹40/-</span>
+                                    </div>
+                                </div>
+
+                                <div class="mt-4 border-t pt-4">
+                                    <div class="flex items-start justify-between gap-4 text-black">
+                                        <span class="text-lg font-bold">Total</span>
+
+                                        <span class="flex flex-col items-end">
+                                            <span class="text-lg font-bold">₹{getCartTotal() + shippingPrice}</span>
+                                            <span class="text-sm text-gray-500">including VAT</span>
+                                        </span>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <Link href="/checkout" class="inline-block mt-5 ml-36 rounded-lg bg-sky-500 px-8 py-3 text-center text-sm font-semibold text-white outline-none ring-indigo-300 transition duration-100 hover:bg-indigo-600 focus-visible:ring active:bg-indigo-700 md:text-base">
+                                Check out
+                            </Link>
+                        </div>
                     </div>
                     {/* <!-- totals - end --> */}
                 </div>
