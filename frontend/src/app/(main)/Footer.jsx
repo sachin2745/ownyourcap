@@ -135,7 +135,13 @@ const Footer = () => {
                 </div>
               </div>
             </div>
+
           </div>
+        </div>
+        <div className="flex justify-center items-center ">
+          <h3 className="text-black font-Jost font-extrabold">
+            &copy; 2024 OWNYOURCAP. All Rights Reserved.
+          </h3>
         </div>
       </div>
     </div>
