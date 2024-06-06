@@ -24,7 +24,7 @@ const page = () => {
         setselImage(file);
         const fd = new FormData();
         fd.append("myfile", file);
-        fetch("http://localhost:5000/util/uploadfile", {
+        fetch(`${process.env.NEXT_PUBLIC_API_URL}/util/uploadfile`, {
             method: "POST",
             body: fd,
         }).then((res) => {

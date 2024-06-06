@@ -15,7 +15,7 @@ const updateProduct = () => {
     const router = useRouter();
 
     const fetchProductData = async () => {
-        const res = await fetch("http://localhost:5000/post/getbyid/" + id);
+        const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/post/getbyid/` + id);
         console.log(res.status);
         const data = await res.json();
         console.log(data);
@@ -34,7 +34,7 @@ const updateProduct = () => {
         setselImage(file);
         const fd = new FormData();
         fd.append("myfile", file);
-        fetch("http://localhost:5000/util/uploadfile", {
+        fetch(`${process.env.NEXT_PUBLIC_API_URL}/util/uploadfile`, {
             method: "POST",
             body: fd,
         }).then((res) => {

@@ -51,7 +51,7 @@ function Checkout() {
 
         onSubmit: (values) => {
             console.log(values);
-            fetch('http://localhost:5000/billing/add', {
+            fetch(`${process.env.NEXT_PUBLIC_API_URL}/billing/add`, {
                 method: 'POST',
                 body: JSON.stringify(values),
                 headers: {
@@ -162,7 +162,7 @@ function Checkout() {
         };
         sessionStorage.setItem('shipping', JSON.stringify(shipping));
         // console.log(getCartTotal());
-        const res = await fetch('http://localhost:5000/create-payment-intent', {
+        const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/create-payment-intent`, {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'

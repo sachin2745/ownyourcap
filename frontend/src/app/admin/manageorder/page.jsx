@@ -32,7 +32,7 @@ const ManageProduct = () => {
   }, []);
 
   const deleteOrder = (id) => {
-    fetch("http://localhost:5000/order/delete/" + id, { method: "DELETE" })
+    fetch(`${process.env.NEXT_PUBLIC_API_URL}/order/delete/` + id, { method: "DELETE" })
       .then((response) => {
         if (response.status === 200) {
           toast.success("Successfully deleted!");
