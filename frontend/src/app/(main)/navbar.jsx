@@ -96,7 +96,7 @@ const Navbar = () => {
           >
             <img
               className="w-8 h-auto rounded-full"
-              src={'http://localhost:5000/' + currentUser.avatar}
+              src={`${process.env.NEXT_PUBLIC_API_URL}/` + currentUser.avatar}
               alt={currentUser.name}
               rounded-lg w-8 h-8
             />

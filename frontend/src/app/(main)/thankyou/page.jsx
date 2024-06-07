@@ -19,7 +19,7 @@ const thankYou = () => {
 
     const savePayment = async () => {
         const paymentDetails = await retrievePaymentIntent();
-        const response = await fetch('http://localhost:5000/order/add', {
+        const response = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/order/add`, {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
@@ -42,7 +42,7 @@ const thankYou = () => {
     };
 
     const retrievePaymentIntent = async () => {
-        const response = await fetch("http://localhost:5000/retrieve-payment-intent", {
+        const response = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/retrieve-payment-intent`, {
             method: 'POST',
             body: JSON.stringify({ paymentIntentId: params.get('payment_intent') }),
             headers: {

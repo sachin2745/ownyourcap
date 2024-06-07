@@ -73,7 +73,7 @@ const ViewProductDetails = () => {
                         productList !== null ? (
                             <div className='section-1 grid grid-cols-1 gap-4 lg:grid-cols-3 lg:gap-8' >
                                 <div className='product-img rounded-lg bg-white p-2 h-full ' >
-                                    <img src={"http://localhost:5000/" + productList.image} alt='product image' className='rounded-lg pt-8' width={640} />
+                                    <img src={`${process.env.NEXT_PUBLIC_API_URL}/` + productList.image} alt='product image' className='rounded-lg pt-8' width={640} />
                                 </div>
                                 <div className='short-description p-10 rounded-lg text-white bg-mate_black lg:col-span-2 font-Jost' >
                                     <div className="flex">

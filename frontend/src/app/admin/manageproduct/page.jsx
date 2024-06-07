@@ -58,7 +58,7 @@ const ManageProduct = () => {
         {
           productList.map((product) => {
             return <tr className="font-Quicksand">
-              <td className='border-2 border-solid border-sky-400'><img src={"http://localhost:5000/" + product.image} alt="" className="h-full w-full" /></td>
+              <td className='border-2 border-solid border-sky-400'><img src={`${process.env.NEXT_PUBLIC_API_URL}/` + product.image} alt="" className="h-full w-full" /></td>
               <td className='border-2 border-solid border-sky-400'>{product.name}</td>
               <td className='border-2 border-solid border-sky-400'>{product.category}</td>
               <td className='border-2 border-solid border-sky-400' >{product.shortdescription}</td>

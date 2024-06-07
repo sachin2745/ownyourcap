@@ -102,7 +102,7 @@ function Checkout() {
                                 <li className="grid grid-cols-6 gap-2 ">
                                     <div className="col-span-1 self-center">
                                         <img
-                                            src={"http://localhost:5000/" + item.image}
+                                            src={`${process.env.NEXT_PUBLIC_API_URL}/` + item.image}
                                             alt="Product"
                                             className="rounded w-full"
                                         />

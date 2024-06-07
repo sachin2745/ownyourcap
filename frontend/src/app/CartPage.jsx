@@ -89,7 +89,7 @@ const CartPage = () => {
     }, [finalTranscript])
 
     const fetchUserData = async () => {
-        const res = await fetch('http://localhost:5000/post/getall');
+        const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/post/getall`);
 
         console.log(res.status);
         if (res.status === 200) {
@@ -136,7 +136,7 @@ const CartPage = () => {
         return cartItems.map((item) => (
             <div key={item._id} className="grid grid-cols-3 mb-4  font-Jost">
                 <div className="">
-                    <img src={'http://localhost:5000/' + item.image} alt="" className="w-auto mx-auto  h-24  py-1 " style={{ objectFit: "cover" }} />
+                    <img src={`${process.env.NEXT_PUBLIC_API_URL}/` + item.image} alt="" className="w-auto mx-auto  h-24  py-1 " style={{ objectFit: "cover" }} />
 
                 </div>
                 <div className="">
