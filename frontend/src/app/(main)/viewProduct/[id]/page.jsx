@@ -94,7 +94,7 @@ const ViewProductDetails = () => {
                                     </div>
                                     <h2 className='text-lg  ' >₹{productList.price}/- <span className='text-xs	ml-2' > <del>₹999/-</del> </span> </h2>
                                     <h3 className='text-xl font-semibold mt-5 mb-2' >Product Details</h3>
-                                    <table border-spacing-2 className='mb-5 table-auto w-64 '  >
+                                    <table border-spacing-2 className='mb-5 table-auto w-96 '  >
                                         <tbody>
                                             <tr>
                                                 <td className='font-semibold ' >Fabric</td>

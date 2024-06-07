@@ -143,7 +143,7 @@ const ViewCart = () => {
                                 </div>
                             </div>
 
-                            <Link href="/checkout" class="inline-block mt-5 ml-36 rounded-lg bg-sky-500 px-8 py-3 text-center text-sm font-semibold text-white outline-none ring-indigo-300 transition duration-100 hover:bg-indigo-600 focus-visible:ring active:bg-indigo-700 md:text-base">
+                            <Link href="/checkout" class="inline-block mt-5 ml-36 rounded-lg bg-sky-500 px-8 py-3 text-center text-sm font-semibold text-white outline-none ring-indigo-300 transition duration-100 hover:bg-sky-400 focus-visible:ring active:bg-sky-500 md:text-base">
                                 Check out
                             </Link>
                         </div>
