@@ -14,7 +14,7 @@ const ResetPassword = () => {
   const router = useRouter();
 
   const checkMailExists = async () => {
-    const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/signup/getbyemail/${emailRef.current.value}`);
+    const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/user/getbyemail/${emailRef.current.value}`);
     const data = await res.json();
     setVerifiedUser(data);
     return res.status === 200;
@@ -49,7 +49,7 @@ const ResetPassword = () => {
   }
 
   const updatePassword = async (values) => {
-    const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/signup/update/${verifiedUser._id}`, {
+    const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/user/update/${verifiedUser._id}`, {
       method: 'PUT',
       body: JSON.stringify(values),
       headers: {

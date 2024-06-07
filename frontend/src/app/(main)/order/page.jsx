@@ -1,12 +1,13 @@
 'use client';
 import useProductContext from '@/context/ProductContext';
-import { useSearchParams } from 'next/navigation';
+import { useParams, useSearchParams } from 'next/navigation';
 import React, { useEffect, useState } from 'react';
 import { Container, Row, Col, Spinner, Nav } from 'react-bootstrap';
 import Navbar from '../navbar';
 import Footer from '../Footer';
 
 const OrderHistory = () => {
+  const { id } = useParams();
   const [currentUser, setCurrentUser] = useState(JSON.parse(sessionStorage.getItem('user')));
   const [paymentData, setPaymentData] = useState([]);
   const [loading, setLoading] = useState(false);

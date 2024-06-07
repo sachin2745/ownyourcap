@@ -30,7 +30,7 @@ const Signup = () => {
 
     onSubmit: (values) => {
       console.log(values);
-      fetch(`${process.env.NEXT_PUBLIC_API_URL}/signup/sign`, {
+      fetch(`${process.env.NEXT_PUBLIC_API_URL}/user/add`, {
         method: 'POST',
         body: JSON.stringify(values),
         headers: {

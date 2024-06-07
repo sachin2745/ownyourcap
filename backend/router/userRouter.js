@@ -1,11 +1,11 @@
 const express = require('express');
 const router = express.Router();
-const Model = require('../model/signupModel');
+const Model = require('../model/userModel');
 require('dotenv').config();
 const jwt = require('jsonwebtoken');
 const verifyToken = require('./verifyToken');
 
-router.post('/sign', (req, res) => {
+router.post('/add', (req, res) => {
     console.log(req.body);
     new Model(req.body).save()
 

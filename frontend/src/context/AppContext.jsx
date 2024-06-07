@@ -1,6 +1,6 @@
 import { useRouter } from 'next/navigation';
 import React, { createContext, useState, useContext } from 'react'
-
+const ISSERVER = typeof window === "undefined";
 const AppContext = createContext();
 
 export const AppProvider = ({ children }) => {
@@ -8,7 +8,7 @@ export const AppProvider = ({ children }) => {
     const router = useRouter();
 
     const [currentUser, setCurrentUser] = useState(
-        JSON.parse(sessionStorage.getItem('user'))
+        JSON.parse(!ISSERVER ? sessionStorage.getItem('user') : null)
     );
 
     const [loggedIn, setLoggedIn] = useState(currentUser !== null)

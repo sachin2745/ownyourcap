@@ -15,7 +15,7 @@ const editPofile = () => {
     initialValues: currentUser,
     onSubmit: async (data) => {
       console.log(data);
-      const res = await fetch('http://localhost:5000/signup/update' + currentUser._id, {
+      const res = await fetch('http://localhost:5000/user/update' + currentUser._id, {
         method: 'PUT',
         body: JSON.stringify(data),
         headers: {
@@ -31,7 +31,7 @@ const editPofile = () => {
   })
 
   const fetchProfileData = () => {
-    fetch('http://localhost:5000/signup/getbyid', {
+    fetch('http://localhost:5000/user/getbyid', {
       headers: {
         'x-auth-token': currentUser.token
       }

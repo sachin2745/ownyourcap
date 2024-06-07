@@ -4,11 +4,11 @@ import { IoIosLogOut, IoMdSearch } from "react-icons/io";
 import { FaAngleDown, FaCartShopping } from "react-icons/fa6";
 import { FaCaretDown } from "react-icons/fa";
 import DarkMode from "./DarkMode";
-import useAppContext from "@/context/AppContext";
 import useProductContext from "@/context/ProductContext";
 import useVoiceContext from "@/context/VoiceContext";
 import CartPage from "../CartPage";
 import Link from "next/link";
+import useAppContext from "@/context/AppContext";
 
 const Menu = [
   {
@@ -79,11 +79,10 @@ const Navbar = () => {
 
   const { getCartItemsCount } = useProductContext();
 
-  const { logout, loggedIn } = useAppContext();
+  const { logout, loggedIn,currentUser } = useAppContext();
 
   const [userMenuOpened, setUserMenuOpened] = useState(false);
 
-  const [currentUser, setCurrentUser] = useState(JSON.parse(sessionStorage.getItem('user')));
 
   const displayLoginOptions = () => {
     if (loggedIn) {

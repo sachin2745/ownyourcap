@@ -36,4 +36,4 @@ const mySchema = new Schema({
 
 });
 
-module.exports = model('signup', mySchema);
+module.exports = model('user', mySchema);

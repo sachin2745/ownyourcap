@@ -4,7 +4,7 @@ const app = express();
 require('dotenv').config();
 
 //fill the require data
-const signupRouter = require('./router/signupRouter');
+const userRouter = require('./router/userRouter');
 const contactFormRouter = require('./router/contactFormRouter');
 const postRouter = require('./router/postRouter');
 const utilRouter = require('./router/util');
@@ -17,7 +17,7 @@ app.use(cors({origin: '*'}));
 
 
 //that is port to start express server
-app.use('/signup', signupRouter);
+app.use('/user', userRouter);
 app.use('/contactForm', contactFormRouter);
 app.use('/post', postRouter);
 app.use('/util', utilRouter);
