@@ -1,3 +1,4 @@
+'use client';
 import React, { createContext, useContext, useEffect, useRef, useState } from 'react';
 import regeneratorRuntime from "regenerator-runtime";
 import SpeechRecognition, { useSpeechRecognition } from 'react-speech-recognition';

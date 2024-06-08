@@ -219,10 +219,10 @@ const Contact = () => {
             <div className="mb-6 max-w-3xl text-center sm:text-center md:mx-auto md:mb-12">
 
               <h2 className="font-heading font-Jost mb-0 font-bold tracking-tight text-white dark:text-black text-3xl sm:text-3xl">
-                Contact 
+                Contact
               </h2>
               <p className="mx-auto mt-1 max-w-3xl font-Jost text-xl text-White dark:text-black">
-              Home &gt; Contact Us
+                Home &gt; Contact Us
               </p>
             </div>
           </div>
@@ -230,12 +230,12 @@ const Contact = () => {
             <div className="grid md:grid-cols-2">
               <div className="h-full pr-6">
                 <p className="mt-3 mb-12 text-lg text-white dark:text-black font-Jost">
-                  Thank you for visiting our website! We're here to assist you with any inquiries or support you may need. Whether you have questions about our products, need help with an order, or want to provide feedback, we're ready to help.        </p>
+                  Thank you for visiting our website! We&apos;re here to assist you with any inquiries or support you may need. Whether you have questions about our products, need help with an order, or want to provide feedback, we&apos;re ready to help.        </p>
 
 
                 <ul className="mb-6 md:mb-0">
                   <li className="flex">
-                    <div className="flex h-10 w-10 items-center justify-center rounded bg-sky-500 text-gray-50">
+                    <div className="flex mt-2 h-10 w-10 items-center justify-center rounded bg-sky-500 text-gray-50">
                       <svg
                         xmlns="http://www.w3.org/2000/svg"
                         width={24}
@@ -253,7 +253,7 @@ const Contact = () => {
                       </svg>
                     </div>
                     <div className="ml-4 mb-4 font-Jost">
-                      <h3 className="mb-2 text-lg font-medium leading-6 text-white dark:text-black">
+                      <h3 className="mb-1 text-lg font-medium leading-6 text-primary dark:text-black">
                         Our Address
                       </h3>
                       <p className="text-white dark:text-black">
@@ -265,7 +265,7 @@ const Contact = () => {
                     </div>
                   </li>
                   <li className="flex">
-                    <div className="flex h-10 w-10 items-center justify-center rounded bg-sky-500 text-gray-50">
+                    <div className="flex mt-2 h-10 w-10 items-center justify-center rounded bg-sky-500 text-gray-50">
                       <svg
                         xmlns="http://www.w3.org/2000/svg"
                         width={24}
@@ -284,7 +284,7 @@ const Contact = () => {
                       </svg>
                     </div>
                     <div className="ml-4 mb-4">
-                      <h3 className="mb-2 text-lg font-medium leading-6 text-white dark:text-black">
+                      <h3 className="mb-1 text-lg font-medium leading-6 text-primary dark:text-black">
                         Contact
                       </h3>
                       <p className="text-white dark:text-black">
@@ -296,7 +296,7 @@ const Contact = () => {
                     </div>
                   </li>
                   <li className="flex">
-                    <div className="flex h-10 w-10 items-center justify-center rounded bg-sky-500 text-gray-50">
+                    <div className="flex mt-2 h-10 w-10 items-center justify-center rounded bg-sky-500 text-gray-50">
                       <svg
                         xmlns="http://www.w3.org/2000/svg"
                         width={24}
@@ -314,7 +314,7 @@ const Contact = () => {
                       </svg>
                     </div>
                     <div className="ml-4 mb-4">
-                      <h3 className="mb-2 text-lg font-medium leading-6 text-white dark:text-black">
+                      <h3 className="mb-1 text-lg font-medium leading-6 text-primary dark:text-black">
                         Working hours
                       </h3>
                       <p className="text-white dark:text-black">
@@ -329,7 +329,7 @@ const Contact = () => {
               </div>
               <div className="card h-fit max-w-6xl p-5 md:p-12" id="form">
                 <h2 className="mb-4 text-2xl font-bold dark:text-white font-Jost">
-                Feel Free To Contact Us
+                  Feel Free To Contact Us
                 </h2>
                 <form onSubmit={formik.handleSubmit} className=" mt-4 max-w-2xl ">
                   <div className="grid grid-cols-1 gap-x-8 gap-y-4 sm:grid-cols-2">

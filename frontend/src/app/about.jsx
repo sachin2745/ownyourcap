@@ -15,7 +15,7 @@ const About = () => {
           <div className="lg:py-24 font-Jost" data-aos="fade-up">
             <h2 className="font-bold  text-secondary dark:text-black sm:text-5xl">About Us</h2>
             <p className="mt-4 text-secondary dark:text-black text-lg">
-              At our online emporium of caps and hats, we're not just about style; we're about making a statement. With a diverse collection curated to cater to every taste and occasion, we blend quality craftsmanship with contemporary trends. Whether you're seeking a classic snapback, a cozy beanie for chilly days, or a sleek fedora to elevate your ensemble, we've got you covered.
+              At our online emporium of caps and hats, we&apos;re not just about style; we&apos;re about making a statement. With a diverse collection curated to cater to every taste and occasion, we blend quality craftsmanship with contemporary trends. Whether yo&apos;re seeking a classic snapback, a cozy beanie for chilly days, or a sleek fedora to elevate your ensemble, we&apos;ve got you covered.
             </p>
            
             <button class= "mt-10 cursor-pointer py-1 px-5 rounded-md bg-gray-950 text-white border border-gray-400 border-b-4 font-medium overflow-hidden relative px-4 py-2 rounded-md hover:brightness-150 hover:border-t-4 hover:border-b active:opacity-75 outline-none duration-300 group">

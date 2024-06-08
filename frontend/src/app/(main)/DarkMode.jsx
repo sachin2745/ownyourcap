@@ -1,5 +1,5 @@
+"use client";
 import React from "react";
-
 
 const DarkMode = () => {
   const [theme, setTheme] = React.useState(
