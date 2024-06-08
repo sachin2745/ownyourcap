@@ -109,6 +109,7 @@ const Signup = () => {
                       value={formik.values.firstName}
                       onChange={formik.handleChange}
                       onBlur={formik.handleBlur}
+                      placeholder=' Enter your first name'
                       className="block w-full rounded-md border-0 px-3.5 py-2 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-sky-500 sm:text-sm sm:leading-6"
                     />
                     {formik.touched.firstName && formik.errors.firstName ? (
@@ -129,6 +130,7 @@ const Signup = () => {
                       value={formik.values.lastName}
                       onChange={formik.handleChange}
                       onBlur={formik.handleBlur}
+                      placeholder=' Enter your last name'
                       className="block w-full rounded-md border-0 px-3.5 py-2 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-sky-500 sm:text-sm sm:leading-6"
                     />
                     {formik.touched.lastName && formik.errors.lastName ? (
@@ -149,6 +151,7 @@ const Signup = () => {
                       value={formik.values.phoneNumber}
                       onChange={formik.handleChange}
                       onBlur={formik.handleBlur}
+                      placeholder=' Enter your phone number'
                       className="block w-full rounded-md border-0 px-3.5 py-2 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-sky-500 sm:text-sm sm:leading-6"
                     />
                     {formik.touched.phoneNumber && formik.errors.phoneNumber ? (
@@ -232,7 +235,7 @@ const Signup = () => {
             <div className="mt-10 " >
               <label
                 htmlFor="avatar"
-                className=" fz-14  leading-6 text-white cursor-pointer"
+                className="block fz-14  leading-6 text-white cursor-pointer"
               >
                 Choose Profile photo
               </label>
@@ -243,6 +246,8 @@ const Signup = () => {
                   name="avatar"
                   type="file"
                   required=""
+                  className="block w-full rounded-md border-0 py-1.5 text-white shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-sky-500 sm:text-sm sm:leading-6"
+
                 />
 
               </div>
