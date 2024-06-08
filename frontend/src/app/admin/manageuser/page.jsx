@@ -52,7 +52,7 @@ const ManageUser = () => {
         {
           userList.map((user) => {
             return <tr className='font-Jost' >
-              <td className='border-2 border-solid border-white'><img src={`${process.env.NEXT_PUBLIC_API_URL}/` + user.avatar} alt="" style={{ height: 40 }} /></td>
+              <td className='border-2 border-solid border-white '><img src={`${process.env.NEXT_PUBLIC_API_URL}/` + user.avatar} alt="" style={{ height: 80 }} /></td>
               <td className='border-2 border-solid border-white'>{user.firstName} {user.lastName} </td>
               <td className='border-2 border-solid border-white'>{user.email}</td>
               <td className='border-2 border-solid border-white'>{user.password}</td>

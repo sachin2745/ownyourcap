@@ -1,4 +1,4 @@
-const { model , Schema } = require('../connection');
+const { model, Schema } = require('../connection');
 
 const mySchema = new Schema({
     firstName: {
@@ -29,10 +29,11 @@ const mySchema = new Schema({
         type: String,
         default: 'user'
     },
-    avatar: { 
-        type: String, 
-        default: 'avatar_placeholder.png'
-    }
+    avatar: { type: String, required: true }
+    // avatar: { 
+    //     type: String, 
+    //     default: 'avatar_placeholder.png'
+    // }
 
 });
 

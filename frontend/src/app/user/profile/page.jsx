@@ -34,27 +34,25 @@ const userProfile = () => {
     getUserInfo();
   }, []);
 
-  const useForm = useFormik({
-    initialValues: currentUser,
-    onSubmit: async (data) => {
-      console.log(data);
-      const res = await fetch(url + "/user/update" + currentUser._id, {
-        method: "PUT",
-        body: JSON.stringify(data),
-        headers: {
-          "Content-Type": "application/json",
-        },
-      });
-      console.log(res.status);
-      const userData = await res.json();
-      console.log(userData);
-      setCurrentUser(userData);
-      sessionStorage.setItem("user", JSON.stringify(userData));
-    },
-  });
+ 
+  //display edit button using id
+  const editButton = () => {
+    if (currentUser._id === profileData._id) {
+      return (
+        <a href={"/user/editprofile/" + profileData._id}>
+          <button className="py-3.5 px-5 rounded-md bg-sky-600 text-white font-semibold text-base leading-7 shadow-sm shadow-transparent transition-all duration-500 hover:shadow-gray-100 hover:bg-sky-400">
+            Edit Profile
+          </button>
+        </a>
+      );
+    }
+  };
+
+
+
   return (
     <>
-    <Navbar />
+      <Navbar />
       <section className="relative pt-40 pb-24">
         <img
           src="https://img.freepik.com/premium-photo/white-cap-wooden-bar-counter-blurred-background-banner-generative-ai_446633-7836.jpg"
@@ -64,9 +62,9 @@ const userProfile = () => {
         <div className="w-full pt-20 max-w-7xl mx-auto px-6 md:px-18">
           <div className="flex items-center justify-center sm:justify-start relative z-10 mb-5">
             <img
-              src={'http://localhost:5000/' + currentUser.avatar}
+              src={`${process.env.NEXT_PUBLIC_API_URL}/` + currentUser.avatar}
               alt="user-avatar-image"
-              className="border-4 border-solid border-white rounded-full h-40"
+              className="border-4 border-solid border-white rounded-full h-40 w-40 object-cover shadow-lg"
             />
           </div>
           <div className="flex flex-col sm:flex-row max-sm:gap-5 items-center justify-between mb-5">
@@ -101,11 +99,7 @@ const userProfile = () => {
           </div>
           <div className="flex flex-col lg:flex-row max-lg:gap-5 items-center justify-between py-0.5">
             <div className="flex items-center gap-4">
-              <a href="http://localhost:3000/user/editprofile">
-                <button className="py-3.5 px-5 rounded-md bg-sky-600 text-white font-semibold text-base leading-7 shadow-sm shadow-transparent transition-all duration-500 hover:shadow-gray-100 hover:bg-sky-400">
-                  Edit Profile
-                </button>
-              </a>
+              {editButton()}
               <button className="py-3.5 px-5 rounded-md bg-indigo-50 text-sky-600 font-semibold text-base leading-7 shadow-sm shadow-transparent transition-all duration-500 hover:bg-indigo-100">
                 Settings
               </button>

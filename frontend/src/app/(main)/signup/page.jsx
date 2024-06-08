@@ -2,7 +2,7 @@
 import { useFormik } from 'formik'
 import Link from 'next/link';
 import { useRouter } from 'next/navigation';
-import React from 'react'
+import React, { useState } from 'react'
 import toast from 'react-hot-toast';
 import * as Yup from 'yup';
 
@@ -25,10 +25,12 @@ const Signup = () => {
       phoneNumber: '',
       email: '',
       password: '',
-      cpassword: ''
+      cpassword: '',
+      avatar: ''
     },
 
     onSubmit: (values) => {
+      values.avatar = selImage.name;
       console.log(values);
       fetch(`${process.env.NEXT_PUBLIC_API_URL}/user/add`, {
         method: 'POST',
@@ -56,6 +58,25 @@ const Signup = () => {
     validationSchema: signupvalidationSchema,
 
   });
+
+  const [selImage, setselImage] = useState('');
+
+  const uploadeImage = async (e) => {
+    const file = e.target.files[0];
+    setselImage(file);
+    const fd = new FormData();
+    fd.append("myfile", file);
+    fetch(`${process.env.NEXT_PUBLIC_API_URL}/util/uploadfile`, {
+      method: "POST",
+      body: fd,
+    }).then((res) => {
+      if (res.status === 200) {
+        console.log("file uploaded");
+        toast.success('File Uploaded!!');
+      }
+    });
+  }
+
 
   return (
     <div className="flex min-h-full flex-1 flex-col justify-center px-6 py-12 lg:px-8 bg-mate_black ">
@@ -206,6 +227,26 @@ const Signup = () => {
                   <div className="text-red-500 text-xs">{formik.errors.cpassword}</div>
                 ) : null}
               </div>
+            </div>
+
+            <div className="mt-10 " >
+              <label
+                htmlFor="avatar"
+                className=" fz-14  leading-6 text-white cursor-pointer"
+              >
+                Choose Profile photo
+              </label>
+              <div className="mt-1 ">
+                <input
+                  onChange={uploadeImage}
+                  id="avatar"
+                  name="avatar"
+                  type="file"
+                  required=""
+                />
+
+              </div>
+
             </div>
 
             <div>
