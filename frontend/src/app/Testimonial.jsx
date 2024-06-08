@@ -65,10 +65,9 @@ const Testimonial = () => {
                 </div>
               </div>
               <p className="mt-4 text-white">
-                Lorem ipsum dolor sit, amet consectetur adipisicing elit. Culpa sit
-                rerum incidunt, a consequuntur recusandae ab saepe illo est quia
-                obcaecati neque quibusdam eius accusamus error officiis atque
-                voluptates magnam!
+                I am absolutely thrilled with my new cap from OWNYOURCAP!
+                The quality is fantastic, and the design is exactly what I was looking for. The fit is perfect, and
+                the material feels really durable. I've received so many compliments already. Highly recommend!
               </p>
             </blockquote>
             <blockquote className="rounded-lg duration-500 group-hover:blur-sm hover:!blur-none group-hover:scale-[0.85] hover:!scale-100  cursor-pointer bg-black p-6 shadow-sm sm:p-8 border-2 border-white">
@@ -122,15 +121,15 @@ const Testimonial = () => {
                     </svg>
                   </div>
                   <p className="mt-0.5 text-lg font-medium text-white">
-                    Kazama
+                   Toru Kazama
                   </p>
                 </div>
               </div>
               <p className="mt-4 text-white">
-                Lorem ipsum dolor sit, amet consectetur adipisicing elit. Culpa sit
-                rerum incidunt, a consequuntur recusandae ab saepe illo est quia
-                obcaecati neque quibusdam eius accusamus error officiis atque
-                voluptates magnam!
+                OWNYOURCAP has the best selection of caps I've seen online.
+                The ordering process was super easy, and my cap arrived earlier than expected.
+                It's comfortable, stylish, and well-made.
+                I'll definitely be ordering more in the future!
               </p>
             </blockquote>
             <blockquote className="rounded-lg duration-500 group-hover:blur-sm hover:!blur-none group-hover:scale-[0.85] hover:!scale-100  cursor-pointer bg-black p-6 shadow-sm sm:p-8 border-2 border-white">
@@ -189,10 +188,9 @@ const Testimonial = () => {
                 </div>
               </div>
               <p className="mt-4 text-white">
-                Lorem ipsum dolor sit, amet consectetur adipisicing elit. Culpa sit
-                rerum incidunt, a consequuntur recusandae ab saepe illo est quia
-                obcaecati neque quibusdam eius accusamus error officiis atque
-                voluptates magnam!
+                I ordered a custom cap for a special event, and it turned out amazing!
+                The customer service team was very helpful throughout the process, ensuring my design came out just right.
+                The cap itself is high quality and fits perfectly. Thank you, OWNYOURCAP!
               </p>
             </blockquote>
           </div>

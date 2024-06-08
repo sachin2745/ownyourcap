@@ -1,4 +1,5 @@
 "use client";
+import Link from "next/link";
 import React from "react";
 import { FaStar } from "react-icons/fa";
 
@@ -37,7 +38,7 @@ const TopProducts = ({ handleOrderPopup }) => {
           <h1 data-aos="fade-up" className="text-4xl text-secondary dark:text-black font-bold">
             Best Products
           </h1>
-         
+
         </div>
         {/* Body section */}
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-20 md:gap-5 place-items-center">
@@ -67,12 +68,13 @@ const TopProducts = ({ handleOrderPopup }) => {
                 <p className="text-black group-hover:text-white duration-300 text-sm line-clamp-2">
                   {data.description}
                 </p>
-                
-                <button class= "mt-10 cursor-pointer py-1 px-5 rounded-md bg-gray-950 text-gray-400 border border-gray-400 border-b-4 font-medium overflow-hidden relative px-4 py-2 rounded-md hover:brightness-150 hover:border-t-4 hover:border-b active:opacity-75 outline-none duration-300 group"
-                onClick={handleOrderPopup}>
-              <span class="bg-gray-400 shadow-gray-400 absolute -top-[150%] left-0 inline-flex w-80 h-[5px] rounded-md opacity-50 group-hover:top-[150%] duration-500 shadow-[0_0_10px_10px_rgba(0,0,0,0.3)]"></span>
-              Order Now
-            </button>
+
+                <button href="/MyShop" class="mt-10 cursor-pointer  bg-gray-950 text-gray-400 border border-gray-400 border-b-4 font-medium overflow-hidden relative px-4 py-2 rounded-md hover:brightness-150 hover:border-t-4 hover:border-b active:opacity-75 outline-none duration-300 group" >
+                  <span class="bg-gray-400 shadow-gray-400 absolute -top-[150%] left-0 inline-flex w-80 h-[5px] rounded-md opacity-50 group-hover:top-[150%] duration-500 shadow-[0_0_10px_10px_rgba(0,0,0,0.3)]"></span>
+                  <Link href="/MyShop">
+                    Order
+                  </Link>
+                </button>
               </div>
             </div>
           ))}

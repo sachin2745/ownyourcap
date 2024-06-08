@@ -215,15 +215,11 @@ const Contact = () => {
     </div> */}
       <section className="bg-mate_black dark:bg-primary" id="contact">
         <div className="mx-auto max-w-7xl px-4 py-16 sm:px-6 lg:px-8 lg:py-20">
-          <div className="mb-4">
-            <div className="mb-6 max-w-3xl text-center sm:text-center md:mx-auto md:mb-12">
+          <div className="mb-4 -mt-20">
+            <div className="text-center font-Jost text-secondary dark:text-black pt-10 max-w-3xl sm:text-center md:mx-auto md:mb-12">
 
-              <h2 className="font-heading font-Jost mb-0 font-bold tracking-tight text-white dark:text-black text-3xl sm:text-3xl">
-                Contact
-              </h2>
-              <p className="mx-auto mt-1 max-w-3xl font-Jost text-xl text-White dark:text-black">
-                Home &gt; Contact Us
-              </p>
+              <h1 className='font-bold text-3xl text-white dark:text-black'> Contact</h1>
+              <h3 className='text-1xl text-White dark:text-black'>Home &rsaquo; Contact Us</h3>
             </div>
           </div>
           <div className="flex items-stretch justify-center">
@@ -328,7 +324,7 @@ const Contact = () => {
                 </ul>
               </div>
               <div className="card h-fit max-w-6xl p-5 md:p-12" id="form">
-                <h2 className="mb-4 text-2xl font-bold dark:text-white font-Jost">
+                <h2 className="mb-4 text-2xl font-bold text-primary dark:text-white font-Jost">
                   Feel Free To Contact Us
                 </h2>
                 <form onSubmit={formik.handleSubmit} className=" mt-4 max-w-2xl ">

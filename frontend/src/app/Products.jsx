@@ -58,20 +58,22 @@ const Products = () => {
           <h1 data-aos="fade-up" className="text-4xl font-bold text-secondary dark:text-black text-mono">
             Products
           </h1>
-          
+
         </div>
         {/* Body section */}
         <div>
           <div className="grid grid-cols-1  sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 place-items-center gap-5 ">
             {/* card section */}
             {ProductsData.map((data) => (
-              <div
+              <Link 
+               href="/MyShop"
                 data-aos="fade-up"
                 data-aos-delay={data.aosDelay}
                 key={data.id}
                 className="space-y-3 border-4 rounded-lg border-secondary bg-secondary dark:border-black dark:bg-black"
               >
-                <img
+                <img               
+                 
                   src={data.img}
                   alt=""
                   className="h-[240px] w-[200px] object-cover rounded-md"
@@ -84,16 +86,16 @@ const Products = () => {
                     <span className="text-mate_black dark:text-secondary">{data.rating}</span>
                   </div>
                 </div>
-              </div>
+              </Link>
             ))}
           </div>
           {/* view all button */}
           <div className="flex justify-center">
-            <Link href={"/MyShop"}  class= "mt-10 cursor-pointer py-1 px-5 rounded-md bg-gray-950 text-white border border-gray-400 border-b-4 font-medium overflow-hidden relative px-4 py-2 rounded-md hover:brightness-150 hover:border-t-4 hover:border-b active:opacity-75 outline-none duration-300 group">
-              <span  class="bg-gray-400 shadow-gray-400 absolute -top-[150%] left-0 inline-flex w-80 h-[5px] rounded-md opacity-50 group-hover:top-[150%] duration-500 shadow-[0_0_10px_10px_rgba(0,0,0,0.3)]"></span>
+            <Link href={"/MyShop"} class="mt-10 cursor-pointer py-1 px-5 rounded-md bg-gray-950 text-white border border-gray-400 border-b-4 font-medium overflow-hidden relative px-4 py-2 rounded-md hover:brightness-150 hover:border-t-4 hover:border-b active:opacity-75 outline-none duration-300 group">
+              <span class="bg-gray-400 shadow-gray-400 absolute -top-[150%] left-0 inline-flex w-80 h-[5px] rounded-md opacity-50 group-hover:top-[150%] duration-500 shadow-[0_0_10px_10px_rgba(0,0,0,0.3)]"></span>
               View All Products
             </Link>
-           
+
           </div>
         </div>
       </div>

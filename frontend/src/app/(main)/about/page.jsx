@@ -361,12 +361,14 @@ const About = () => {
               {/* content - start */}
               <div className="flex w-full  flex-col p-4 sm:w-1/2 sm:p-8 lg:w-3/5">
                 <h2 className="mb-5 text-xl font-extrabold text-primary font-Quicksand md:text-2xl lg:text-4xl">
-                  Help center
+                  Customer Support
                 </h2>
-                <p className="mb-6 max-w-xl text-white font-Jost text-xl">
-                  Have questions or need assistance?<br />
-                  We&apos;re here to help! Reach out to us at ownyourcap@gmail.com or call us at 1284785478.<br/> You can also visit our Contact Us page for more information.
-                  <br />
+                <p className="mb-6 max-w-1xl text-white font-Jost text-xl">
+                  If you need further assistance, our customer support team is here to help.<br />
+                  You can reach us via email at <b>ownyourcap@gmail.com </b>or<br/> call us at<b> +91 8858680724</b>.<br />
+                  Our support hours are Monday to Friday, 9 AM - 5 PM EST.<br />
+                  You can also visit our Contact Us page for more information.
+                 
                 </p>
                 <div className="mt-auto">
                   <Link

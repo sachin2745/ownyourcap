@@ -18,7 +18,7 @@ const About = () => {
               At our online emporium of caps and hats, we&apos;re not just about style; we&apos;re about making a statement. With a diverse collection curated to cater to every taste and occasion, we blend quality craftsmanship with contemporary trends. Whether yo&apos;re seeking a classic snapback, a cozy beanie for chilly days, or a sleek fedora to elevate your ensemble, we&apos;ve got you covered.
             </p>
            
-            <button class= "mt-10 cursor-pointer py-1 px-5 rounded-md bg-gray-950 text-white border border-gray-400 border-b-4 font-medium overflow-hidden relative px-4 py-2 rounded-md hover:brightness-150 hover:border-t-4 hover:border-b active:opacity-75 outline-none duration-300 group">
+            <button class= "mt-10 cursor-pointer  bg-gray-950 text-white border border-gray-400 border-b-4 font-medium overflow-hidden relative px-4 py-2 rounded-md hover:brightness-150 hover:border-t-4 hover:border-b active:opacity-75 outline-none duration-300 group">
               <span class="bg-gray-400 shadow-gray-400 absolute -top-[150%] left-0 inline-flex w-80 h-[5px] rounded-md opacity-50 group-hover:top-[150%] duration-500 shadow-[0_0_10px_10px_rgba(0,0,0,0.3)]"></span>
               Explore Now
             </button>
