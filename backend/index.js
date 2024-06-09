@@ -60,7 +60,7 @@ app.post('/create-payment-intent', async (req, res) => {
     const paymentIntent = await stripe.paymentIntents.retrieve(paymentIntentId);
     res.json(paymentIntent);
   });
-const port = 5000 ;
+const port = process.env.PORT;
 
 app.get('/', (req , res) => {
     res.send('Got Response From The Express Server')
