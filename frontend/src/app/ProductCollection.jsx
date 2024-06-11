@@ -9,10 +9,8 @@ const ProductCollection = () => {
           <h2 className="text-xl font-bold text-secondary  dark:text-black sm:text-3xl " data-aos="fade-up">
             New Collection
           </h2>
-          <p className="mx-auto mt-4 max-w-md text-secondary dark:text-black" data-aos="fade-up">
-            Lorem ipsum, dolor sit amet consectetur adipisicing elit. Itaque
-            praesentium cumque iure dicta incidunt est ipsam, officia dolor fugit
-            natus?
+          <p className="mx-auto mt-4 max-w-2xl text-secondary dark:text-black" data-aos="fade-up">
+          Welcome to Own Your Cap, your ultimate destination for stylish and unique headwear! Our New Collection is here, featuring an exclusive range of caps that blend fashion with comfort. Each piece in this collection is crafted with premium materials and designed to make a statement. 
           </p>
         </header>
         <ul className="mt-8 grid grid-cols-1 gap-4 lg:grid-cols-3 " data-aos="zoom-in">

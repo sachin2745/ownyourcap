@@ -24,10 +24,9 @@ const Banner = () => {
             </h1>
             <p
               data-aos="fade-up"
-              className="text-sm text-secondary dark:text-black tracking-wide leading-5"
+              className="text-md text-secondary  dark:text-black tracking-wide leading-5"
             >
-              Lorem ipsum, dolor sit amet consectetur adipisicing elit. Eaque
-              reiciendis inventore iste ratione ex alias quis magni at optio
+             Welcome to Own Your Cap's Summer Sale! Enjoy up to 50% off on a wide range of stylish and high-quality caps. Whether you're looking for trendy designs, classic fits, or sporty styles, our collection has something for everyone. Don't miss out on these hot deals – grab your favorite caps at unbeatable prices while the summer sale lasts!
             </p>
             <div className="flex flex-col gap-4 text-secondary dark:text-black">
               <div data-aos="fade-up" className="flex items-center gap-4">

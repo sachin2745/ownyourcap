@@ -68,8 +68,7 @@ const Footer = () => {
               OWNYOUCAP
             </h1>
             <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Cum in
-              beatae ea recusandae blanditiis veritatis.
+            Empowering personalized, stylish headwear with custom designs for every individual's unique expression.
             </p>
           </div>
 

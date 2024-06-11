@@ -12,8 +12,8 @@ const Testimonial = () => {
             <blockquote className="rounded-lg duration-500 group-hover:blur-sm hover:!blur-none group-hover:scale-[0.85] hover:!scale-100  cursor-pointer bg-black p-6 shadow-sm sm:p-8 border-2 border-white">
               <div className="flex items-center gap-4">
                 <img
-                  alt=""
-                  src="https://images.unsplash.com/photo-1595152772835-219674b2a8a6?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1180&q=80"
+                  alt="Nena Sukarada"
+                  src="testimonal1.jpg"
                   className="size-14 rounded-full object-cover"
                 />
                 <div>
@@ -73,8 +73,8 @@ const Testimonial = () => {
             <blockquote className="rounded-lg duration-500 group-hover:blur-sm hover:!blur-none group-hover:scale-[0.85] hover:!scale-100  cursor-pointer bg-black p-6 shadow-sm sm:p-8 border-2 border-white">
               <div className="flex items-center gap-4">
                 <img
-                  alt=""
-                  src="https://images.unsplash.com/photo-1595152772835-219674b2a8a6?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1180&q=80"
+                  alt="toru kazama"
+                  src="testimonal2.jpg"
                   className="size-14 rounded-full object-cover"
                 />
                 <div>
@@ -135,8 +135,8 @@ const Testimonial = () => {
             <blockquote className="rounded-lg duration-500 group-hover:blur-sm hover:!blur-none group-hover:scale-[0.85] hover:!scale-100  cursor-pointer bg-black p-6 shadow-sm sm:p-8 border-2 border-white">
               <div className="flex items-center gap-4">
                 <img
-                  alt=""
-                  src="https://images.unsplash.com/photo-1595152772835-219674b2a8a6?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1180&q=80"
+                  alt=" shinchan nohara"
+                  src="testimonal3.jpg"
                   className="size-14 rounded-full object-cover"
                 />
                 <div>

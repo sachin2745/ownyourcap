@@ -60,7 +60,7 @@ app.post('/create-payment-intent', async (req, res) => {
     const paymentIntent = await stripe.paymentIntents.retrieve(paymentIntentId);
     res.json(paymentIntent);
   });
-const port = process.env.PORT;
+const port =process.env.PORT;
 
 app.get('/', (req , res) => {
     res.send('Got Response From The Express Server')
@@ -70,4 +70,4 @@ app.get('/add', (req , res) => {
     res.send('Add Response From The Express Server')
 });
 
-app.listen( port, () => (console.log('Express server started Now')));
+app.listen( port, () => (console.log('Express Server Started Now')));
